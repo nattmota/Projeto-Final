@@ -15,14 +15,14 @@ public class UsuarioDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
-            stmt = conn.prepareStatement("SELECT * FROM usuario WHERE nome = ? AND senha = ?");
-            stmt.setString(1, u.getNome());
+            stmt = conn.prepareStatement("SELECT * FROM usuario WHERE email = ? AND senha = ?");
+            stmt.setString(1, u.getEmail());
             stmt.setString(2, u.getSenha());
             rs = stmt.executeQuery();
 
             if (rs.next()) {
                 usuarioValido.setIdUsuario(rs.getInt("idUsuario"));
-                usuarioValido.setNome(rs.getString("nome"));
+                usuarioValido.setEmail(rs.getString("email"));
                 usuarioValido.setSenha(rs.getString("senha"));
 
             }
@@ -33,7 +33,7 @@ public class UsuarioDAO {
         } catch (SQLException ex) {
             ex.printStackTrace();
             usuarioValido.setIdUsuario(0);
-            usuarioValido.setNome("");
+            usuarioValido.setEmail("");
             usuarioValido.setSenha("");
         }
         return usuarioValido;

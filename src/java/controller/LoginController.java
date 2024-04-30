@@ -51,36 +51,59 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String url = request.getServletPath();
-        if(url.equals("/logar")) {
-            String nextPage = "/WEB-INF/jsp/index.jsp";
-            Usuario u = new Usuario();
-            UsuarioDAO dao = new UsuarioDAO();
+        
+        if (url.equals("/logar")) {
+            String nextPage = "/WEB-INF/jsp/login.jsp";
+
+            String email = request.getParameter("email");
+            String password = request.getParameter("senha");
+
+            System.out.println(email);
+            System.out.println(password);
             
-            u.setEmail(request.getParameter("email"));
-            u.setSenha(request.getParameter("senha"));
-            
+            // Verificar se os campos estão vazios
+            if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
+                nextPage = "/WEB-INF/jsp/login.jsp";
+                request.setAttribute("errorMessage", "Por favor, preencha todos os campos.");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                dispatcher.forward(request, response);
+                return;
+            }
+
+            // Se o usuário e a senha forem "admin", redirecione para outra página
+            if (email.equals("admin") && password.equals("admin")) {
+                response.sendRedirect("./index"); // Substitua "outraPagina" pelo URL da página desejada
+                return;
+            }
+
+            Usuario user = new Usuario();
+            UsuarioDAO valida = new UsuarioDAO();
+
+            user.setEmail(email);
+            user.setSenha(password);
+
             try {
-                Usuario userAutenticado = dao.login(u);
-                
-                if(userAutenticado != null && !userAutenticado.getNome().isEmpty()) {
-                    response.sendRedirect("./index");                   
+                Usuario userAutenticado = valida.login(user);
+
+                if (userAutenticado != null && !userAutenticado.getEmail().isEmpty()) {
+                    response.sendRedirect("./index");
                 } else {
                     nextPage = "/WEB-INF/jsp/login.jsp";
-                    request.setAttribute("errorMessage", "Usuário ou senha inválidos");
-                    RequestDispatcher d = getServletContext().getRequestDispatcher(nextPage);
-                    d.forward(request, response);                  
-                }                       
-            }catch(Exception e) {
+                    request.setAttribute("errorMessage", "Email ou senha inválidos");
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                    dispatcher.forward(request, response);
+                }
+            } catch (Exception e) {
                 nextPage = "/WEB-INF/jsp/login.jsp";
-                request.setAttribute("errorMessage", "Usuário ou senha inválidos");
-                RequestDispatcher d = getServletContext().getRequestDispatcher(nextPage);
-                d.forward(request, response);
+                request.setAttribute("errorMessage", "Nome ou senha inválidos");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                dispatcher.forward(request, response);
             }
-            
         } else {
             processRequest(request, response);
-        }      
+        }
     }
 
    

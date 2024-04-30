@@ -8,6 +8,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Font Awesome -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+            />
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+            />
+        <!-- MDB -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
+            rel="stylesheet"
+            />
         <script src="https://kit.fontawesome.com/6f0f753ce6.js" crossorigin="anonymous"></script>
         <link href="./style/footer.css" rel="stylesheet" type="text/css"/>
         <link href="./style/header.css" rel="stylesheet" type="text/css"/>
@@ -95,7 +110,7 @@
                                             </div>
 
                                             <div class="d-flex justify-content-center">
-                                                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Iniciar sessão</button>
+                                                <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Iniciar sessão</button>
                                             </div>
                                             <p class="text-center text-muted mt-5 mb-0">Não possui uma conta ainda? <a href="./cadastro-usuario" class="fw-bold text-body"><u>Cadastre-se aqui</u></a></p>
                                         </form>
@@ -160,4 +175,5 @@
             </div>
         </footer>
     </body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
 </html>

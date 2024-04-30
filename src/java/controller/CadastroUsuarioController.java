@@ -65,55 +65,50 @@ public class CadastroUsuarioController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = request.getServletPath();
-        
-        if(url.equals("/cadastrar")) {
-            
-            String nextPage = "/WEB-INF/jsp/login.jsp";
-            
-            String usuario = request.getParameter("nome");
-            String email = request.getParameter("email");
-            String senha = request.getParameter("senha");
-            String cpf = request.getParameter("cpf");
-            String telefone = request.getParameter("telefone");
-            
-            if (usuario == null || usuario.isEmpty() ||
-                senha == null || senha.isEmpty() ||
-                email == null || email.isEmpty() ||
-                cpf == null || cpf.isEmpty() ||
-                telefone == null || telefone.isEmpty()) {
-                
-                nextPage = "/WEB-INF/jsp/cadastro-usuario.jsp";
-                request.setAttribute("errorMessage", "Por favor, preencha todos os campos!");
-                RequestDispatcher d = getServletContext().getRequestDispatcher(nextPage);
-                d.forward(request, response);
-                return;
-            }
-            
-            Usuario u = new Usuario();
-            UsuarioDAO dao = new UsuarioDAO();
-            
-            u.setNome(usuario);
-            u.setSenha(senha);
-            u.setEmail(email);
-            u.setCpf(cpf);
-            u.setTelefone(telefone);
-                              
-            try {                      
-                dao.cadastro(u);
-                RequestDispatcher d = getServletContext().getRequestDispatcher(nextPage);
-                d.forward(request, response);
-                              
-            }catch(Exception e) {
-                nextPage = "/WEB-INF/jsp/cadastro-usuario.jsp";
-                request.setAttribute("errorMessage", "Usuário ou senha inválidos");
-                RequestDispatcher d = getServletContext().getRequestDispatcher(nextPage);
-                d.forward(request, response);
-                return;
-            }
+        String nextPage = "/WEB-INF/jsp/cadastro-usuario.jsp";
+        UsuarioDAO dao = new UsuarioDAO();
+
+        String errorMessage = "";
+        System.out.println("Enrae");
+        String nome = request.getParameter("nome");
+        String email = request.getParameter("email");
+        String senha = request.getParameter("senha");
+        String confirmarSenha = request.getParameter("confirmarSenha");
+        String telefone = request.getParameter("telefone");
+        String cpf = request.getParameter("cpf");
+
+        if (nome == null || nome.trim().isEmpty()
+                || email == null || email.trim().isEmpty()
+                || senha == null || senha.trim().isEmpty()
+                || confirmarSenha == null || confirmarSenha.trim().isEmpty()
+                || telefone == null || telefone.trim().isEmpty()
+                || cpf == null || cpf.trim().isEmpty()) {
+            errorMessage = "Todos os campos são obrigatórios.";
         } else {
-            processRequest(request, response);
-        }      
+            if (senha.equals(confirmarSenha)) {
+                telefone = telefone.replaceAll("[^0-9]", "");
+                cpf = cpf.replaceAll("[^0-9]", "");
+                
+                Usuario usuario = new Usuario();
+                usuario.setNome(nome);
+                usuario.setEmail(email);
+                usuario.setSenha(senha);
+                usuario.setTelefone(telefone);
+                usuario.setCpf(cpf);
+
+                dao.cadastro(usuario);
+                request.setAttribute("successMessage", "Cadastro realizado com sucesso!");
+                nextPage = "./login";
+            }
+        }
+
+        // Definir mensagens de erro na requisição
+        request.setAttribute("errorMessage", errorMessage);
+
+        // Encaminhar para a próxima página
+        RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
+        dispatcher.forward(request, response);
+       
     }
 
     @Override
