@@ -1,0 +1,27 @@
+/* Dispositivos móveis */
+@media screen and (min-width: 320px) and (max-width: 480px) { 
+}
+
+/* iPads, tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+} 
+
+/* telas pequenas, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+
+/* desktops, telas grandes */
+@media screen and (min-width: 1025px) {
+
+}
+
+
+main {
+    background-color: #ECF0F1;
+    padding: 5% 0;
+}    
+
+.btn btn-success btn-block btn-lg gradient-custom-4 text-body {
+    color: #fff; 
+}

@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); /* font-family: "Rubik", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap'); /* font-family: "Roboto Slab", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* font-family: "Work Sans", sans-serif */
+
+/* Dispositivos móveis */
+@media screen and (min-width: 320px) and (max-width: 480px) { 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+        background-color: #00326D;
+        height: 22vh;
+        width: auto;
+    }
+
+    .upper-header {
+        height: 15vh; /* Reduzindo a altura */
+        background-color: #4D71B4; /* Alterando a cor de fundo */
+        display: flex;
+        flex-direction: column; /* Alterando a direção da coluna */
+        justify-content: center; /* Centralizando verticalmente */
+        align-items: center; /* Centralizando horizontalmente */
+    }
+
+    .icons-upper-header {
+        display: none; /* Ocultando os ícones */
+    }
+
+    .upper-header-text p {
+        margin: 10px 0; /* Reduzindo a margem */
+        text-align: center;  
+        color: whitesmoke;
+        font-family: "Rubik", sans-serif;
+        font-size: 14px; /* Reduzindo o tamanho da fonte */
+    }
+
+    .header-cima {
+        display: flex;
+        flex-direction: column; /* Alterando a direção da coluna */
+        justify-content: center; /* Centralizando verticalmente */
+        align-items: center; /* Centralizando horizontalmente */
+    }
+
+    .header-cima .logo {
+        width: 40%; /* Reduzindo a largura */
+    }
+
+    .header-cima .logo img {
+        width: 100%; /* Ajustando a largura da imagem */
+    }
+
+    .header-cima .input-box {
+        margin-top: 10px; /* Adicionando margem superior */
+        width: 80%; /* Ajustando a largura */
+    }
+
+    .header-cima .input-box input {
+        width: 100%; /* Ajustando a largura */
+    }
+
+    .header-cima .nav-1 ul {
+        width: 100%; /* Ajustando a largura */
+        flex-direction: column; /* Alterando a direção da coluna */
+        gap: 10px; /* Ajustando o espaçamento entre os elementos */
+    }
+
+    .header-cima .nav-1 ul .element-nav-1 {
+        width: 100%; /* Ajustando a largura */
+        justify-content: center; /* Centralizando horizontalmente */
+        position: static;
+    }
+
+    .header-baixo ul {
+        flex-direction: column; /* Alterando a direção da coluna */
+        justify-content: center; /* Centralizando verticalmente */
+        align-items: center; /* Centralizando horizontalmente */
+        margin-top: 20px; /* Adicionando margem superior */
+    }
+
+    .header-baixo ul li {
+        margin-bottom: 10px; /* Adicionando margem inferior */
+    }
+
+    .header-baixo ul li a {
+        font-size: 16px; /* Reduzindo o tamanho da fonte */
+    }
+}
+
+/* iPads, tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+} 
+
+/* telas pequenas, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+
+/* desktops, telas grandes */
+@media screen and (min-width: 1025px) {
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #00326D;
+    height: 22vh;
+    width: auto;
+}
+
+.upper-header {
+    height: 30px;
+    background-color: #4D71B4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icons-upper-header {
+    display: grid;
+    grid-template-columns: 16px 16px;
+    column-gap: 10px;
+    left: 0;
+    position: absolute;
+}
+
+.icons-upper-header i {
+    width: 16px;
+    margin-left: 10px;
+    color: whitesmoke;
+    font-size: 17px;
+}
+
+.upper-header-text p {
+    margin: 20px;
+    text-align: center;  
+    color: whitesmoke;
+    font-family: "Rubik", sans-serif;
+    font-size: 17px;
+}
+
+.header-cima a {
+    font-family: "Rubik", sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+.header-cima i {
+    color: #fff;
+}
+
+.header-cima {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-cima .logo {
+    width: 20%;
+}
+
+.header-cima .logo img {
+    width: 85%;  
+}
+
+.header-cima .input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.header-cima .input-box i {
+    font-size: 22px;
+    position: absolute;
+    right: 10px;
+    color: black;
+}
+
+.header-cima .input-box input {
+    width: 750px;
+    height: 55px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ecf0f1;
+    border: none;
+    font-family: "Rubik", sans-serif;
+}
+
+
+.header-cima .nav-1 ul {
+    width: 300px;
+    display: flex;
+    gap: 50px;
+}
+
+.header-cima .nav-1 ul .element-nav-1 {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+}
+
+.header-cima ul {
+    list-style: none;
+}
+
+.header-baixo ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-top: 35px;
+}
+
+.header-baixo ul li a {
+    color: #fff;
+    font-family: "Rubik", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.header-baixo i {
+    color: #fff;
+    padding: 0 5px;
+}
+}
