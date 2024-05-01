@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* font-family: "Work Sans", sans-serif */
 
 /* Dispositivos móveis */
-@media screen and (min-width: 320px) and (max-width: 480px) { 
+@media screen and (min-width: 320px) and (max-width: 767px) { 
     * {
         margin: 0;
         padding: 0;
@@ -13,90 +13,100 @@
 
     header {
         background-color: #00326D;
-        height: 22vh;
+        height: auto;
         width: auto;
     }
 
     .upper-header {
-        height: 15vh; /* Reduzindo a altura */
+        height: 5vh; /* Reduzindo a altura */
         background-color: #4D71B4; /* Alterando a cor de fundo */
-        display: flex;
-        flex-direction: column; /* Alterando a direção da coluna */
-        justify-content: center; /* Centralizando verticalmente */
-        align-items: center; /* Centralizando horizontalmente */
     }
 
-    .icons-upper-header {
-        display: none; /* Ocultando os ícones */
+    .icons-upper-header i {
+        display: none;
+    }
+
+    .upper-header-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Definindo a altura para ocupar todo o espaço vertical */
+    }
+
+    header hr {
+        display: none;
     }
 
     .upper-header-text p {
-        margin: 10px 0; /* Reduzindo a margem */
-        text-align: center;  
         color: whitesmoke;
         font-family: "Rubik", sans-serif;
         font-size: 14px; /* Reduzindo o tamanho da fonte */
     }
 
-    .header-cima {
+    header .bar-mobile .up-row {     
         display: flex;
-        flex-direction: column; /* Alterando a direção da coluna */
-        justify-content: center; /* Centralizando verticalmente */
-        align-items: center; /* Centralizando horizontalmente */
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 35px;
+        padding-bottom: 15px ;
     }
 
-    .header-cima .logo {
-        width: 40%; /* Reduzindo a largura */
+    header .bar-mobile .up-row img {
+        width: 50%;
     }
 
-    .header-cima .logo img {
-        width: 100%; /* Ajustando a largura da imagem */
+    header .bar-mobile .up-row i {
+        width: 25px;
+        font-size: 40px;
+        color: #fff;
     }
 
-    .header-cima .input-box {
-        margin-top: 10px; /* Adicionando margem superior */
-        width: 80%; /* Ajustando a largura */
+    header .bar-mobile .down-row {
+        padding: 0 10px 10px 10px;
     }
 
-    .header-cima .input-box input {
-        width: 100%; /* Ajustando a largura */
+    header .bar-mobile .input-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+    
+    header .bar-mobile .input-box i {
+        font-size: 22px;
+        position: absolute;
+        right: 10px;
+        color: #00326D;
+    }
+    
+    header .bar-mobile .input-box input {
+        width: 750px;
+        height: 55px;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #ecf0f1;
+        border: none;
+        font-family: "Rubik", sans-serif;
     }
 
-    .header-cima .nav-1 ul {
-        width: 100%; /* Ajustando a largura */
-        flex-direction: column; /* Alterando a direção da coluna */
-        gap: 10px; /* Ajustando o espaçamento entre os elementos */
+    header .bar-mobile .input-box input:focus {
+        outline: none;
     }
 
-    .header-cima .nav-1 ul .element-nav-1 {
-        width: 100%; /* Ajustando a largura */
-        justify-content: center; /* Centralizando horizontalmente */
-        position: static;
+    header .bar-mobile .input-box input::placeholder {
+        color: #00326D; 
     }
 
-    .header-baixo ul {
-        flex-direction: column; /* Alterando a direção da coluna */
-        justify-content: center; /* Centralizando verticalmente */
-        align-items: center; /* Centralizando horizontalmente */
-        margin-top: 20px; /* Adicionando margem superior */
-    }
-
-    .header-baixo ul li {
-        margin-bottom: 10px; /* Adicionando margem inferior */
-    }
-
-    .header-baixo ul li a {
-        font-size: 16px; /* Reduzindo o tamanho da fonte */
-    }
 }
 
-/* iPads, tablets */
+/* iPads, tablets 
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
-} 
+} */
 
 /* telas pequenas, laptops */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 }
 
 /* desktops, telas grandes */
@@ -213,6 +223,11 @@ header {
 
 .header-cima ul {
     list-style: none;
+}
+
+.header-baixo {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .header-baixo ul {

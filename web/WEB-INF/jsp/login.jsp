@@ -41,15 +41,14 @@
             </div>
         </div>
         <header>
-            <div class="header-cima">
+            <div class="header-cima d-none d-md-flex">
                 <div class="logo">
-                    <a href="./home"><img src="./assets/Logo Site Komunhão.png" alt="logo-livraria"></a>
+                    <a href="./index"><img src="./assets/Logo Site Komunhão.png" alt="logo-livraria"></a>
                 </div>
                 <div class="input-box">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" placeholder="O que você está buscando?" >
-                </div>
-
+                </div>                    
                 <nav class="nav-1">         
                     <ul>
                         <div class="element-nav-1">
@@ -68,7 +67,7 @@
                 </nav>
             </div>
             <hr/>
-            <nav class="header-baixo">
+            <nav class="header-baixo d-none d-md-flex">
                 <ul>
                     <li><a href="#">Início</a></li>
                     <li><a href="./produtos-categorias">Livros <i class="fa-solid fa-chevron-down"></i></a></li>
@@ -80,6 +79,19 @@
                 </ul>
             </nav>
             <br/>
+            <div class="bar-mobile d-block d-md-none">
+                <div class="up-row">
+                    <i class="fa-solid fa-bars"></i>                   
+                    <img src="./assets/Logo Site Komunhão.png" alt="img">
+                    <i class="fa-solid fa-cart-shopping"></i>                  
+                </div>
+                <div class="down-row">
+                    <div class="input-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="O que você está buscando?" >
+                    </div>                
+                </div>
+            </div>     
         </header>
         <main>
             <section class="vh-100 bg-image"

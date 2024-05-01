@@ -9,7 +9,7 @@
 }
 
 /* Dispositivos móveis */
-@media screen and (min-width: 320px) and (max-width: 480px) { 
+@media screen and (min-width: 320px) and (max-width: 767px) { 
     * {
         margin: 0;
         padding: 0;
@@ -97,6 +97,14 @@
         background-color: #00326D;
     } 
 
+    footer .text-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+      padding: 0 5%;
+    }
+
+
     footer .text-footer span {  
         color: #fff;
         font-size: 3.5vw;
@@ -106,7 +114,7 @@
 } 
 
 
-/* iPads, tablets */
+/* iPads, tablets 
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
 } 
