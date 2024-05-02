@@ -7,7 +7,8 @@ CREATE TABLE usuario (
     email VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
     cpf CHAR(11) NOT NULL,
-    telefone VARCHAR(13)
+    telefone VARCHAR(13),
+    status int default '1'
 );
 
 CREATE TABLE endereco (
@@ -31,6 +32,7 @@ CREATE TABLE produto (
     autor VARCHAR(100),
     valor FLOAT(10,2) NOT NULL,
     imagem LONGBLOB,
+    descricao TEXT,
     categoria INT,
     FOREIGN KEY (categoria) REFERENCES categoria(idCategoria)
 );
