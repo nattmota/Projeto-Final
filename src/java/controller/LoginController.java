@@ -50,9 +50,15 @@ public class LoginController extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {   
+         processRequest(request, response);
+    }
+
+   
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String url = request.getServletPath();
+          String url = request.getServletPath();
         
         if (url.equals("/logar")) {
             String nextPage = "/WEB-INF/jsp/login.jsp";
@@ -104,13 +110,6 @@ public class LoginController extends HttpServlet {
         } else {
             processRequest(request, response);
         }
-    }
-
-   
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
     }
 
     /**

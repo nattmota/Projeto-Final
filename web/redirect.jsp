@@ -10,3 +10,4 @@ servlet but should be the only JSP outside of WEB-INF.
 <link href="./style/footer.css" rel="stylesheet" type="text/css"/>
 <link href="./style/header.css" rel="stylesheet" type="text/css"/>
 <link href="./style/login.css" rel="stylesheet" type="text/css"/>
+<link href="./style/cadastro-produto.css" rel="stylesheet" type="text/css"/>

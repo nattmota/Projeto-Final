@@ -24,6 +24,10 @@
         <servlet-name>IndexController</servlet-name>
         <servlet-class>controller.IndexController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastroProdutoController</servlet-name>
+        <servlet-class>controller.CadastroProdutoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -47,6 +51,14 @@
     <servlet-mapping>
         <servlet-name>IndexController</servlet-name>
         <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastroProdutoController</servlet-name>
+        <url-pattern>/cadastro-produto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastroProdutoController</servlet-name>
+        <url-pattern>/cadastrarProduto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

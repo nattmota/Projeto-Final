@@ -94,17 +94,17 @@
                                         <form action="cadastrar" method="post">
 
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="text" id="nome"  name="nome" class="form-control form-control-lg" />
+                                                <input type="text" id="nome"  name="nome" class="form-control form-control-lg" required/>
                                                 <label class="form-label" for="form3Example1cg">Nome</label>
                                             </div>
 
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="email" id="email"  name="email" class="form-control form-control-lg" />
+                                                <input type="email" id="email"  name="email" class="form-control form-control-lg" required/>
                                                 <label class="form-label" for="form3Example3cg">Email</label>
                                             </div>
 
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="password" id="senha" name="senha" class="form-control form-control-lg" />
+                                                <input type="password" id="senha" name="senha" class="form-control form-control-lg" required/>
                                                 <label class="form-label" for="form3Example4cg">Senha</label>
                                             </div>
 

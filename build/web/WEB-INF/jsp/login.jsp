@@ -102,23 +102,16 @@
                                 <div class="card" style="border-radius: 15px;">
                                     <div class="card-body p-5">
                                         <h2 class="text-uppercase text-center mb-5">Iniciar Sessão</h2>
-                                        <form action="logar" method="get">
+                                        <form action="logar" method="post" id="form-login">
 
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                                                <input type="email" id="email" name="email" class="form-control form-control-lg"/>
                                                 <label class="form-label" for="form3Example3cg">Seu Email</label>
                                             </div>
 
                                             <div data-mdb-input-init class="form-outline mb-4">
-                                                <input type="password" id="senha" name="senha" class="form-control form-control-lg" />
+                                                <input type="password" id="senha" name="senha" class="form-control form-control-lg"/>
                                                 <label class="form-label" for="form3Example4cg">Senha</label>
-                                            </div>
-
-                                            <div class="form-check d-flex justify-content-center mb-5">
-                                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                                                <label class="form-check-label" for="form2Example3g">
-                                                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
-                                                </label>
                                             </div>
 
                                             <div class="d-flex justify-content-center">
@@ -188,4 +181,5 @@
         </footer>
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
+    <!-- <script src="./js/login.js"></script> -->
 </html>
