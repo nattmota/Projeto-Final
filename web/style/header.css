@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); /* font-family: "Rubik", sans-serif */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap'); /* font-family: "Roboto Slab", sans-serif */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* font-family: "Work Sans", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* font-family: "Rubik", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+/* font-family: "Roboto Slab", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* font-family: "Work Sans", sans-serif */
 
 /* Dispositivos móveis */
-@media screen and (min-width: 320px) and (max-width: 767px) { 
+@media screen and (min-width: 320px) and (max-width: 767px) {
     * {
         margin: 0;
         padding: 0;
@@ -18,8 +21,10 @@
     }
 
     .upper-header {
-        height: 5vh; /* Reduzindo a altura */
-        background-color: #4D71B4; /* Alterando a cor de fundo */
+        height: 6vh;
+        /* Reduzindo a altura */
+        background-color: #4D71B4;
+        /* Alterando a cor de fundo */
     }
 
     .icons-upper-header i {
@@ -30,7 +35,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%; /* Definindo a altura para ocupar todo o espaço vertical */
+        height: 100%;
+        /* Definindo a altura para ocupar todo o espaço vertical */
     }
 
     header hr {
@@ -40,15 +46,16 @@
     .upper-header-text p {
         color: whitesmoke;
         font-family: "Rubik", sans-serif;
-        font-size: 14px; /* Reduzindo o tamanho da fonte */
+        font-size: 14px;
+        /* Reduzindo o tamanho da fonte */
     }
 
-    header .bar-mobile .up-row {     
+    header .bar-mobile .up-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 35px;
-        padding-bottom: 15px ;
+        padding-bottom: 15px;
     }
 
     header .bar-mobile .up-row img {
@@ -71,14 +78,14 @@
         align-items: center;
         font-size: 14px;
     }
-    
+
     header .bar-mobile .input-box i {
         font-size: 22px;
         position: absolute;
         right: 10px;
         color: #00326D;
     }
-    
+
     header .bar-mobile .input-box input {
         width: 750px;
         height: 55px;
@@ -95,7 +102,98 @@
     }
 
     header .bar-mobile .input-box input::placeholder {
-        color: #00326D; 
+        color: #00326D;
+    }
+
+    header .bar-mobile .up-row .btn-icon {
+        border: none;
+        /* Remove a borda */
+        background-color: transparent;
+        /* Define o fundo como transparente */
+        padding: 0;
+        /* Remove o preenchimento */
+        box-shadow: none !important;
+        /* Remove a sombra */
+    }
+
+
+    header .bar-mobile .up-row .offcanvas {
+        background-color: #00326D;
+        /* Define a cor de fundo da barra lateral */
+    }
+
+    header .bar-mobile .up-row .offcanvas-header {
+        padding: 10px 10px;
+        background-color: #4D71B4;
+    }
+
+    header .bar-mobile .up-row .offcanvas-header .medias-mobile {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+
+    header .bar-mobile .up-row .offcanvas-header .medias-mobile li {
+        padding: 0 10px;
+    }
+
+    header .bar-mobile .up-row .offcanvas-header .medias-mobile li a i {
+        font-size: 25px;     
+    }
+
+    header .bar-mobile .up-row .offcanvas-body {
+        padding: 0;
+    }
+
+    header .bar-mobile .up-row .offcanvas-body ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    header .bar-mobile .up-row .offcanvas-body ul li {
+        padding: 20px;
+        width: 100%;
+    }
+
+    header .bar-mobile .up-row .offcanvas-body ul li a {
+        width: 100%;
+        text-decoration: none;
+        color: #fff;
+        font-size: 25px;
+        font-family: "Roboto Slab", sans-serif
+    }
+
+    header .bar-mobile .up-row .offcanvas-body .nav-conta {
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    header .bar-mobile .up-row .offcanvas-body .nav-conta i {
+        padding-right: 50px;
+    }
+
+    header .bar-mobile .up-row .offcanvas-body .nav-conta ul {
+        display: flex;
+    }
+
+    header .bar-mobile .up-row .offcanvas-body .nav-conta ul li  {
+        padding: 0 20px;
+    }
+
+    header .bar-mobile .up-row .offcanvas-body .nav-conta ul li a {
+        font-size: 21px;
+    }
+
+    .offcanvas-body ul li a {
+        position: relative; /* Define a posição como relativa para os elementos a */
+        text-decoration: none; /* Remove o sublinhado padrão dos links */
+        color: inherit; /* Herda a cor do texto do elemento pai */
+    }
+
+    .offcanvas-body ul li a:hover {
+        border-bottom: 2px solid #00326D; /* Adiciona uma borda inferior de 2px com a cor #00326D quando o link estiver em estado de hover */
     }
 
 }
@@ -106,146 +204,145 @@
 } */
 
 /* telas pequenas, laptops */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-}
+@media screen and (min-width: 768px) and (max-width: 1024px) {}
 
 /* desktops, telas grandes */
 @media screen and (min-width: 1025px) {
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-header {
-    background-color: #00326D;
-    height: 22vh;
-    width: auto;
-}
+    header {
+        background-color: #00326D;
+        height: 22vh;
+        width: auto;
+    }
 
-.upper-header {
-    height: 30px;
-    background-color: #4D71B4;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
+    .upper-header {
+        height: 30px;
+        background-color: #4D71B4;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-.icons-upper-header {
-    display: grid;
-    grid-template-columns: 16px 16px;
-    column-gap: 10px;
-    left: 0;
-    position: absolute;
-}
+    .icons-upper-header {
+        display: grid;
+        grid-template-columns: 16px 16px;
+        column-gap: 10px;
+        left: 0;
+        position: absolute;
+    }
 
-.icons-upper-header i {
-    width: 16px;
-    margin-left: 10px;
-    color: whitesmoke;
-    font-size: 17px;
-}
+    .icons-upper-header i {
+        width: 16px;
+        margin-left: 10px;
+        color: whitesmoke;
+        font-size: 17px;
+    }
 
-.upper-header-text p {
-    margin: 20px;
-    text-align: center;  
-    color: whitesmoke;
-    font-family: "Rubik", sans-serif;
-    font-size: 17px;
-}
+    .upper-header-text p {
+        margin: 20px;
+        text-align: center;
+        color: whitesmoke;
+        font-family: "Rubik", sans-serif;
+        font-size: 17px;
+    }
 
-.header-cima a {
-    font-family: "Rubik", sans-serif;
-    text-decoration: none;
-    color: white;
-}
+    .header-cima a {
+        font-family: "Rubik", sans-serif;
+        text-decoration: none;
+        color: white;
+    }
 
-.header-cima i {
-    color: #fff;
-}
+    .header-cima i {
+        color: #fff;
+    }
 
-.header-cima {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+    .header-cima {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-.header-cima .logo {
-    width: 20%;
-}
+    .header-cima .logo {
+        width: 20%;
+    }
 
-.header-cima .logo img {
-    width: 85%;  
-}
+    .header-cima .logo img {
+        width: 85%;
+    }
 
-.header-cima .input-box {
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-}
+    .header-cima .input-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
 
-.header-cima .input-box i {
-    font-size: 22px;
-    position: absolute;
-    right: 10px;
-    color: black;
-}
+    .header-cima .input-box i {
+        font-size: 22px;
+        position: absolute;
+        right: 10px;
+        color: black;
+    }
 
-.header-cima .input-box input {
-    width: 750px;
-    height: 55px;
-    font-size: 14px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #ecf0f1;
-    border: none;
-    font-family: "Rubik", sans-serif;
-}
+    .header-cima .input-box input {
+        width: 750px;
+        height: 55px;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #ecf0f1;
+        border: none;
+        font-family: "Rubik", sans-serif;
+    }
 
 
-.header-cima .nav-1 ul {
-    width: 300px;
-    display: flex;
-    gap: 50px;
-}
+    .header-cima .nav-1 ul {
+        width: 300px;
+        display: flex;
+        gap: 50px;
+    }
 
-.header-cima .nav-1 ul .element-nav-1 {
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: static;
-}
+    .header-cima .nav-1 ul .element-nav-1 {
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: static;
+    }
 
-.header-cima ul {
-    list-style: none;
-}
+    .header-cima ul {
+        list-style: none;
+    }
 
-.header-baixo {
-    display: flex;
-    justify-content: space-evenly;
-}
+    .header-baixo {
+        display: flex;
+        justify-content: space-evenly;
+    }
 
-.header-baixo ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-    margin-top: 35px;
-}
+    .header-baixo ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        margin-top: 35px;
+    }
 
-.header-baixo ul li a {
-    color: #fff;
-    font-family: "Rubik", sans-serif;
-    font-size: 20px;
-    text-decoration: none;
-}
+    .header-baixo ul li a {
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: 20px;
+        text-decoration: none;
+    }
 
-.header-baixo i {
-    color: #fff;
-    padding: 0 5px;
-}
+    .header-baixo i {
+        color: #fff;
+        padding: 0 5px;
+    }
 }
