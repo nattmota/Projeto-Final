@@ -26,6 +26,8 @@ CREATE TABLE categoria (
     nome VARCHAR(100) NOT NULL
 );
 
+INSERT INTO categoria (nome) VALUES ('Livros'),('Papelaria'),('Biblias'),('Brinquedos Educativos');
+
 CREATE TABLE produto (
     idProduto INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
