@@ -11,14 +11,15 @@ import java.util.List;
 import model.bean.Produto;
 
 public class ProdutoDAO {
-     public List<Produto> listarTodos() {
+
+    public List<Produto> listarTodos() {
         List<Produto> produtos = new ArrayList();
 
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
-           
+
             String query = "SELECT * FROM produto";
 
             stmt = conexao.prepareStatement(query);
@@ -36,7 +37,7 @@ public class ProdutoDAO {
                 produtos.add(p);
             }
 
-            rs.close();        
+            rs.close();
             stmt.close();
             conexao.close();
 
@@ -300,7 +301,6 @@ public class ProdutoDAO {
             stmt.setBytes(4, produto.getImagemBytes());
             stmt.setString(5, produto.getDescricao());
             stmt.setInt(6, produto.getCategoria());
-            
 
             // Execute o PreparedStatement
             int linhasAfetadas = stmt.executeUpdate();
@@ -350,7 +350,6 @@ public class ProdutoDAO {
             // Verifique se a inserção foi bem-sucedida (verifique se uma linha foi afetada)
             return linhasAfetadas > 0;
 
-                     
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -377,5 +376,77 @@ public class ProdutoDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Produto> buscaProdutos(String busca) {
+        List<Produto> resultadoBusca = new ArrayList();
+
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE nome LIKE ? OR descricao LIKE ?");
+            stmt.setString(1, busca);
+            stmt.setString(2, busca);
+            
+            rs = stmt.executeQuery();
+            
+            while(rs.next()) {
+                Produto p = new Produto();
+                p.setIdProduto(rs.getInt("idProduto"));
+                p.setNome(rs.getString("nome"));
+                p.setCategoria(rs.getInt("categoria"));
+                p.setDescricao(rs.getString("descricao"));
+                p.setValor(rs.getFloat("valor"));
+                Blob imagemBlob = rs.getBlob("imagem");
+                if (imagemBlob != null) {
+                    byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
+                    p.setImagemBytes(imagemBytes);
+                }
+                
+                resultadoBusca.add(p);
+                
+                rs.close();
+                stmt.close();
+                conexao.close();
+            }
+            
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultadoBusca;
+    }
+    
+    public List<Produto> buscaCategoria (int Categoria) {
+        List<Produto> resultadoBusca = new ArrayList();
+
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE categoria LIKE ?");
+            // stmt.setInt(1, categoria);
+            
+            rs = stmt.executeQuery();
+            
+            while(rs.next()) {
+                Produto p = new Produto();
+                p.setIdProduto(rs.getInt("idProduto"));             
+                
+                resultadoBusca.add(p);
+                
+                rs.close();
+                stmt.close();
+                conexao.close();
+            }
+            
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultadoBusca;
     }
 }

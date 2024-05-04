@@ -41,6 +41,14 @@ public class CadastroProdutoController extends HttpServlet {
         
         String url = "/WEB-INF/jsp/cadastro-produto.jsp";
         
+        if(url.equals("/buscar-produtos")) {
+            String busca = request.getParameter("busca");
+            ProdutoDAO pDao = new ProdutoDAO();
+            List<Produto> listaProdutos = pDao.buscaProdutos(busca);
+            //request.setAttribute("produtos", produtos);
+            
+        }
+        
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
     }
@@ -57,6 +65,9 @@ public class CadastroProdutoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+        
         processRequest(request, response);
     }
 
