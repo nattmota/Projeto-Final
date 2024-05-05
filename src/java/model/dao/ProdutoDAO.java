@@ -31,7 +31,11 @@ public class ProdutoDAO {
                 p.setNome(rs.getString("nome"));
                 p.setAutor(rs.getString("autor"));
                 p.setValor(rs.getFloat("valor"));
-                // p.setImagem(rs.getBlob("imagem"));
+                Blob imagemBlob = rs.getBlob("imagem");
+                if (imagemBlob != null) {
+                    byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
+                    p.setImagemBytes(imagemBytes);
+                }
                 p.setDescricao(rs.getString("descricao"));
                 p.setCategoria(rs.getInt("categoria"));
                 produtos.add(p);
@@ -386,9 +390,8 @@ public class ProdutoDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE nome LIKE ? OR descricao LIKE ?");
-            stmt.setString(1, busca);
-            stmt.setString(2, busca);
+            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE nome LIKE ?");
+            stmt.setString(1, "%" + busca + "%");        
             
             rs = stmt.executeQuery();
             

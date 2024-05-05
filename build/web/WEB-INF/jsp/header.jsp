@@ -30,8 +30,10 @@
                     <a href="./index"><img src="./assets/Logo Site Komunhão.png" alt="logo-livraria"></a>
                 </div>
                 <div class="input-box">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="O que você está buscando?">
+                    <form class="d-flex" role="search" action="buscar" method="get">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="search" name="pesquisa" placeholder="O que você está buscando?">
+                    </form>
                 </div>
                 <nav class="nav-1">
                     <ul>
@@ -106,8 +108,10 @@
                 </div>
                 <div class="down-row">
                     <div class="input-box">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="O que você está buscando?">
+                        <form class="d-flex" role="search" action="buscar" method="get">
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="search" name="pesquisa" placeholder="O que você está buscando?">
+                        </form>
                     </div>
                 </div>
             </div>
