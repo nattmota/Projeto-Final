@@ -32,6 +32,22 @@
         <servlet-name>ListarProdutosController</servlet-name>
         <servlet-class>controller.ListarProdutosController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControllerLivros</servlet-name>
+        <servlet-class>controller.LivrosController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PapelariaController</servlet-name>
+        <servlet-class>controller.PapelariaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BibliasController</servlet-name>
+        <servlet-class>controller.BibliasController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BrinquedosController</servlet-name>
+        <servlet-class>controller.BrinquedosController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -71,6 +87,22 @@
     <servlet-mapping>
         <servlet-name>ListarProdutosController</servlet-name>
         <url-pattern>/buscar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerLivros</servlet-name>
+        <url-pattern>/livros</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PapelariaController</servlet-name>
+        <url-pattern>/papelaria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BibliasController</servlet-name>
+        <url-pattern>/biblias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BrinquedosController</servlet-name>
+        <url-pattern>/brinquedos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

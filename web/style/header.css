@@ -521,8 +521,7 @@
     }
 
     .header-baixo {
-        display: flex;
-        justify-content: space-evenly;
+        flex-direction: column;
     }
 
     .header-baixo ul {

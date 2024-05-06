@@ -19,34 +19,34 @@
     </head>
     <body>
         <jsp:include page="header.jsp" ></jsp:include>
-        <main>
-            <div class="form-cadastro">
-                <form action="cadastrarProduto" method="post" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <label for="nome-produto" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome-produto" name="nome-produto" aria-describedby="emailHelp">           
-                    </div>
-                    <div class="mb-3">
-                        <label for="autor" class="form-label">Autor</label>
-                        <input type="text" class="form-control" name="autor" id="autor">
-                    </div>
-                    <div class="mb-3">
-                        <label for="valor" class="form-label">Valor</label>
-                        <input type="text" class="form-control" name="valor" id="valor">
-                    </div>
-                    <div class="mb-3">
-                        <label for="descricao" class="form-label">Descricao</label>
-                        <input type="text" class="form-control" id="descricao" name="descricao">
-                    </div>
-                    <div class="mb-3">                      
-                        <label for="categoria" class="form-label">Categoria</label>
-                        <select name="categoria" id="categoria">
+            <main>
+                <div class="form-cadastro">
+                    <form action="cadastrarProduto" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="nome-produto" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome-produto" name="nome-produto" aria-describedby="emailHelp">           
+                        </div>
+                        <div class="mb-3">
+                            <label for="autor" class="form-label">Autor</label>
+                            <input type="text" class="form-control" name="autor" id="autor">
+                        </div>
+                        <div class="mb-3">
+                            <label for="valor" class="form-label">Valor</label>
+                            <input type="text" class="form-control" name="valor" id="valor">
+                        </div>
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label">Descricao</label>
+                            <input type="text" class="form-control" id="descricao" name="descricao">
+                        </div>
+                        <div class="mb-3">                      
+                            <label for="categoria" class="form-label">Categoria</label>
+                            <select name="categoria" id="categoria">
                             <c:forEach items="${categorias}" var="categoria">
                                 <option value="${categoria.idCategoria}"> ${categoria.nome}</option>
                             </c:forEach>
                         </select>
                     </div>
-                    
+
                     <div class="mb-3">                     
                         <label for="formFile" class="form-label">Imagem</label>
                         <input class="form-control" type="file" id="imagem" name="imagem" required accept="image/*">                       
@@ -112,7 +112,7 @@
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
 </html>

@@ -55,8 +55,8 @@
             <hr />
             <nav class="header-baixo d-none d-md-flex">
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="./produtos-categorias">Livros <i class="fa-solid fa-chevron-down"></i></a></li>
+                    <li><a href="./index">Início</a></li>
+                    <li><a href="./livros">Livros <i class="fa-solid fa-chevron-down"></i></a></li>
                     <li><a href="./papelaria">Papelaria <i class="fa-solid fa-chevron-down"></i></a></li>
                     <li><a href="./biblias">Bíblias <i class="fa-solid fa-chevron-down"></i></a></li>
                     <li><a href="./brinquedos">Brinquedos Educativos <i class="fa-solid fa-chevron-down"></i></a>
@@ -69,19 +69,19 @@
             <div class="bar-mobile d-block d-md-none">
                 <div class="up-row">
                     <button class="btn btn-primary btn-icon" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
+                            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
                             class="fa-solid fa-bars"></i></button>
                     <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false"
-                        tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                         tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                         <div class="offcanvas-header">
                             <ul class="medias-mobile">
                                 <li><a href="https://www.instagram.com/komunhaolivraria/"><i
-                                        class="fa-brands fa-instagram"></i></a></li>
+                                            class="fa-brands fa-instagram"></i></a></li>
                                 <li><a href="https://www.facebook.com/komunhaolivraria"><i
-                                        class="fa-brands fa-facebook"></i></a></li>
+                                            class="fa-brands fa-facebook"></i></a></li>
                             </ul>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>                               
+                                    aria-label="Close"></button>                               
                         </div>
                         <div class="offcanvas-body">
                             <ul>
@@ -94,13 +94,13 @@
                                 <li><a href="#">Quem somos</a></li>
                                 <li><a href="#footer">Contato</a></li>
                             </ul>
-                                <div class="nav-conta">
-                                    <i class="fa-solid fa-user"></i>
-                                    <ul>
-                                        <li><a href="./cadastro-usuario">Criar uma conta</a></li>
-                                        <li><a href="./login">Iniciar Sessão</a></li>
-                                    </ul>
-                                </div>                               
+                            <div class="nav-conta">
+                                <i class="fa-solid fa-user"></i>
+                                <ul>
+                                    <li><a href="./cadastro-usuario">Criar uma conta</a></li>
+                                    <li><a href="./login">Iniciar Sessão</a></li>
+                                </ul>
+                            </div>                               
                         </div>
                     </div>
                     <img src="./assets/Logo Site Komunhão.png" alt="img">
@@ -118,6 +118,6 @@
         </header>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                crossorigin="anonymous"></script>
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </html>
