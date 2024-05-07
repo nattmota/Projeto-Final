@@ -279,7 +279,7 @@ public class ProdutoDAO {
                     p.setAutor(rs.getString("autor"));
                     p.setCategoria(rs.getInt("categoria"));
                     p.setValor(rs.getFloat("valor"));
-
+                    p.setDescricao(rs.getString("descricao"));
                     // Recuperar a imagem como um array de bytes
                     Blob imagemBlob = rs.getBlob("imagem");
                     if (imagemBlob != null) {
@@ -389,13 +389,13 @@ public class ProdutoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
-            
+
             stmt = conexao.prepareStatement("SELECT * FROM produto WHERE nome LIKE ?");
-            stmt.setString(1, "%" + busca + "%");        
-            
+            stmt.setString(1, "%" + busca + "%");
+
             rs = stmt.executeQuery();
-            
-            while(rs.next()) {
+
+            while (rs.next()) {
                 Produto p = new Produto();
                 p.setIdProduto(rs.getInt("idProduto"));
                 p.setNome(rs.getString("nome"));
@@ -407,46 +407,44 @@ public class ProdutoDAO {
                     byte[] imagemBytes = imagemBlob.getBytes(1, (int) imagemBlob.length());
                     p.setImagemBytes(imagemBytes);
                 }
-                
+
                 resultadoBusca.add(p);
-                
+
                 rs.close();
                 stmt.close();
                 conexao.close();
             }
-            
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return resultadoBusca;
     }
-    
-    public List<Produto> buscaCategoria (int Categoria) {
+
+    public List<Produto> buscaCategoria(int Categoria) {
         List<Produto> resultadoBusca = new ArrayList();
 
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
-            
+
             stmt = conexao.prepareStatement("SELECT * FROM produto WHERE categoria LIKE ?");
             // stmt.setInt(1, categoria);
-            
+
             rs = stmt.executeQuery();
-            
-            while(rs.next()) {
+
+            while (rs.next()) {
                 Produto p = new Produto();
-                p.setIdProduto(rs.getInt("idProduto"));             
-                
+                p.setIdProduto(rs.getInt("idProduto"));
+
                 resultadoBusca.add(p);
-                
+
                 rs.close();
                 stmt.close();
                 conexao.close();
             }
-            
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

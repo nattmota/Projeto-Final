@@ -464,8 +464,8 @@
 
     .header-cima {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: center;
+        align-items: baseline;
     }
 
     .header-cima .logo {
@@ -509,10 +509,8 @@
     }
 
     .header-cima .nav-1 ul .element-nav-1 {
-        width: 50px;
+        width: 100px;
         display: flex;
-        justify-content: center;
-        align-items: center;
         position: static;
     }
 
@@ -541,5 +539,20 @@
     .header-baixo i {
         color: #fff;
         padding: 0 5px;
+    }
+
+    header .header-cima .nav-1 ul .dropdown button  {
+        background-color: #fff;
+        font-family: "Rubik", sans-serif;
+        color: #00326D;
+    }
+
+    header .header-cima .nav-1 ul .dropdown button i {
+        color: #00326D;
+   
+    }
+
+    header .header-cima .nav-1 ul .dropdown .dropdown-menu a {
+        color: black;
     }
 }

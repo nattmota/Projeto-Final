@@ -39,7 +39,7 @@
             <div class="contato">
                 <h4>Entre em contato</h4>
                 <div class="div-contato">
-                    <a href=""><i class="fa-brands fa-whatsapp"></i>5543999752103</a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i>+55 (43) 99975-2103</a>
                 </div>
                 <br />
                 <div class="div-contato">

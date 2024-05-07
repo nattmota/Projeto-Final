@@ -1,19 +1,17 @@
-<%-- 
-    Document   : header
-    Created on : 04/05/2024, 11:20:03
-    Author     : natan
---%>
+<%-- Document : header Created on : 04/05/2024, 11:20:03 Author : natan --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
+
     <head>
         <link href="./style/header.css" rel="stylesheet" type="text/css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="https://kit.fontawesome.com/6f0f753ce6.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/6f0f753ce6.js" crossorigin="anonymous"></script>      
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <title>Header</title>
     </head>
+
     <body>
         <div class="upper-header">
             <div class="icons-upper-header">
@@ -36,19 +34,21 @@
                     </form>
                 </div>
                 <nav class="nav-1">
-                    <ul>
-                        <div class="element-nav-1">
-                            <li><i class="fa-regular fa-comments"></i><a href="./login">Login</a></li>
-                        </div>
-                        <div class="element-nav-1">
-                            <li><i class="fa-regular fa-user"></i><a href="#">Minha conta</a></li>
-                        </div>
+                    <ul>                   
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Conta <i class="fa-regular fa-user"></i></button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="./login">Iniciar Sessão</a>
+                                <a class="dropdown-item" href="./cadastro-usuario">Criar uma conta</a>
+                                <a class="dropdown-item" href="./login">Logout</a>
+                            </div>
+                        </div>  
                         <div class="element-nav-1">
                             <li><i class="fa-solid fa-cart-shopping"></i><a href="./carrinho">Meu carrinho</a></li>
-                        </div>
-                        <div class="element-nav-1">
+                        </div>                     
+                        <!-- <div class="element-nav-1">
                             <li><i class="fa-solid fa-right-from-bracket"></i><a href="./login">Logout</a></li>
-                        </div>
+                        </div> -->
                     </ul>
                 </nav>
             </div>
@@ -81,7 +81,7 @@
                                             class="fa-brands fa-facebook"></i></a></li>
                             </ul>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>                               
+                                    aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
                             <ul>
@@ -90,7 +90,7 @@
                                 <li><a href="./produtos-categorias">Livros</a></li>
                                 <li><a href="./papelaria">Papelaria </a></li>
                                 <li><a href="./biblias">Bíblias </a></li>
-                                <li><a href="./brinquedos">Brinquedos Educativos</a></li>                  
+                                <li><a href="./brinquedos">Brinquedos Educativos</a></li>
                                 <li><a href="#">Quem somos</a></li>
                                 <li><a href="#footer">Contato</a></li>
                             </ul>
@@ -100,7 +100,7 @@
                                     <li><a href="./cadastro-usuario">Criar uma conta</a></li>
                                     <li><a href="./login">Iniciar Sessão</a></li>
                                 </ul>
-                            </div>                               
+                            </div>
                         </div>
                     </div>
                     <img src="./assets/Logo Site Komunhão.png" alt="img">
@@ -116,8 +116,8 @@
                 </div>
             </div>
         </header>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
 </html>

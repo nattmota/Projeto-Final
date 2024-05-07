@@ -13,7 +13,12 @@
     </head>
     <body>
         <jsp:include page="header.jsp" ></jsp:include>
-        <jsp:include page="produto.jsp" ></jsp:include>
+        <section class="show-products">
+            <div class="h1-text">
+                <h1>BRINQUEDOS EDUCATIVOS</h1>
+            </div>
+            <jsp:include page="produto.jsp" ></jsp:include>
+        </section>
         <jsp:include page="footer.jsp" ></jsp:include>
     </body>
 </html>

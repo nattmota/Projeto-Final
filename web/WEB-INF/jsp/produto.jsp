@@ -6,6 +6,7 @@
 <html>
 
     <head>
+        <link href="./style/categorias.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Produto</title>
     </head>
@@ -32,7 +33,7 @@
                         </div>
                         <div class="center-element">
                             <a href="#" class="btn btn-primary">ADICIONAR</a>
-                            <a href="./produtos?id=${produto.idProduto}" class="btn btn-primary">VISITAR</a>
+                            <a href="./produto-espec?id=${produto.idProduto}" class="btn btn-primary">VISITAR</a>
                         </div>
                     </div>
                 </div>
