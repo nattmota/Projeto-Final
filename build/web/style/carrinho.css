@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); /* font-family: "Rubik", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap'); /* font-family: "Roboto Slab", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* font-family: "Work Sans", sans-serif */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {}
+@media screen and (min-width: 768px) and (max-width: 1024px) {}
+@media screen and (min-width: 1025px) {
+    main {
+        background-color: #ECF0F1;
+        padding: 40px;
+    }
+
+    main .text {
+        display: flex;
+        justify-content: center;
+    }
+
+    main .text h1 {
+        font-family: "Rubik", sans-serif;
+        color: #00326D;
+        font-weight: bolder;
+    }
+
+    main .line  {
+        color: #A7A7A7;
+    }
+
+    main .cart-table {
+        display: flex;
+        justify-content: center;
+    }
+
+    main .cart-table tr th {
+        padding: 10px 50px;
+    }
+
+    main .cart-table tr td {
+        padding: 10px 50px;
+    }
+
+    main .cart-table .th-produtos,
+    main .cart-table .td-produtos {
+        text-align: left;
+        padding-right: 650px;
+    }
+
+    main .cart-table tr .th-produtos {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    main .cart-table tr .td-produtos {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    main .cart-table tr .td-produtos .container-img {
+        width: 138px;
+        height: 96px;
+        border: 1px solid #B6B6B6;
+        border-radius: 15px;
+    }
+
+    main .cart-table tr td .box-price {
+        width: 129px;
+        height: 42px;
+        border: 1px solid #B6B6B6;
+        border-radius: 20px;     
+        display: flex;
+        justify-content: space-around;
+        padding-top: 8px;
+    }
+
+    main .cart-table tr td .box-price button {
+        border: none;
+    }
+
+    main .cart-table tr td button {
+        border: none;
+    }
+
+    main .cart-table tr td button i {
+        font-size: 24px;
+    }
+
+    main .down-cart {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main .down-cart .calculo-cep .text-cep {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    main .down-cart .calculo-cep .text-cep i{
+        font-size: 32px;
+    }
+
+    main .down-cart .calculo-cep .text-cep h3{
+        font-family: "Rubik", sans-serif;
+        font-size: 20px;
+    }
+
+    main .down-cart .calculo-cep .container-cep {
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;
+        border-radius: 15px;
+    }
+
+    main .down-cart .calculo-cep .container-cep input{
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;
+        border: none;
+        border-radius: 15px;
+        padding: 15px;
+        font-family: "Rubik", sans-serif;
+        outline: none;
+    }
+
+    main .down-cart .calculo-cep .container-cep button{
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;
+        border: none;
+        border-radius: 15px;
+        padding: 10px;
+        color: #00326D;  
+        font-weight: bold;
+        font-family: "Rubik", sans-serif;
+    }
+
+    main .down-cart .container-compra {
+        width: 415px;
+        height: auto;
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;    
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    main .down-cart .container-compra .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    main .down-cart .container-compra .flex h4 {
+        font-size: 20px;
+        font-family: "Work Sans", sans-serif;
+    }
+
+    main .down-cart .container-compra .flex p {
+        font-size: 20px;
+        font-family: "Work Sans", sans-serif;       
+    }
+
+    main .down-cart .container-compra .flex .p-cep {
+        font-size: 20px;
+        font-family: "Work Sans", sans-serif;
+        color: #868686;       
+    }
+
+    main .down-cart .container-compra .flex h3 {       
+        font-family: "Work Sans", sans-serif;
+        color: #00326D;       
+    }
+
+    main .down-cart .container-compra .btn-compra {       
+        display: flex;      
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .down-cart .container-compra .btn-compra button {       
+        width: 351px;
+        height: 44px;
+        background-color: #00326D;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-weight: bold;
+    }
+
+}
