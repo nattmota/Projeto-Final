@@ -476,18 +476,25 @@
         width: 85%;
     }
 
-    .header-cima .input-box {
+    .header-cima .input-box form .search-container {
         position: relative;
-        display: flex;
-        align-items: center;
-        font-size: 14px;
     }
 
-    .header-cima .input-box i {
-        font-size: 22px;
+    .header-cima .input-box form button.search-button {
         position: absolute;
-        right: 10px;
-        color: black;
+        right: 0;
+        top: 0;
+        height: 100%;
+        border: none;
+        background-color: #ecf0f1;
+        padding-left: 10px;
+        border-radius: 10px;
+    }
+
+    .header-cima .input-box form button.search-button i {
+        font-size: 22px;
+        color: #000; /* Cor do ícone */
+        padding-right: 10px;
     }
 
     .header-cima .input-box input {
@@ -499,6 +506,7 @@
         background-color: #ecf0f1;
         border: none;
         font-family: "Rubik", sans-serif;
+        outline: none;
     }
 
 

@@ -28,9 +28,11 @@
                     <a href="./index"><img src="./assets/Logo Site Komunhão.png" alt="logo-livraria"></a>
                 </div>
                 <div class="input-box">
-                    <form class="d-flex" role="search" action="buscar" method="get">
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input type="search" name="pesquisa" placeholder="O que você está buscando?">
+                    <form class="d-flex" role="search" action="buscar" method="get">     
+                        <div class="search-container">               
+                            <input type="search" name="pesquisa" placeholder="O que você está buscando?">
+                            <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div> 
                     </form>
                 </div>
                 <nav class="nav-1">

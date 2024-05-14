@@ -10,7 +10,7 @@
         <link href="./style/header.css" rel="stylesheet" type="text/css" />
         <link href="./style/index.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
+        <title>Página Inicial - Komunhão Livraria</title>
     </head>
 
     <body>
