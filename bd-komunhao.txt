@@ -1,5 +1,10 @@
-CREATE DATABASE banco_komunhao;
-USE banco_komunhao;
+CREATE DATABASE bd_komunhao;
+USE bd_komunhao;
+-- DROP DATABASE bd_komunhao;
+
+CREATE TABLE carrinho (
+    idCarrinho INT PRIMARY KEY AUTO_INCREMENT
+);
 
 CREATE TABLE usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -8,7 +13,9 @@ CREATE TABLE usuario (
     senha VARCHAR(100) NOT NULL,
     cpf CHAR(11) NOT NULL,
     telefone VARCHAR(13),
-    status int default '1'
+    status int default '1',
+    carrinho int,
+    FOREIGN KEY(carrinho) REFERENCES carrinho(idCarrinho)
 );
 
 CREATE TABLE endereco (
@@ -47,11 +54,32 @@ CREATE TABLE estoque (
     FOREIGN KEY (produto) REFERENCES produto(idProduto)
 );
 
-CREATE TABLE carrinho (
-    idCarrinho INT PRIMARY KEY AUTO_INCREMENT,
-    usuario INT,
-    FOREIGN KEY (usuario) REFERENCES usuario(idUsuario)
+CREATE TABLE tipo_pagamento (
+    idPagamento INT PRIMARY KEY AUTO_INCREMENT,
+    metodo VARCHAR(100) NOT NULL
 );
+
+CREATE TABLE pedido (
+    idPedido INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
+    endereco_entrega_id INT NOT NULL,
+    tipo_pagamento_id INT NOT NULL,
+    data_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    valor_total FLOAT,
+    status_pedido ENUM('pendente', 'processando', 'enviado', 'entregue') DEFAULT 'pendente',
+    FOREIGN KEY (endereco_entrega_id) REFERENCES endereco(idEndereco),
+    FOREIGN KEY (usuario_id) REFERENCES usuario(idUsuario),
+    FOREIGN KEY (tipo_pagamento_id) REFERENCES tipo_pagamento(idPagamento)
+);
+
+CREATE TABLE usuario_pagamento (
+	idUsuarioPagamento INT PRIMARY KEY AUTO_INCREMENT,
+    idUsuario INT,
+	idTipoPagamento INT,
+    FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
+    FOREIGN KEY (idTipoPagamento) REFERENCES tipo_pagamento(idPagamento)
+);
+
 
 CREATE TABLE carrinho_itens (
     idCarrinho_item INT PRIMARY KEY AUTO_INCREMENT,
@@ -60,24 +88,4 @@ CREATE TABLE carrinho_itens (
     quantidade INT NOT NULL,
     FOREIGN KEY (carrinho_id) REFERENCES carrinho(idCarrinho),
     FOREIGN KEY (produto_id) REFERENCES produto(idProduto)
-);
-
-CREATE TABLE pedido (
-    idPedido INT PRIMARY KEY AUTO_INCREMENT,
-    usuario_id INT NOT NULL,
-    endereco_entrega_id INT NOT NULL,
-    data_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    valor_total FLOAT,
-    status_pedido ENUM('pendente', 'processando', 'enviado', 'entregue') DEFAULT 'pendente',
-    FOREIGN KEY (endereco_entrega_id) REFERENCES endereco(idEndereco),
-    FOREIGN KEY (usuario_id) REFERENCES usuario(idUsuario)
-);
-
-CREATE TABLE pagamento (
-    idPagamento INT PRIMARY KEY AUTO_INCREMENT,
-    pedido_id INT NOT NULL,
-    metodo_pagamento VARCHAR(100) NOT NULL,
-    valor_total FLOAT NOT NULL,
-    status_pagamento ENUM('pendente', 'aprovado', 'cancelado') DEFAULT 'pendente',
-    FOREIGN KEY (pedido_id) REFERENCES pedido(idPedido)
 );
