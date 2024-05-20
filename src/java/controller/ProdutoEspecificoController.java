@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Carrinho;
 import model.bean.Produto;
 import model.dao.ProdutoDAO;
 
@@ -77,14 +78,21 @@ public class ProdutoEspecificoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String url = request.getServletPath();
+        String nextPage = "/WEB-INF/jsp/carrinho.jsp";
+        
+        if(url.equals("/adicionarCarrinho")) {
+            Carrinho carrinho = new Carrinho();
+            int idProduto = Integer.parseInt(request.getParameter("idProduto"));
+            int qtd = Integer.parseInt(request.getParameter("quantidade"));
+            
+            carrinho.setIdProduto(idProduto);
+            carrinho.setQuantidade(qtd);
+            
+        }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+   
     @Override
     public String getServletInfo() {
         return "Short description";

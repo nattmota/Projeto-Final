@@ -69,7 +69,7 @@ public class CadastroUsuarioController extends HttpServlet {
         UsuarioDAO dao = new UsuarioDAO();
 
         String errorMessage = "";
-        System.out.println("Enrae");
+       
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");

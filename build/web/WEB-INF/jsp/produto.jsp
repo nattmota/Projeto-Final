@@ -31,9 +31,8 @@
                         <div class="center-element">
                             <h5 class="card-price">R$ ${produto.valor}</h5>
                         </div>
-                        <div class="center-element">
-                            <a href="#" class="btn btn-primary">ADICIONAR</a>
-                            <a href="./produto-espec?id=${produto.idProduto}" class="btn btn-primary">VISITAR</a>
+                        <div class="center-element">                           
+                            <a href="./produto-espec?id=${produto.idProduto}" class="btn btn-primary" style="width: 80%;">VISITAR</a>
                         </div>
                     </div>
                 </div>

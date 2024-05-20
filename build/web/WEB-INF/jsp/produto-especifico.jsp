@@ -22,24 +22,26 @@
                     </div>
                 </div>
                 <div class="detalhes-box">
-                    <h1>${produto.nome}</h1>
+                    <h1>${produto.nome}</h1> <span id="idProduto">${produto.idProduto}</span>
                     <p>Avaliação (Em estoque)</p>
                     <h2>R$ ${produto.valor}</h2>
-                    <table cellspacing="0" class="inputs">
-                        <tr>
-                            <td><b>Quantidade</b></td>
-                            <td align="right"><input type="number" id="primeiro"></td>
-                        </tr>
-                        <tr>
-                            <td><b>Sub Total</b></td>
-                            <td align="right"><input type="number" id="segundo"></td>
-                        </tr>
-                    </table>
-                    <h4>Especificações</h4>
-                    <!-- <p>Para mais informações do produto, entre em contato com a loja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus repellat ipsum aperiam minima
-                        facere provident saepe quidem, officia quae iste ad totam autem doloremque perferendis nihil harum dolorem soluta eaque.</p> -->
-                        <p>${produto.descricao}</p>
-                    <button>Adicionar ao Carrinho</button>
+                    <form action="" method="post">
+                        <table cellspacing="0" class="inputs">
+                            <tr>
+                                <td><b>Quantidade</b></td>
+                                <td align="right"><input type="number" name="quantidade" id="quantidade"></td>
+                            </tr>
+                            <tr>
+                                <td><b>Sub Total</b></td>
+                                <td align="right"><input type="text" id="segundo"></td>
+                            </tr>
+                        </table>
+                        <h4>Especificações</h4>
+                        <!-- <p>Para mais informações do produto, entre em contato com a loja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus repellat ipsum aperiam minima
+                            facere provident saepe quidem, officia quae iste ad totam autem doloremque perferendis nihil harum dolorem soluta eaque.</p> -->
+                            <p>${produto.descricao}</p>
+                        <button type="submit">Adicionar ao Carrinho</button>
+                    </form>
                 </div>
             </div>
         </main>

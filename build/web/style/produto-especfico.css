@@ -47,6 +47,10 @@
         padding-left: 50px;
     }
 
+    main .detalhes-box span {
+        display: none;
+    }
+
     main .detalhes-box h1 {
         color: #00326D;
     }
@@ -66,7 +70,10 @@
 
     main .detalhes-box input {
         height: 30px;
-        padding: 0 5px;
+        padding: 10px;
+        outline: none;
+        border-color: #C9C9C9;
+        border-radius: 5px;
     }
 
     main .detalhes-box button {
@@ -82,5 +89,4 @@
     main .detalhes-box button:hover {
         background-color: darkgreen;
     }
-
 }
