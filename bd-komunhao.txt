@@ -2,10 +2,6 @@ CREATE DATABASE bd_komunhao;
 USE bd_komunhao;
 -- DROP DATABASE bd_komunhao;
 
-CREATE TABLE carrinho (
-    idCarrinho INT PRIMARY KEY AUTO_INCREMENT
-);
-
 CREATE TABLE usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
@@ -73,19 +69,19 @@ CREATE TABLE pedido (
 );
 
 CREATE TABLE usuario_pagamento (
-	idUsuarioPagamento INT PRIMARY KEY AUTO_INCREMENT,
+    idUsuarioPagamento INT PRIMARY KEY AUTO_INCREMENT,
     idUsuario INT,
-	idTipoPagamento INT,
+    idTipoPagamento INT,
     FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
     FOREIGN KEY (idTipoPagamento) REFERENCES tipo_pagamento(idPagamento)
 );
 
 
-CREATE TABLE carrinho_itens (
-    idCarrinho_item INT PRIMARY KEY AUTO_INCREMENT,
-    carrinho_id INT NOT NULL,
+CREATE TABLE carrinho (
+    idCarrinho INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
     produto_id INT NOT NULL,
     quantidade INT NOT NULL,
-    FOREIGN KEY (carrinho_id) REFERENCES carrinho(idCarrinho),
+    FOREIGN KEY (usuario_id) REFERENCES usuario(idUsuario),
     FOREIGN KEY (produto_id) REFERENCES produto(idProduto)
 );
