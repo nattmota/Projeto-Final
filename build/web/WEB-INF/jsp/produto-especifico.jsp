@@ -22,10 +22,10 @@
                     </div>
                 </div>
                 <div class="detalhes-box">
-                    <h1>${produto.nome}</h1> <span id="idProduto">${produto.idProduto}</span>
+                    <h1>${produto.nome}</h1> 
                     <p>Avaliação (Em estoque)</p>
                     <h2>R$ ${produto.valor}</h2>
-                    <form action="" method="post">
+                    <form action="adicionarCarrinho" method="post" id="form-add-carrinho">
                         <table cellspacing="0" class="inputs">
                             <tr>
                                 <td><b>Quantidade</b></td>
@@ -36,6 +36,8 @@
                                 <td align="right"><input type="text" id="segundo"></td>
                             </tr>
                         </table>
+                        <input type="hidden" name="id-produto" id="id-produto" value="${produto.idProduto}">
+                        
                         <h4>Especificações</h4>
                         <!-- <p>Para mais informações do produto, entre em contato com a loja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus repellat ipsum aperiam minima
                             facere provident saepe quidem, officia quae iste ad totam autem doloremque perferendis nihil harum dolorem soluta eaque.</p> -->

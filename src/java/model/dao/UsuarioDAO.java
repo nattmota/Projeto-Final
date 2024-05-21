@@ -24,6 +24,7 @@ public class UsuarioDAO {
                 usuarioValido.setIdUsuario(rs.getInt("idUsuario"));
                 usuarioValido.setEmail(rs.getString("email"));
                 usuarioValido.setSenha(rs.getString("senha"));
+                Usuario.setIdUsuarioStatic(rs.getInt("idUsuario"));
 
             }
             rs.close();

@@ -4,6 +4,7 @@
     Author     : Senai
 --%>
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,56 +16,36 @@
     </head>
     <body>
         <jsp:include page="header.jsp" ></jsp:include>
-        <main>
-            <div class="text">
-                <h1>CARRINHO DE COMPRAS</h1>
-            </div>          
-            <table class="cart-table">
-                <tr>
-                    <th class="th-produtos">Produtos</th>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                    <th>Subtotal</th>
-                </tr>
-                <tr>
-                    <td class="td-produtos"><div class="container-img">Img</div>Nome do Produto</td>
-                    <td>
-                        <div class="box-price">
-                            <button><p>+</p></button>
-                            <p>1</p>
-                            <button><p>-</p></button>
-                        </div>
-                    </td>
-                    <td>R$ xx,xx</td>
-                    <td>R$ xx,xx</td>
-                    <td><button><i class="bi bi-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td class="td-produtos"><div class="container-img">Img</div>Nome do Produto</td>
-                    <td>
-                        <div class="box-price">
-                            <button><p>+</p></button>
-                            <p>1</p>
-                            <button><p>-</p></button>
-                        </div>
-                    </td>
-                    <td>R$ xx,xx</td>
-                    <td>R$ xx,xx</td>
-                    <td><button><i class="bi bi-trash"></i></button></td>
-                </tr>
-                <tr>
-                    <td class="td-produtos"><div class="container-img">Img</div>Nome do Produto</td>
-                    <td>
-                        <div class="box-price">
-                            <button><p>+</p></button>
-                            <p>1</p>
-                            <button><p>-</p></button>
-                        </div>
-                    </td>
-                    <td>R$ xx,xx</td>
-                    <td>R$ xx,xx</td>
-                    <td><button><i class="bi bi-trash"></i></button></td>
-                </tr>
+            <main>
+                <div class="text">
+                    <h1>CARRINHO DE COMPRAS</h1>
+                </div>          
+                <table class="cart-table">
+                    <tr>
+                        <th class="th-produtos">Produtos</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Subtotal</th>
+                    </tr>
+                <c:forEach items="${carrinhos}" var="carrinho">
+                    <tr>
+                        <td class="td-produtos">
+                            <div class="container-img">
+                                <img src="data:image/jpeg;base64,${carrinho.imagemBase64}" alt="${carrinho.nome}">
+                            </div>${carrinho.nome}
+                        </td>
+                        <td>
+                            <div class="box-price">
+                                <button><p>+</p></button>
+                                <p>${carrinho.quantidade}</p>
+                                <button><p>-</p></button>
+                            </div>
+                        </td>
+                        <td>R$ ${carrinho.valor}</td>
+                        <td>R$ ${carrinho.subtotal}</td>
+                        <td><button><i class="bi bi-trash"></i></button></td>
+                </c:forEach>
+                    </tr>              
             </table>
             <hr class="line">
             <div class="down-cart">

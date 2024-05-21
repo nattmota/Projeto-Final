@@ -47,10 +47,6 @@
         padding-left: 50px;
     }
 
-    main .detalhes-box span {
-        display: none;
-    }
-
     main .detalhes-box h1 {
         color: #00326D;
     }
@@ -88,5 +84,9 @@
 
     main .detalhes-box button:hover {
         background-color: darkgreen;
+    }
+
+    main .detalhes-box #form-add-carrinho span {
+        display: none;
     }
 }

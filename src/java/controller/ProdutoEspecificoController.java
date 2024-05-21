@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Carrinho;
 import model.bean.Produto;
+import model.dao.CarrinhoDAO;
 import model.dao.ProdutoDAO;
 
 /**
@@ -23,15 +24,7 @@ import model.dao.ProdutoDAO;
  */
 public class ProdutoEspecificoController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/WEB-INF/jsp/produto-especifico.jsp";
@@ -83,12 +76,19 @@ public class ProdutoEspecificoController extends HttpServlet {
         
         if(url.equals("/adicionarCarrinho")) {
             Carrinho carrinho = new Carrinho();
-            int idProduto = Integer.parseInt(request.getParameter("idProduto"));
+            
+            int id = Integer.parseInt(request.getParameter("id-produto"));
             int qtd = Integer.parseInt(request.getParameter("quantidade"));
-            
-            carrinho.setIdProduto(idProduto);
+                           
+            carrinho.setIdProduto(id);
             carrinho.setQuantidade(qtd);
+                       
+            System.out.println("Id do Produto: " + carrinho.getIdProduto());
+            System.out.println("Quantidade: " + carrinho.getQuantidade());
             
+            CarrinhoDAO carrinhoDao = new CarrinhoDAO();
+            carrinhoDao.adicionarCarrinho(carrinho);
+                       
         }
     }
 

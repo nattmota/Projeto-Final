@@ -2,6 +2,7 @@ package model.bean;
 
 public class Usuario {
     private int idUsuario;
+    private static int idUsuarioStatic;
     private String nome;
     private String email;
     private String senha;
@@ -28,6 +29,14 @@ public class Usuario {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public static int getIdUsuarioStatic() {
+        return idUsuarioStatic;
+    }
+
+    public static void setIdUsuarioStatic(int idUsuarioStatic) {
+        Usuario.idUsuarioStatic = idUsuarioStatic;
     }
 
     public String getNome() {
@@ -77,6 +86,7 @@ public class Usuario {
     public void setAcesso(int acesso) {
         this.acesso = acesso;
     }
+
     
     
 }
