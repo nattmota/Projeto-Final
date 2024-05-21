@@ -9,9 +9,7 @@ CREATE TABLE usuario (
     senha VARCHAR(100) NOT NULL,
     cpf CHAR(11) NOT NULL,
     telefone VARCHAR(13),
-    status int default '1',
-    carrinho int,
-    FOREIGN KEY(carrinho) REFERENCES carrinho(idCarrinho)
+    status int default '1'
 );
 
 CREATE TABLE endereco (
