@@ -30,11 +30,7 @@
                             <tr>
                                 <td><b>Quantidade</b></td>
                                 <td align="right"><input type="number" name="quantidade" id="quantidade"></td>
-                            </tr>
-                            <tr>
-                                <td><b>Sub Total</b></td>
-                                <td align="right"><input type="text" id="segundo"></td>
-                            </tr>
+                            </tr>                         
                         </table>
                         <input type="hidden" name="id-produto" id="id-produto" value="${produto.idProduto}">
                         

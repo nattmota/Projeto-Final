@@ -43,7 +43,10 @@
                         </td>
                         <td>R$ ${carrinho.valor}</td>
                         <td>R$ ${carrinho.subtotal}</td>
-                        <td><button><i class="bi bi-trash"></i></button></td>
+                        <form action="deletarItemCarrinho" method="post">
+                            <input type="hidden" name="idCarrinho" id="idCarrinho" value="${carrinho.idCarrinho}">
+                            <td><button type="submit" id="deletarItem" name="deletarItem"><i class="bi bi-trash"></i></button></td>
+                        </form>
                 </c:forEach>
                     </tr>              
             </table>
@@ -59,11 +62,7 @@
                         <button>CALCULAR</button>
                     </div>
                 </div>
-                <div class="container-compra">
-                    <div class="flex">
-                        <h4>Subtotal:</h4>
-                        <p>R$ xx,xx</p>
-                    </div>
+                <div class="container-compra">                   
                     <div class="flex">
                         <h4>Frete:</h4>
                         <p class="p-cep">Calcule para visualizar</p>
@@ -71,7 +70,7 @@
                     <hr class="line">
                     <div class="flex">
                         <h3>Total:</h3>
-                        <p>R$ xx,xx</p>
+                        <p>R$ ${total}</p>
                     </div>
                     <div class="btn-compra">
                         <button>INICIAR COMPRA</button>

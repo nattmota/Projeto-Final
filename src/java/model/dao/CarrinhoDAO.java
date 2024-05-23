@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.HashSet;
 import java.util.List;
 import model.bean.Carrinho;
 import model.bean.Produto;
@@ -38,6 +39,7 @@ public class CarrinhoDAO {
     }
 
     public List<Carrinho> visualizarCarrinho() {
+        float total = 0.0f;
         List<Carrinho> listaCarrinho = new ArrayList();
         try {
             Connection conexao = Conexao.conectar();
@@ -66,7 +68,10 @@ public class CarrinhoDAO {
                 carrinho.setValor(rs.getFloat("valor"));
                 carrinho.setSubtotal(rs.getFloat("subtotal"));
                 
-                listaCarrinho.add(carrinho);
+                total += carrinho.getSubtotal();
+                carrinho.setTotal(total);
+                
+                listaCarrinho.add(carrinho);                
             }
             
             rs.close();
@@ -77,5 +82,22 @@ public class CarrinhoDAO {
             e.printStackTrace();
         }
         return listaCarrinho;
+    }
+    
+    public void deletarItemCarrinho(Carrinho carrinho) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+
+            stmt = conexao.prepareStatement("DELETE FROM carrinho WHERE idCarrinho = ?");
+            stmt.setInt(1, carrinho.getIdCarrinho());
+
+            stmt.executeUpdate();
+
+            stmt.close();
+            conexao.close();
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex);
+        }
     }
 }

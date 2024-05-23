@@ -26,11 +26,21 @@ public class CarrinhoController extends HttpServlet {
             throws ServletException, IOException {
         String url = "/WEB-INF/jsp/carrinho.jsp";
 
+        Carrinho c = new Carrinho();
         CarrinhoDAO dao = new CarrinhoDAO();
-        
+
         List<Carrinho> carrinho = dao.visualizarCarrinho();
-     
+
         request.setAttribute("carrinhos", carrinho);
+
+        float total = 0.0f;
+        for (Carrinho item : carrinho) {
+            total += item.getSubtotal();
+        }
+
+        request.setAttribute("total", total);
+
+        System.out.println("Total: " + total);
 
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
@@ -45,7 +55,21 @@ public class CarrinhoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String url = request.getServletPath();
+
+        if (url.equals("/deletarItemCarrinho")) {
+            int idCarrinho = Integer.parseInt(request.getParameter("idCarrinho"));
+
+            CarrinhoDAO dao = new CarrinhoDAO();
+            Carrinho carrinho = new Carrinho();
+            
+            carrinho.setIdCarrinho(idCarrinho);
+
+            dao.deletarItemCarrinho(carrinho);
+
+            // Redireciona para a página do carrinho após a exclusão
+            response.sendRedirect("./home");
+        }
     }
 
     @Override

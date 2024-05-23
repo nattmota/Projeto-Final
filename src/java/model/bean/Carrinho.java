@@ -10,11 +10,12 @@ public class Carrinho {
     private byte[] imagemBytes;
     private String imagemBase64; 
     private float subtotal;
+    private float total;
 
     public Carrinho() {
     }
 
-    public Carrinho(int idCarrinho, int idUsuario, int idProduto, int quantidade, String nome, float valor, byte[] imagemBytes, String imagemBase64, float subtotal) {
+    public Carrinho(int idCarrinho, int idUsuario, int idProduto, int quantidade, String nome, float valor, byte[] imagemBytes, String imagemBase64, float subtotal, float total) {
         this.idCarrinho = idCarrinho;
         this.idUsuario = idUsuario;
         this.idProduto = idProduto;
@@ -24,6 +25,7 @@ public class Carrinho {
         this.imagemBytes = imagemBytes;
         this.imagemBase64 = imagemBase64;
         this.subtotal = subtotal;
+        this.total = total;
     }
 
     public int getIdCarrinho() {
@@ -96,5 +98,17 @@ public class Carrinho {
 
     public void setSubtotal(float subtotal) {
         this.subtotal = subtotal;
-    }     
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
+
+    
+    
+   
 }
