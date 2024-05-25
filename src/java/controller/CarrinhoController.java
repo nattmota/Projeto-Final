@@ -33,6 +33,7 @@ public class CarrinhoController extends HttpServlet {
 
         request.setAttribute("carrinhos", carrinho);
 
+        
         float total = 0.0f;
         for (Carrinho item : carrinho) {
             total += item.getSubtotal();
@@ -70,6 +71,23 @@ public class CarrinhoController extends HttpServlet {
             // Redireciona para a página do carrinho após a exclusão
             response.sendRedirect("./home");
         }
+        
+        else if(url.equals("/esvaziarCarrinho")) {
+            
+        }
+        
+        else if(url.equals("/finalizarCompra")) {
+            
+        }
+        
+        else if(url.equals("/atualizarQuantidadeMais")) {
+            
+        }
+        
+        else if(url.equals("/atualizarQuantidadeMenos")) {
+            
+        }
+        
     }
 
     @Override

@@ -98,7 +98,7 @@
 
     main .down-cart {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 
     main .down-cart .calculo-cep .text-cep {
@@ -158,6 +158,10 @@
         align-items: baseline;
     }
 
+    main .down-cart .container-compra .line {
+        padding: 10px;
+    }
+
     main .down-cart .container-compra .flex h4 {
         font-size: 20px;
         font-family: "Work Sans", sans-serif;
@@ -177,12 +181,14 @@
     main .down-cart .container-compra .flex h3 {       
         font-family: "Work Sans", sans-serif;
         color: #00326D;       
+        padding: 10px;
     }
 
     main .down-cart .container-compra .btn-compra {       
         display: flex;      
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 
     main .down-cart .container-compra .btn-compra button {       
@@ -195,5 +201,17 @@
         font-family: "Rubik", sans-serif;
         font-weight: bold;
     }
+
+    main .down-cart .container-compra .btn-compra #btn-esvaizar-carrinho {       
+        width: 351px;
+        height: 44px;
+        background-color: #ECF0F1;
+        border-radius: 10px;
+        border: none;
+        color: #000;
+        font-family: "Rubik", sans-serif;
+        font-weight: bold;
+    }
+
 
 }

@@ -89,7 +89,7 @@ public class CarrinhoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("DELETE FROM carrinho WHERE idCarrinho = ?");
+            stmt = conexao.prepareStatement("DELETE * FROM carrinho WHERE idCarrinho = ?");
             stmt.setInt(1, carrinho.getIdCarrinho());
 
             stmt.executeUpdate();
@@ -97,7 +97,26 @@ public class CarrinhoDAO {
             stmt.close();
             conexao.close();
         } catch (SQLException ex) {
-            System.out.println("Erro: " + ex);
+            ex.printStackTrace();
+        }
+    }
+    
+    public void esvaizarCarrinho(Carrinho carrinho) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            
+            stmt = conexao.prepareStatement("DELETE * FROM carrinho WHERE usuario_id = ?");
+            stmt.setInt(1, Usuario.getIdUsuarioStatic());
+            
+            stmt.executeUpdate();
+            
+            stmt.close();
+            conexao.close();
+            
+            
+        } catch(SQLException ex) {
+            ex.printStackTrace();
         }
     }
 }
