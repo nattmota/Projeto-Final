@@ -13,7 +13,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.bean.Carrinho;
+import model.bean.Usuario;
 import model.dao.CarrinhoDAO;
 
 /**
@@ -33,15 +35,15 @@ public class CarrinhoController extends HttpServlet {
 
         request.setAttribute("carrinhos", carrinho);
 
-        
         float total = 0.0f;
         for (Carrinho item : carrinho) {
             total += item.getSubtotal();
         }
 
         request.setAttribute("total", total);
-
         System.out.println("Total: " + total);
+        
+        request.setAttribute("idUsuario", Usuario.getIdUsuarioStatic());
 
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
@@ -57,37 +59,55 @@ public class CarrinhoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
+        HttpSession session = request.getSession();
 
+        // FUNÇÃO PARA DELETAR UM ÚNICO PRODUTOS DO CARRINHO
         if (url.equals("/deletarItemCarrinho")) {
             int idCarrinho = Integer.parseInt(request.getParameter("idCarrinho"));
 
+            CarrinhoDAO dao = new CarrinhoDAO();                 
+
+            dao.deletarItemCarrinho(idCarrinho);
+           
+            response.sendRedirect("./carrinho");
+            
+        // FUNÇÃO PARA DELETAR TODOOS OS ITENS DO CARRINHO DO USUÁRIO LOGADO    
+        } else if (url.equals("/esvaziarCarrinho")) {
+            int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+            
             CarrinhoDAO dao = new CarrinhoDAO();
-            Carrinho carrinho = new Carrinho();
             
-            carrinho.setIdCarrinho(idCarrinho);
-
-            dao.deletarItemCarrinho(carrinho);
-
-            // Redireciona para a página do carrinho após a exclusão
-            response.sendRedirect("./home");
-        }
-        
-        else if(url.equals("/esvaziarCarrinho")) {
+            dao.esvaizarCarrinho(idUsuario);
             
-        }
+            response.sendRedirect("./carrinho");
         
-        else if(url.equals("/finalizarCompra")) {
+        } else if (url.equals("/atualizarQuantidadeMais")) {
+            int idCarrinho = Integer.parseInt(request.getParameter("idCarrinho"));
+            int qtdAtualizada = Integer.parseInt(request.getParameter("quantidade"));
             
-        }
-        
-        else if(url.equals("/atualizarQuantidadeMais")) {
+            CarrinhoDAO dao = new CarrinhoDAO();
             
-        }
-        
-        else if(url.equals("/atualizarQuantidadeMenos")) {
+            dao.atualizarQuantidadeDoProdutoNoCarrinho(idCarrinho, qtdAtualizada);
             
+            response.sendRedirect("./carrinho");
+            
+            
+        } else if (url.equals("/atualizarQuantidadeMenos")) {
+            int idCarrinho = Integer.parseInt(request.getParameter("idCarrinho"));
+            int qtdAtualizada = Integer.parseInt(request.getParameter("quantidade"));
+            
+            CarrinhoDAO dao = new CarrinhoDAO();
+            
+            if(qtdAtualizada > 0) {
+                dao.atualizarQuantidadeDoProdutoNoCarrinho(idCarrinho, qtdAtualizada);
+                response.sendRedirect("./carrinho");
+            } else {
+                dao.deletarItemCarrinho(idCarrinho);
+                response.sendRedirect("./carrinho");
+            }          
+        } else if (url.equals("/finalizarCompra")) {
+            response.sendRedirect("./dados-pessoais");
         }
-        
     }
 
     @Override

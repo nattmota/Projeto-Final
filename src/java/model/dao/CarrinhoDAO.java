@@ -44,7 +44,7 @@ public class CarrinhoDAO {
         try {
             Connection conexao = Conexao.conectar();
 
-            PreparedStatement stmt = conexao.prepareStatement("SELECT p.imagem, p.nome, c.quantidade, p.valor, (c.quantidade * p.valor) AS subtotal, p.idProduto "
+            PreparedStatement stmt = conexao.prepareStatement("SELECT c.idCarrinho, c.usuario_id, p.imagem, p.nome, c.quantidade, p.valor, (c.quantidade * p.valor) AS subtotal, p.idProduto "
                     + "FROM carrinho c "
                     + "JOIN produto p ON c.produto_id = p.idProduto "
                     + "WHERE c.usuario_id = ?");
@@ -55,6 +55,7 @@ public class CarrinhoDAO {
             
             while (rs.next()) {
                 Carrinho carrinho = new Carrinho();
+                carrinho.setIdCarrinho(rs.getInt("idCarrinho"));
                 carrinho.setIdUsuario(Usuario.getIdUsuarioStatic());
                 carrinho.setIdProduto(rs.getInt("idProduto"));            
                 byte[] imagemBytes = rs.getBytes("imagem");
@@ -84,13 +85,13 @@ public class CarrinhoDAO {
         return listaCarrinho;
     }
     
-    public void deletarItemCarrinho(Carrinho carrinho) {
+    public void deletarItemCarrinho(int idCarrinho) {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("DELETE * FROM carrinho WHERE idCarrinho = ?");
-            stmt.setInt(1, carrinho.getIdCarrinho());
+            stmt = conexao.prepareStatement("DELETE FROM carrinho WHERE idCarrinho = ?");
+            stmt.setInt(1, idCarrinho);
 
             stmt.executeUpdate();
 
@@ -101,22 +102,39 @@ public class CarrinhoDAO {
         }
     }
     
-    public void esvaizarCarrinho(Carrinho carrinho) {
+    public void esvaizarCarrinho(int idUsuario) {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             
-            stmt = conexao.prepareStatement("DELETE * FROM carrinho WHERE usuario_id = ?");
-            stmt.setInt(1, Usuario.getIdUsuarioStatic());
+            stmt = conexao.prepareStatement("DELETE FROM carrinho WHERE usuario_id = ?");
+            stmt.setInt(1, idUsuario);
             
             stmt.executeUpdate();
             
             stmt.close();
             conexao.close();
             
-            
         } catch(SQLException ex) {
             ex.printStackTrace();
+        }
+    }
+    
+    public void atualizarQuantidadeDoProdutoNoCarrinho(int idCarrinho, int qtdAtualizada) {
+        try {       
+            Connection conexao = Conexao.conectar();  
+            
+            PreparedStatement stmt = conexao.prepareStatement("UPDATE carrinho SET quantidade = ? WHERE idCarrinho = ?");
+            
+            stmt.setInt(1, qtdAtualizada);
+            stmt.setInt(2, idCarrinho);
+                      
+            stmt.executeUpdate();
+                    
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

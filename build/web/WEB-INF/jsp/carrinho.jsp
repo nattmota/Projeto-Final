@@ -19,8 +19,7 @@
                     <div class="text">
                         <h1>CARRINHO DE COMPRAS</h1>
                     </div>
-                    <c:choose>
-                        <!-- Verifica se a variavel carrinhos está vazia -->
+                    <c:choose>                        
                         <c:when test="${not empty carrinhos}">
                             <table class="cart-table">
                                 <tr>
@@ -86,6 +85,7 @@
                                             <button type="submit" style="margin-bottom: 10px;">FINALIZAR COMPRA</button>
                                         </form>
                                         <form action="esvaziarCarrinho" method="post">
+                                            <input type="hidden" name="idUsuario" value="${idUsuario}">
                                             <button type="submit" id="btn-esvaizar-carrinho">ESVAZIAR CARRINHO</button>
                                         </form>
                                     </div>

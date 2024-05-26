@@ -133,6 +133,22 @@
         <url-pattern>/deletarItemCarrinho</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/esvaziarCarrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/atualizarQuantidadeMais</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/atualizarQuantidadeMenos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/finalizarCompra</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>DadosPessoaisController</servlet-name>
         <url-pattern>/dados-pessoais</url-pattern>
     </servlet-mapping>
