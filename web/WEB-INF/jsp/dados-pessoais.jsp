@@ -22,7 +22,7 @@
                     </div>
                     <div class="progresso-linha"></div>
                     <div class="progresso-passo-container">
-                        <div class="passo-check">
+                        <div class="passo-check-2">
                             <i class="fa-solid fa-truck"></i>
                         </div>
                         <span class="passo-titulo">Entrega</span>
@@ -35,39 +35,38 @@
                         <span class="passo-titulo">Pagamento</span>
                     </div>
                 </div>
-                <div class="inputs-container">
-                    <div class="dados">
-                        <h2>Dados de Contato</h2>
-                        <input type="text" placeholder="E-mail">
-                    </div>
-                    <div class="entrega">
-                        <h2>Entrega</h2>
-                        <input type="text" placeholder="CEP">
-                    </div>
-                    <div class="btn-continuar">
-                        <button>CONTINUAR</button>
-                    </div>
-                </div>
-                <div class="container-carrinho">
-                    <div class="info-produto">
-                        <div class="image-box">
-                            <img src="" alt="ImagemProduto">
+                <div class="main-separator">
+                    <div class="inputs-container">
+                        <div class="dados">
+                            <h2>Dados de Contato</h2>
+                            <input type="text" placeholder="E-mail">
                         </div>
-                        <h5>Nome do Produto</h5>
-                        <span>R$ xx,xx</span>
+                        <div class="entrega">
+                            <h2>Entrega</h2>
+                            <input type="text" placeholder="CEP">
+                        </div>
+                        <div class="btn-continuar">
+                            <button>CONTINUAR</button>
+                        </div>
                     </div>
-                    <hr>
-                    <div clas="info-preco">
-                        <div>
-                            <span>Subtotal</span>
+                    <div class="container-carrinho">
+                        <div class="info-produto">
+                            <div class="image-box">
+                                <img src="" alt="ImagemProduto">
+                            </div>
+                            <h5>Nome do Produto</h5>
                             <span>R$ xx,xx</span>
                         </div>
-                        <div>
-                            <span>Custo de frete</span>
-                            <span>R$ xx,xx</span>
-                        </div>
-                        <div>
-                            Total: R$ xx,xx
+                        <hr>
+                        <div class="info-preco">                        
+                            <div class="price-separator">
+                                <span>Custo de frete</span>
+                                <span>R$ xx,xx</span>
+                            </div>
+                            <div class="price-separator">
+                                <span>Total</span>
+                                <span>R$ xx,xx</span>
+                            </div>
                         </div>
                     </div>
                 </div>
