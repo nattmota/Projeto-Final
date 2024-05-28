@@ -66,6 +66,15 @@ CREATE TABLE pedido (
     FOREIGN KEY (tipo_pagamento_id) REFERENCES tipo_pagamento(idPagamento)
 );
 
+CREATE TABLE produto_pedido (
+	idProdutoPedido INT PRIMARY KEY AUTO_INCREMENT,
+    pedido_id int,
+    produto_id int,
+    quantidade int,
+    FOREIGN KEY (pedido_id) REFERENCES pedido(idPedido),
+    FOREIGN KEY (produto_id) REFERENCES produto(idProduto)
+);
+
 CREATE TABLE usuario_pagamento (
     idUsuarioPagamento INT PRIMARY KEY AUTO_INCREMENT,
     idUsuario INT,
