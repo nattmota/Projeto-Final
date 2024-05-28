@@ -23,8 +23,7 @@ public class CarrinhoDAO {
             PreparedStatement stmt = conexao.prepareStatement("INSERT INTO carrinho (produto_id, quantidade, usuario_id) VALUES (?,?,?) ");
             stmt.setInt(1, carrinho.getIdProduto());
             stmt.setInt(2, carrinho.getQuantidade());
-            stmt.setInt(3, Usuario.getIdUsuarioStatic());
-            System.out.println("Id Usuario: " + Usuario.getIdUsuarioStatic());
+            stmt.setInt(3, Usuario.getIdUsuarioStatic());        
             
             stmt.executeUpdate();
 

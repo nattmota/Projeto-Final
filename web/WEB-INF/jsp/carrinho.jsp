@@ -45,7 +45,7 @@
                                                     <input type="hidden" name="quantidade"
                                                         value="${carrinho.quantidade + 1}">
                                                     <button type="submit">
-                                                        <p>+</p>
+                                                        <p style="margin: 0">+</p>
                                                     </button>
                                                 </form>
                                                 <p>${carrinho.quantidade}</p>
@@ -56,7 +56,7 @@
                                                     <input type="hidden" name="quantidade"
                                                         value="${carrinho.quantidade - 1}">
                                                     <button type="submit">
-                                                        <p>-</p>
+                                                        <p style="margin: 0">-</p>
                                                     </button>
                                                 </form>
                                             </div>
@@ -82,6 +82,8 @@
                                     <hr class="line">
                                     <div class="btn-compra">
                                         <form action="finalizarCompra" method="post">
+                                            <input type="hidden" name="idUsuario" value="${idUsuario}">
+                                            <input type="hidden" name="valorTotal" value="${total}">
                                             <button type="submit" style="margin-bottom: 10px;">FINALIZAR COMPRA</button>
                                         </form>
                                         <form action="esvaziarCarrinho" method="post">

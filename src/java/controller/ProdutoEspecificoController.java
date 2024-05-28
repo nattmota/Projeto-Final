@@ -81,10 +81,7 @@ public class ProdutoEspecificoController extends HttpServlet {
             int qtd = Integer.parseInt(request.getParameter("quantidade"));
                            
             carrinho.setIdProduto(id);
-            carrinho.setQuantidade(qtd);
-                       
-            System.out.println("Id do Produto: " + carrinho.getIdProduto());
-            System.out.println("Quantidade: " + carrinho.getQuantidade());
+            carrinho.setQuantidade(qtd);         
             
             CarrinhoDAO carrinhoDao = new CarrinhoDAO();
             carrinhoDao.adicionarCarrinho(carrinho);

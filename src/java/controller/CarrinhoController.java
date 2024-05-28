@@ -15,8 +15,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.bean.Carrinho;
+import model.bean.Pedido;
 import model.bean.Usuario;
 import model.dao.CarrinhoDAO;
+import model.dao.PedidoDAO;
+import model.dao.ProdutoPedidoDAO;
 
 /**
  *
@@ -27,8 +30,7 @@ public class CarrinhoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/WEB-INF/jsp/carrinho.jsp";
-
-        Carrinho c = new Carrinho();
+       
         CarrinhoDAO dao = new CarrinhoDAO();
 
         List<Carrinho> carrinho = dao.visualizarCarrinho();
@@ -106,6 +108,25 @@ public class CarrinhoController extends HttpServlet {
                 response.sendRedirect("./carrinho");
             }          
         } else if (url.equals("/finalizarCompra")) {
+            int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+            float valorTotal = Float.parseFloat(request.getParameter("valorTotal"));
+            
+            CarrinhoDAO cDao = new CarrinhoDAO();
+            List<Carrinho> carrinho = cDao.visualizarCarrinho();
+
+            request.setAttribute("carrinhos", carrinho);
+            
+            Pedido pedido = new Pedido(idUsuario,valorTotal);
+            PedidoDAO dao = new PedidoDAO();
+            
+            int idPedido = dao.criarNovoPedido(pedido);
+            pedido.setIdPedido(idPedido);
+            
+            ProdutoPedidoDAO produtoPedidoDAO = new ProdutoPedidoDAO();
+            produtoPedidoDAO.adicionarProdutosPedido(pedido, carrinho);
+            
+            cDao.esvaizarCarrinho(idUsuario);
+
             response.sendRedirect("./dados-pessoais");
         }
     }
