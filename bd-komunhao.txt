@@ -1,3 +1,4 @@
+
 CREATE DATABASE bd_komunhao;
 USE bd_komunhao;
 -- DROP DATABASE bd_komunhao;
@@ -56,8 +57,8 @@ CREATE TABLE tipo_pagamento (
 CREATE TABLE pedido (
     idPedido INT PRIMARY KEY AUTO_INCREMENT,
     usuario_id INT NOT NULL,
-    endereco_entrega_id INT NOT NULL,
-    tipo_pagamento_id INT NOT NULL,
+    endereco_entrega_id INT,
+    tipo_pagamento_id INT,
     data_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     valor_total FLOAT,
     status_pedido ENUM('pendente', 'processando', 'enviado', 'entregue') DEFAULT 'pendente',
@@ -67,7 +68,7 @@ CREATE TABLE pedido (
 );
 
 CREATE TABLE produto_pedido (
-	idProdutoPedido INT PRIMARY KEY AUTO_INCREMENT,
+    idProdutoPedido INT PRIMARY KEY AUTO_INCREMENT,
     pedido_id int,
     produto_id int,
     quantidade int,
