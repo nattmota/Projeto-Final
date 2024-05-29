@@ -96,6 +96,7 @@
         width: 850px;
         font-family: "Open Sans", sans-serif;
         font-size: 15px;
+        outline: none;
     }
 
     main .main-separator .inputs-container .entrega {
@@ -138,27 +139,45 @@
         border: 1px solid #B2B2B2;
         border-radius: 25px;
         padding: 10px;
-        width: 350px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     main .main-separator .container-carrinho span,
     main .main-separator .container-carrinho h5 {
         font-family: "Rubik", sans-serif;
+        font-size: 18px;
     }
 
     main .main-separator .container-carrinho .info-produto {
         display: flex;
+        justify-content: space-between;
     }
     
     main .main-separator .container-carrinho .info-produto .image-box {
         border: 1px solid #A4A4A4;
         width: 66px;
         height: 66px;
+        overflow: hidden;
+    }
+
+    main .main-separator .container-carrinho .info-produto .image-box img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 
     main .main-separator .container-carrinho .info-preco .price-separator {
         display: flex;
         justify-content: space-between;
+    }
+
+    main .main-separator .container-carrinho .info-preco .price-separator #preco-total {
+        font-size: 22px;
+        font-weight: bold;
+        color: #00326D;
     }
 
 }

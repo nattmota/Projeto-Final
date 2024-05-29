@@ -1,6 +1,7 @@
 <%-- Document : dados-pessoais Created on : 14/05/2024, 16:30:45 Author : Senai --%>
 
-    <%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
         <!DOCTYPE html>
         <html>
 
@@ -48,27 +49,30 @@
                         <div class="btn-continuar">
                             <button>CONTINUAR</button>
                         </div>
-                    </div>
+                    </div>                   
                     <div class="container-carrinho">
+                        <c:forEach items="${produtosPedido}" var="produtoPedido">
                         <div class="info-produto">
                             <div class="image-box">
-                                <img src="" alt="ImagemProduto">
+                                <img src="data:image/jpeg;base64,${produtoPedido.imagemBase64}" alt="ImagemProduto">
                             </div>
-                            <h5>Nome do Produto</h5>
-                            <span>R$ xx,xx</span>
+                            <h5>${produtoPedido.nome}</h5>
+                            <span>x ${produtoPedido.quantidade}</span>
+                            <span>R$ ${produtoPedido.subtotal}</span>
                         </div>
-                        <hr>
+                        </c:forEach>
+                        <hr>                      
                         <div class="info-preco">                        
                             <div class="price-separator">
-                                <span>Custo de frete</span>
+                                <span>Custo de frete:</span>
                                 <span>R$ xx,xx</span>
                             </div>
                             <div class="price-separator">
-                                <span>Total</span>
-                                <span>R$ xx,xx</span>
+                                <span id="preco-total">Total:</span>
+                                <span>R$ ${total}</span>
                             </div>
-                        </div>
-                    </div>
+                        </div>                       
+                    </div>                   
                 </div>
             </main>
             <jsp:include page="footer.jsp"></jsp:include>

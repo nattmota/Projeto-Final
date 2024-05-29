@@ -127,7 +127,7 @@ public class CarrinhoController extends HttpServlet {
             
             cDao.esvaizarCarrinho(idUsuario);
 
-            response.sendRedirect("./dados-pessoais");
+            response.sendRedirect("./dados-pessoais?idPedido=" + idPedido);
         }
     }
 
