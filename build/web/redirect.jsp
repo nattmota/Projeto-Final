@@ -17,3 +17,4 @@ servlet but should be the only JSP outside of WEB-INF.
 <link href="./style/categorias.css" rel="stylesheet" type="text/css"/>
 <link href="./style/carrinho.css" rel="stylesheet" type="text/css"/>
 <link href="./style/header-checkout.css" rel="stylesheet" type="text/css"/>
+<link href="./style/dados-endereco.css" rel="stylesheet" type="text/css"/>
