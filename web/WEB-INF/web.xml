@@ -64,6 +64,10 @@
         <servlet-name>DadosEnderecoController</servlet-name>
         <servlet-class>controller.DadosEnderecoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DadosPagamentoController</servlet-name>
+        <servlet-class>controller.DadosPagamentoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -159,6 +163,10 @@
     <servlet-mapping>
         <servlet-name>DadosEnderecoController</servlet-name>
         <url-pattern>/dados-endereco</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DadosPagamentoController</servlet-name>
+        <url-pattern>/dados-pagamento</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
