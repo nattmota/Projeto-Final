@@ -3,7 +3,7 @@
     Created on : 30/05/2024, 17:06:51
     Author     : natan
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,15 +43,15 @@
                     <div class="container-info-pedido">
                         <div class="email-sec">
                             <i class="fa-solid fa-envelope"></i>
-                            <span>Email do Usuário</span>
+                            <span>${usuario[0].email}</span>
                         </div>
                         <hr>
                         <div class="user-sec">
                             <i class="fa-solid fa-location-dot"></i>
                             <div class="user-sec-info">
-                                <span>Endereço</span>
-                                <span>CEP</span>
-                                <span>Telefone</span>   
+                                <span>Endereço: ${endereco[0].rua} ${endereco[0].numero} ${endereco[0].complemento}</span>
+                                <span>CEP: ${endereco[0].cep}</span>
+                                <span>Telefone: ${usuario[0].telefone}</span>   
                             </div>            
                             <div class="alterar">
                                 <a href="./dados-endereco">Alterar</a>
@@ -94,17 +94,18 @@
                 </div>
                 <div class="container-carrinho">
                     <c:forEach items="${produtosPedido}" var="produtoPedido">
-                    <div class="info-produto">
-                        <div class="image-box">
-                            <img src="data:image/jpeg;base64,${produtoPedido.imagemBase64}" alt="ImagemProduto">
+                        <div class="info-produto">
+                            <div class="image-box">
+                                <img src="data:image/jpeg;base64,${produtoPedido.imagemBase64}"
+                                    alt="ImagemProduto">
+                            </div>
+                            <h5>${produtoPedido.nome}</h5>
+                            <span>x ${produtoPedido.quantidade}</span>
+                            <span>R$ ${produtoPedido.subtotal}</span>
                         </div>
-                        <h5>${produtoPedido.nome}</h5>
-                        <span>x ${produtoPedido.quantidade}</span>
-                        <span>R$ ${produtoPedido.subtotal}</span>
-                    </div>
-                    </c:forEach>
-                    <hr>                      
-                    <div class="info-preco">                        
+                    </c:forEach>                           
+                    <div class="info-preco">
+                        <hr>
                         <div class="price-separator">
                             <span>Custo de frete:</span>
                             <span>R$ xx,xx</span>
@@ -113,8 +114,8 @@
                             <span id="preco-total">Total:</span>
                             <span>R$ ${total}</span>
                         </div>
-                    </div>                       
-                </div>                   
+                    </div>
+                </div>    
             </div>
         </main>
         <jsp:include page="footer.jsp"></jsp:include>

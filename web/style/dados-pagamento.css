@@ -143,6 +143,11 @@
         gap: 5px;
     }
 
+    main .main-separator .container-info-pedido .user-sec .user-sec-info span {
+        font-size: 20px;
+        font-family: "Rubik", sans-serif;
+    }
+
     main .main-separator .container-info-pedido .entrega-sec {
         padding: 10px;
         display: flex;
@@ -252,7 +257,10 @@
 
     main .main-separator .container-carrinho .info-produto {
         display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
         justify-content: space-between;
+        align-items: center;
     }
     
     main .main-separator .container-carrinho .info-produto .image-box {
@@ -268,9 +276,14 @@
         object-fit: cover;
     }
 
+    main .main-separator .container-carrinho .info-preco {
+        margin-top: auto;
+    }
+
     main .main-separator .container-carrinho .info-preco .price-separator {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 5px;
     }
 
     main .main-separator .container-carrinho .info-preco .price-separator #preco-total {

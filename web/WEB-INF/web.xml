@@ -165,6 +165,10 @@
         <url-pattern>/dados-endereco</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>DadosEnderecoController</servlet-name>
+        <url-pattern>/inserirEndereco</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>DadosPagamentoController</servlet-name>
         <url-pattern>/dados-pagamento</url-pattern>
     </servlet-mapping>

@@ -1,78 +1,108 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Endereco;
+import model.bean.ProdutoPedido;
+import model.bean.Usuario;
+import model.dao.EnderecoDAO;
+import model.dao.ProdutoPedidoDAO;
+import model.dao.UsuarioDAO;
 
-/**
- *
- * @author natan
- */
+
 public class DadosEnderecoController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/WEB-INF/jsp/dados-endereco.jsp";
+
+        //RECUPERAR VALOR DO ID PEDIDO
+        int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+        request.setAttribute("idPedido", idPedido);
+
         
+        // LISTAR PRODUTOS DO PEDIDO
+        ProdutoPedidoDAO produtoPedidoDao = new ProdutoPedidoDAO();
+        List<ProdutoPedido> listaProdutoPedido = produtoPedidoDao.visualizarProdutosPedido(idPedido);      
+        request.setAttribute("produtosPedido", listaProdutoPedido);
+        
+        // CALCULAR VALOR TOTAL DO PEDIDO
+        float total = 0;
+        for (ProdutoPedido produtoPedido : listaProdutoPedido) {
+            total = produtoPedido.getTotal();
+        }
+        request.setAttribute("total", total);
+
+        // LISTAR INFORMAÇÕES DO USUARIO DO PEDIDO
+        UsuarioDAO usuarioDao = new UsuarioDAO();        
+        List<Usuario> infoUsuario = usuarioDao.listarInformacoesUsuario();       
+        request.setAttribute("usuario", infoUsuario);
+
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String url = request.getServletPath();
+
+        System.out.println("Servlet chamado: " + url);
+
+        int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+
+        if (url.equals("/inserirEndereco")) {       
+            EnderecoDAO eDAO = new EnderecoDAO();
+
+            String estado = request.getParameter("estado");
+            String cidade = request.getParameter("cidade");
+            String cep = request.getParameter("cep");
+            String rua = request.getParameter("rua");
+            String numero = request.getParameter("numero");
+            String complemento = request.getParameter("complemento");     
+
+            if (estado != null && !estado.isEmpty()
+                    && cidade != null && !cidade.isEmpty()
+                    && cep != null && !cep.isEmpty()
+                    && rua != null && !rua.isEmpty()
+                    && numero != null && !numero.isEmpty()) {
+                
+                Endereco endereco = new Endereco();
+                endereco.setEstado(estado);
+                endereco.setCidade(cidade);
+                endereco.setCep(cep);
+                endereco.setRua(rua);
+                endereco.setNumero(numero);
+                endereco.setComplemento(complemento);
+                endereco.setId_usuario(Usuario.getIdUsuarioStatic());         
+                               
+                if (eDAO.inserirEndereco(endereco)) {
+                    response.sendRedirect("./dados-pagamento?idPedido=" + idPedido);
+                } else {
+                    System.out.println("Erro ao inserir!");
+                    response.sendRedirect("./dados-endereco?idPedido=" + idPedido);
+                }
+            }
+        }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

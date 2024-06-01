@@ -80,7 +80,7 @@
 
                     reader.onload = function () {
                         selectedImage.src = reader.result;
-                    }
+                    };
 
                     if (file) {
                         reader.readAsDataURL(file);

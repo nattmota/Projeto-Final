@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import model.bean.Usuario;
 
 public class UsuarioDAO {
@@ -133,5 +135,32 @@ public class UsuarioDAO {
             System.out.println("Erro: " + ex);
             return false;
         }
+    }
+    
+    public List<Usuario> listarInformacoesUsuario() {
+        List<Usuario> infoUsuario = new ArrayList();
+        try{
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = conexao.prepareStatement("SELECT nome,email,telefone FROM usuario WHERE idUsuario = ?");
+            stmt.setInt(1, Usuario.getIdUsuarioStatic());
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setNome(rs.getString("nome"));
+                usuario.setEmail(rs.getString("email"));
+                usuario.setTelefone(rs.getString("telefone"));
+                infoUsuario.add(usuario);
+            }
+            
+            rs.close();
+            stmt.close();
+            conexao.close();
+            
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return infoUsuario;
     }
 }

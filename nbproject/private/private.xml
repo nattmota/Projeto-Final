@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/src/java/controller/DadosEnderecoController.java</file>
-            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/web/WEB-INF/jsp/dados-endereco.jsp</file>
-            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/web/style/dados-endereco.css</file>
-            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/src/java/controller/DadosPessoaisController.java</file>
-            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/web/WEB-INF/jsp/dados-pessoais.jsp</file>
-            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/web/redirect.jsp</file>
+            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/web/WEB-INF/jsp/cadastro-produto.jsp</file>
+            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/src/java/controller/CarrinhoController.java</file>
+            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/src/java/controller/ListarProdutosController.java</file>
+            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/web/WEB-INF/jsp/produto-especifico.jsp</file>
+            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/src/java/model/dao/ProdutoDAO.java</file>
+            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/src/java/controller/ProdutoEspecificoController.java</file>
+            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/web/WEB-INF/jsp/listar-produtos.jsp</file>
+            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/web/WEB-INF/jsp/carrinho.jsp</file>
+            <file>file:/C:/Users/natan/OneDrive/Documentos/HTML%20Curso%20Senai/Projeto-Final/src/java/controller/CadastroProdutoController.java</file>
         </group>
     </open-files>
 </project-private>

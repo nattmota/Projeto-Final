@@ -7,11 +7,18 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Endereco;
+import model.bean.ProdutoPedido;
+import model.bean.Usuario;
+import model.dao.EnderecoDAO;
+import model.dao.ProdutoPedidoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
@@ -32,6 +39,35 @@ public class DadosPagamentoController extends HttpServlet {
             throws ServletException, IOException {
         
         String url = "/WEB-INF/jsp/dados-pagamento.jsp";
+        
+        //RECUPERAR VALOR DO ID PEDIDO
+        int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+        request.setAttribute("idPedido", idPedido);
+
+        
+        // LISTAR PRODUTOS DO PEDIDO
+        ProdutoPedidoDAO produtoPedidoDao = new ProdutoPedidoDAO();
+        List<ProdutoPedido> listaProdutoPedido = produtoPedidoDao.visualizarProdutosPedido(idPedido);      
+        request.setAttribute("produtosPedido", listaProdutoPedido);
+        
+        // CALCULAR VALOR TOTAL DO PEDIDO
+        float total = 0;
+        for (ProdutoPedido produtoPedido : listaProdutoPedido) {
+            total = produtoPedido.getTotal();
+        }
+        request.setAttribute("total", total);
+
+        // LISTAR INFORMAÇÕES DO USUARIO DO PEDIDO
+        UsuarioDAO usuarioDao = new UsuarioDAO();        
+        List<Usuario> infoUsuario = usuarioDao.listarInformacoesUsuario();       
+        request.setAttribute("usuario", infoUsuario);
+
+        //LISTAR INFORMAÇÕES DO ENDEREÇO DO USUARIO DO PEDIDO
+        EnderecoDAO enderecoDao = new EnderecoDAO();      
+        List<Endereco> infoEndereco = enderecoDao.ListarInfoEnderecoUsuario();        
+        request.setAttribute("endereco", infoEndereco);
+
+        
         
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

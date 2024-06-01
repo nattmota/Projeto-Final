@@ -88,7 +88,7 @@
                                         </form>
                                         <form action="esvaziarCarrinho" method="post">
                                             <input type="hidden" name="idUsuario" value="${idUsuario}">
-                                            <button type="submit" id="btn-esvaizar-carrinho">ESVAZIAR CARRINHO</button>
+                                            <button type="submit"  id="btn-esvaizar-carrinho">ESVAZIAR CARRINHO</button>                                     
                                         </form>
                                     </div>
                                 </div>

@@ -86,10 +86,7 @@ public class ProdutoEspecificoController extends HttpServlet {
             CarrinhoDAO carrinhoDao = new CarrinhoDAO();
             carrinhoDao.adicionarCarrinho(carrinho);
             
-            response.sendRedirect("./carrinho");
-            
-            
-                       
+            response.sendRedirect("./carrinho");                
         }
     }
 
