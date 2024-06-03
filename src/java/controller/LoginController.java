@@ -16,7 +16,7 @@ public class LoginController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = "/WEB-INF/jsp/login.jsp";
         System.out.println("USUARIO STATIC: " + Usuario.getIdUsuarioStatic());
-        
+        request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
     }

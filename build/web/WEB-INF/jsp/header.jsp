@@ -1,5 +1,7 @@
 <%-- Document : header Created on : 04/05/2024, 11:20:03 Author : natan --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -36,24 +38,43 @@
                     </form>
                 </div>
                 <nav class="nav-1">
-                    <ul>                   
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Conta <i class="fa-regular fa-user"></i></button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="./login">Iniciar Sessão</a>
-                                <a class="dropdown-item" href="./cadastro-usuario">Criar uma conta</a>
-                                <form action="deslogar" method="post">
-                                    <button class="dropdown-item" type="submit">Logout</button>
-                                </form>
-                            </div>
-                        </div>  
-                        <div class="element-nav-1">
-                            <li><i class="fa-solid fa-cart-shopping"></i><a href="./carrinho">Meu carrinho</a></li>
-                        </div>                     
-                        <!-- <div class="element-nav-1">
-                            <li><i class="fa-solid fa-right-from-bracket"></i><a href="./login">Logout</a></li>
-                        </div> -->
-                    </ul>
+                    <c:choose>
+                        <c:when test="${idusuario != 0}">
+                            <ul>                   
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Conta <i class="fa-regular fa-user"></i></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <form action="deslogar" method="post">
+                                            <button class="dropdown-item" type="submit">Logout</button>
+                                        </form>
+                                    </div>
+                                </div>  
+                                <div class="element-nav-1">
+                                    <li><i class="fa-solid fa-cart-shopping"></i><a href="./carrinho">Meu carrinho</a></li>
+                                </div>                     
+                                <!-- <div class="element-nav-1">
+                                    <li><i class="fa-solid fa-right-from-bracket"></i><a href="./login">Logout</a></li>
+                                </div> -->
+                            </ul>
+                        </c:when>
+                        <c:otherwise>
+                            <ul>                   
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Minha Conta <i class="fa-regular fa-user"></i></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="./login">Iniciar Sessão</a>
+                                        <a class="dropdown-item" href="./cadastro-usuario">Criar uma conta</a>
+                                        
+                                    </div>
+                                </div>                  
+                                <!-- <div class="element-nav-1">
+                                    <li><i class="fa-solid fa-right-from-bracket"></i><a href="./login">Logout</a></li>
+                                </div> -->
+                            </ul>
+                        </c:otherwise>
+                    </c:choose>
+
+
                 </nav>
             </div>
             <hr />
@@ -121,7 +142,7 @@
             </div>
         </header>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
