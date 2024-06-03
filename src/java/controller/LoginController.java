@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +15,7 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String url = "/WEB-INF/jsp/login.jsp";
+        System.out.println("USUARIO STATIC: " + Usuario.getIdUsuarioStatic());
         
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
@@ -68,6 +68,7 @@ public class LoginController extends HttpServlet {
 
                 if (userAutenticado != null && !userAutenticado.getEmail().isEmpty()) {
                     response.sendRedirect("./index");
+                    System.out.println("ID USER STATIC: " + Usuario.getIdUsuarioStatic());
                 } else {
                     nextPage = "/WEB-INF/jsp/login.jsp";
                     request.setAttribute("errorMessage", "Email ou senha inválidos");

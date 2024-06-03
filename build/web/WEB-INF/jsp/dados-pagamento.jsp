@@ -16,28 +16,33 @@
     <body>
         <jsp:include page="header-checkout.jsp"></jsp:include>
         <main>
-            <div class="progresso-checkout-container">
-                <div class="progresso-passo-container">
-                    <div class="passo-check">
-                        <i class="fa-solid fa-check"></i>
+            <section class="vh-10">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12">
+                            <div class="card card-stepper" style="background-color: #ECF0F1; border: none; box-shadow: none">
+                                <div class="card-body p-5">
+                                    <ul id="progressbar-2"
+                                        class="d-flex justify-content-between mx-0 mt-0 mb-5 px-0 pt-0 pb-2">
+                                        <li class="step0 active text-center" id="step1">
+                                            <span class="fas fa-check-circle"></span>
+                                            <p class="step-text">Carrinho</p>
+                                        </li>
+                                        <li class="step0 active text-center" id="step2">
+                                            <span class="fas fa-check-circle"></span>
+                                            <p class="step-text">Entrega</p>
+                                        </li>
+                                        <li class="step0 active text-center" id="step3">
+                                            <span class="fas fa-credit-card"></span>
+                                            <p class="step-text">Pagamento</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="passo-titulo">Carrinho</span>
                 </div>
-                <div class="progresso-linha"></div>
-                <div class="progresso-passo-container">
-                    <div class="passo-check">
-                        <i class="fa-solid fa-truck"></i>
-                    </div>
-                    <span class="passo-titulo">Entrega</span>
-                </div>
-                <div class="progresso-linha"></div>
-                <div class="progresso-passo-container">
-                    <div class="passo-check-2">
-                        <i class="fa-regular fa-credit-card"></i>
-                    </div>
-                    <b><span class="passo-titulo" id="cor">Pagamento</span></b>
-                </div>
-            </div>
+            </section>
             <div class="main-separator">
                 <div class="separator-two">
                     <div class="container-info-pedido">

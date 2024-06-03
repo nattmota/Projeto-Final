@@ -27,6 +27,7 @@ public class UsuarioDAO {
                 usuarioValido.setEmail(rs.getString("email"));
                 usuarioValido.setSenha(rs.getString("senha"));
                 Usuario.setIdUsuarioStatic(rs.getInt("idUsuario"));
+                System.out.println("ID USER STATIC DAO: " + Usuario.getIdUsuarioStatic());
 
             }
             rs.close();

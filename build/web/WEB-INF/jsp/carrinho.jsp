@@ -74,6 +74,20 @@
                             </table>
                             <hr class="line">
                             <div class="down-cart">
+                                <div class="calculo-cep">
+                                    <div class="text-cep">
+                                        <i class="bi bi-truck"></i>
+                                        <h3>Meios de envio</h3>
+                                    </div>
+                                    <div class="container-cep">
+                                        <div class="cep-input">
+                                            <input type="text" placeholder="Seu CEP">
+                                        </div>
+                                        <div class="cep-btn">
+                                            <button>CALCULAR</button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="container-compra">
                                     <div class="flex">
                                         <h3>Total:</h3>
@@ -95,7 +109,12 @@
                             </div>
                         </c:when>
                         <c:otherwise>
-                            <p>Seu carrinho está vazio.</p>
+                            <section class="carrinho-vazio-1">
+                                <div class="carrinho-vazio">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span>Seu carrinho está vazio.</span>
+                                </div>
+                            </section>
                         </c:otherwise>
                     </c:choose>
                 </main>

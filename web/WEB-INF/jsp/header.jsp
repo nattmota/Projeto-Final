@@ -42,7 +42,9 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="./login">Iniciar Sessão</a>
                                 <a class="dropdown-item" href="./cadastro-usuario">Criar uma conta</a>
-                                <a class="dropdown-item" href="./login">Logout</a>
+                                <form action="deslogar" method="post">
+                                    <button class="dropdown-item" type="submit">Logout</button>
+                                </form>
                             </div>
                         </div>  
                         <div class="element-nav-1">

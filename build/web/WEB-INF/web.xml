@@ -93,6 +93,10 @@
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>IndexController</servlet-name>
+        <url-pattern>/deslogar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CadastroProdutoController</servlet-name>
         <url-pattern>/cadastro-produto</url-pattern>
     </servlet-mapping>
