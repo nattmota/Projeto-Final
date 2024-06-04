@@ -43,6 +43,8 @@ public class DadosEnderecoController extends HttpServlet {
         UsuarioDAO usuarioDao = new UsuarioDAO();        
         List<Usuario> infoUsuario = usuarioDao.listarInformacoesUsuario();       
         request.setAttribute("usuario", infoUsuario);
+        
+        request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
 
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

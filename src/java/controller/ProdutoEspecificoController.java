@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Carrinho;
 import model.bean.Produto;
+import model.bean.Usuario;
 import model.dao.CarrinhoDAO;
 import model.dao.ProdutoDAO;
 
@@ -40,6 +41,8 @@ public class ProdutoEspecificoController extends HttpServlet {
             String imagemBase64 = Base64.getEncoder().encodeToString(produto.getImagemBytes());
             produto.setImagemBase64(imagemBase64);
         }
+        
+        request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
         
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

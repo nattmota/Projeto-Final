@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); /* font-family: "Rubik", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap'); /* font-family: "Roboto Slab", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* font-family: "Work Sans", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); /* font-family: "Open Sans", sans-serif; */
+
+
+
+
 @media screen and (min-width: 320px) and (max-width: 767px) {}
 @media screen and (min-width: 768px) and (max-width: 1024px) {}
 

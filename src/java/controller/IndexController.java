@@ -24,7 +24,7 @@ public class IndexController extends HttpServlet {
             throws ServletException, IOException {
         String url = "/WEB-INF/jsp/index.jsp";
         System.out.println("Id: " + Usuario.getIdUsuarioStatic());
-       request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
+        request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
         
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

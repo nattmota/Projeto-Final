@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Produto;
+import model.bean.Usuario;
 import model.dao.ProdutoDAO;
 
 /**
@@ -42,6 +43,8 @@ public class ListarProdutosController extends HttpServlet {
         }
         
         request.setAttribute("produtos", produto);
+        
+        request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
 
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);response.setContentType("text/html;charset=UTF-8");

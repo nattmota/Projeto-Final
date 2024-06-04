@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Categoria;
 import model.bean.Produto;
+import model.bean.Usuario;
 import model.dao.CategoriaDAO;
 import model.dao.ProdutoDAO;
 import org.apache.commons.fileupload.FileItem;
@@ -40,6 +41,8 @@ public class CadastroProdutoController extends HttpServlet {
             //request.setAttribute("produtos", produtos);
             
         }
+        
+        request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
         
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

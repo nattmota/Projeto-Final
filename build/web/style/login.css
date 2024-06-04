@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); /* font-family: "Rubik", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap'); /* font-family: "Roboto Slab", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* font-family: "Work Sans", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); /* font-family: "Open Sans", sans-serif; */
+
+
+
 /* Dispositivos móveis */
 @media screen and (min-width: 320px) and (max-width: 480px) { 
 }
@@ -24,4 +31,18 @@ main {
 
 .btn btn-success btn-block btn-lg gradient-custom-4 text-body {
     color: #fff; 
+}
+
+main section form .mensagem-erro {
+    display: flex;
+    justify-content: center;
+}
+
+main section form .mensagem-erro i {
+    color: red;
+}
+
+main section form .mensagem-erro p {
+    color: red;
+    font-family: "Rubik", sans-serif;
 }

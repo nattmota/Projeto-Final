@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Pedido;
 import model.bean.ProdutoPedido;
+import model.bean.Usuario;
 import model.dao.ProdutoPedidoDAO;
 
 public class DadosPessoaisController extends HttpServlet {
@@ -40,6 +41,8 @@ public class DadosPessoaisController extends HttpServlet {
         request.setAttribute("total", total);
 
         request.setAttribute("produtosPedido", listaProdutoPedido);
+        
+        request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
 
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

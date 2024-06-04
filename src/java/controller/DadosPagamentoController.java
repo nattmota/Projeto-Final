@@ -66,8 +66,8 @@ public class DadosPagamentoController extends HttpServlet {
         EnderecoDAO enderecoDao = new EnderecoDAO();      
         List<Endereco> infoEndereco = enderecoDao.ListarInfoEnderecoUsuario();        
         request.setAttribute("endereco", infoEndereco);
-
-        
+       
+        request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
         
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
