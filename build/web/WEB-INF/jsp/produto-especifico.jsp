@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <link href="./style/produto-especfico.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="detalhes-box">
                     <h1>${produto.nome}</h1> 
-                    <p>Avaliação (Em estoque)</p>
+                    <p>${produto.autor}</p>
                     <h2>R$ ${produto.valor}</h2>
                     <form action="adicionarCarrinho" method="post" id="form-add-carrinho">
                         <table cellspacing="0" class="inputs">

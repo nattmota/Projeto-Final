@@ -131,7 +131,7 @@ public class CadastroProdutoController extends HttpServlet {
     
     private void redirectToSuccessPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // Redireciona para a página de produtos
-        response.sendRedirect(request.getContextPath() + "/index");
+        response.sendRedirect(request.getContextPath() + "/cadastro-produto");
     }
 
     private void redirectToErrorPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
