@@ -34,8 +34,7 @@
                                 <div class="card-body p-5">
                                     <h2 class="text-uppercase text-center mb-5">Criar conta</h2>
                                     <form action="cadastrar" method="post">
-                                        <div class="mensagem-erro">
-                                            <i class="fa-solid fa-circle-exclamation"></i>
+                                        <div class="mensagem-erro">                                            
                                             <p>${errorMessage}</p>
                                         </div>
                                         <div data-mdb-input-init class="form-outline mb-4">
