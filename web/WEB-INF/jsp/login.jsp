@@ -34,7 +34,9 @@
                                         <div class="card-body p-5">
                                             <h2 class="text-uppercase text-center mb-5">Iniciar Sessão</h2>                                    
                                             <form action="logar" method="post" id="form-login">
-
+                                                <div class="mensagem-erro">
+                                                    <p>${errorMessage}</p>
+                                                </div>
                                                 <div data-mdb-input-init class="form-outline mb-4">
                                                     <input type="email" id="email" name="email"
                                                            class="form-control form-control-lg" />

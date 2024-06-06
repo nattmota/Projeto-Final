@@ -78,7 +78,7 @@ public class LoginController extends HttpServlet {
                 }
             } catch (Exception e) {
                 nextPage = "/WEB-INF/jsp/login.jsp";
-                request.setAttribute("errorMessage", "Nome ou senha inválidos");
+                request.setAttribute("errorMessage", "Email ou senha inválidos");
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                 dispatcher.forward(request, response);
             }

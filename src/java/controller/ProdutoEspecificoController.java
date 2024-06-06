@@ -25,25 +25,24 @@ import model.dao.ProdutoDAO;
  */
 public class ProdutoEspecificoController extends HttpServlet {
 
-   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/WEB-INF/jsp/produto-especifico.jsp";
-        
+
         ProdutoDAO dao = new ProdutoDAO();
         Produto produto = new Produto();
-        
+
         int id = Integer.parseInt(request.getParameter("id"));
         produto = dao.readById(id);
         request.setAttribute("produto", produto);
-        
+
         if (produto.getImagemBytes() != null) {
             String imagemBase64 = Base64.getEncoder().encodeToString(produto.getImagemBytes());
             produto.setImagemBase64(imagemBase64);
         }
-        
+
         request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
-        
+
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
     }
@@ -76,24 +75,30 @@ public class ProdutoEspecificoController extends HttpServlet {
             throws ServletException, IOException {
         String url = request.getServletPath();
         String nextPage = "/WEB-INF/jsp/carrinho.jsp";
-        
-        if(url.equals("/adicionarCarrinho")) {
+
+        if (url.equals("/adicionarCarrinho")) {
             Carrinho carrinho = new Carrinho();
-            
+
             int id = Integer.parseInt(request.getParameter("id-produto"));
-            int qtd = Integer.parseInt(request.getParameter("quantidade"));
-                           
+            String qtdTesteVazio = request.getParameter("quantidade");
+            //Verifica se o campo de quantidade está vazio, caso SIM, a quantidade será 1, caso NÃO, a quantidade será o valora que o usuário inseriu
+            int qtd = (qtdTesteVazio == null || qtdTesteVazio.isEmpty()) ? 1 : Integer.parseInt(qtdTesteVazio);
+
             carrinho.setIdProduto(id);
-            carrinho.setQuantidade(qtd);         
-            
+            carrinho.setQuantidade(qtd);
+
             CarrinhoDAO carrinhoDao = new CarrinhoDAO();
-            carrinhoDao.adicionarCarrinho(carrinho);
-            
-            response.sendRedirect("./carrinho");                
+            boolean adicionado = carrinhoDao.adicionarCarrinho(carrinho);
+
+            if (!adicionado) {
+                response.sendRedirect("./carrinho");
+            } else {
+
+                response.sendRedirect("./carrinho");
+            }
         }
     }
 
-   
     @Override
     public String getServletInfo() {
         return "Short description";
