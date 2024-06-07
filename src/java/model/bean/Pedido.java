@@ -7,22 +7,26 @@ public class Pedido {
     private int idPedido;
     private int idUsuario;
     private int idEndereco;
+    private int tipoPagamento;
     private Date dataPedido;
     private float valorTotal;
     private String statusPedido;
+    private float valorFrete;
 
     public Pedido() {
     }
 
-    public Pedido(int idPedido, int idUsuario, int idEndereco, Date dataPedido, float valorTotal, String statusPedido) {
+    public Pedido(int idPedido, int idUsuario, int idEndereco, int tipoPagamento, Date dataPedido, float valorTotal, String statusPedido, float valorFrete) {
         this.idPedido = idPedido;
         this.idUsuario = idUsuario;
         this.idEndereco = idEndereco;
+        this.tipoPagamento = tipoPagamento;
         this.dataPedido = dataPedido;
         this.valorTotal = valorTotal;
         this.statusPedido = statusPedido;
+        this.valorFrete = valorFrete;
     }
-
+    
     public Pedido(int idUsuario, float valorTotal) {
         this.idUsuario = idUsuario;
         this.valorTotal = valorTotal;
@@ -52,6 +56,14 @@ public class Pedido {
         this.idEndereco = idEndereco;
     }
 
+    public int getTipoPagamento() {
+        return tipoPagamento;
+    }
+
+    public void setTipoPagamento(int tipoPagamento) {
+        this.tipoPagamento = tipoPagamento;
+    }
+
     public Date getDataPedido() {
         return dataPedido;
     }
@@ -75,4 +87,17 @@ public class Pedido {
     public void setStatusPedido(String statusPedido) {
         this.statusPedido = statusPedido;
     }
+
+    public float getValorFrete() {
+        return valorFrete;
+    }
+
+    public void setValorFrete(float valorFrete) {
+        this.valorFrete = valorFrete;
+    }
+    
+    
+
+    
+    
 }

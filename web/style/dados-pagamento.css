@@ -285,5 +285,20 @@
         font-weight: bold;
         color: #00326D;
     }
+
+    select {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    .mensagem-erro {
+        color: red;
+        font-size: 20px;
+        font-family: "Open Sans", sans-serif;
+    }
 }
 

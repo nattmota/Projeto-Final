@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import model.bean.Endereco;
@@ -14,10 +15,10 @@ public class EnderecoDAO {
     public boolean inserirEndereco(Endereco endereco) {
         try {
             int idUsuarioStatic = Usuario.getIdUsuarioStatic();
-            System.out.println("ID do usuário estático recebido: " + idUsuarioStatic); // Adiciona este log
+            System.out.println("ID do usuário estático recebido: " + idUsuarioStatic); 
             
             Connection conexao = Conexao.conectar();
-            PreparedStatement stmt = conexao.prepareStatement("INSERT INTO endereco (estado, cidade, cep, rua, numero, complemento, id_usuario) VALUES (?,?,?,?,?,?,?)");
+            PreparedStatement stmt = conexao.prepareStatement("INSERT INTO endereco (estado, cidade, cep, rua, numero, complemento, id_usuario) VALUES (?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             
             stmt.setString(1, endereco.getEstado());
             stmt.setString(2, endereco.getCidade());
@@ -31,8 +32,16 @@ public class EnderecoDAO {
             
             int linhasAfetadas = stmt.executeUpdate();
             
-            return linhasAfetadas > 0;
+            if(linhasAfetadas > 0) {
+                ResultSet rs = stmt.getGeneratedKeys();
+                if(rs.next()) {
+                    endereco.setIdEndereco(rs.getInt(1));
+                }
+                rs.close();
+            }
             
+            return linhasAfetadas > 0;
+         
         }catch(SQLException e) {
             e.printStackTrace();
             return false;

@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,41 +9,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Endereco;
 import model.bean.ProdutoPedido;
+import model.bean.TipoPagamento;
 import model.bean.Usuario;
 import model.dao.EnderecoDAO;
+import model.dao.PedidoDAO;
 import model.dao.ProdutoPedidoDAO;
+import model.dao.TipoPagamentoDAO;
 import model.dao.UsuarioDAO;
 
-/**
- *
- * @author natan
- */
 public class DadosPagamentoController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String url = "/WEB-INF/jsp/dados-pagamento.jsp";
-        
+
         //RECUPERAR VALOR DO ID PEDIDO
         int idPedido = Integer.parseInt(request.getParameter("idPedido"));
         request.setAttribute("idPedido", idPedido);
 
-        
         // LISTAR PRODUTOS DO PEDIDO
         ProdutoPedidoDAO produtoPedidoDao = new ProdutoPedidoDAO();
-        List<ProdutoPedido> listaProdutoPedido = produtoPedidoDao.visualizarProdutosPedido(idPedido);      
+        List<ProdutoPedido> listaProdutoPedido = produtoPedidoDao.visualizarProdutosPedido(idPedido);
         request.setAttribute("produtosPedido", listaProdutoPedido);
-        
+
         // CALCULAR VALOR TOTAL DO PEDIDO
         float total = 0;
         for (ProdutoPedido produtoPedido : listaProdutoPedido) {
@@ -58,55 +41,77 @@ public class DadosPagamentoController extends HttpServlet {
         request.setAttribute("total", total);
 
         // LISTAR INFORMAÇÕES DO USUARIO DO PEDIDO
-        UsuarioDAO usuarioDao = new UsuarioDAO();        
-        List<Usuario> infoUsuario = usuarioDao.listarInformacoesUsuario();       
+        UsuarioDAO usuarioDao = new UsuarioDAO();
+        List<Usuario> infoUsuario = usuarioDao.listarInformacoesUsuario();
         request.setAttribute("usuario", infoUsuario);
 
         //LISTAR INFORMAÇÕES DO ENDEREÇO DO USUARIO DO PEDIDO
-        EnderecoDAO enderecoDao = new EnderecoDAO();      
-        List<Endereco> infoEndereco = enderecoDao.ListarInfoEnderecoUsuario();        
+        EnderecoDAO enderecoDao = new EnderecoDAO();
+        List<Endereco> infoEndereco = enderecoDao.ListarInfoEnderecoUsuario();
         request.setAttribute("endereco", infoEndereco);
-       
+
         request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
-        
+
+        TipoPagamentoDAO tpDAO = new TipoPagamentoDAO();
+
+        List<TipoPagamento> tiposPagamento = tpDAO.listarTodos();
+        request.setAttribute("tipoPagamento", tiposPagamento);
+
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String url = request.getServletPath();
+
+        String errorMessage = "";
+
+        if (url.equals("/enviarDadosPagamento")) {
+
+            int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+            System.out.println("ID do Pedido Controller: " + idPedido);
+            int tipoPagamento = Integer.parseInt(request.getParameter("tipoPagamento"));
+            String numeroCartao = request.getParameter("numeroCartao");
+            String nomeCartao = request.getParameter("nomeCartao");
+            String vencimentoCartao = request.getParameter("vencimentoCartao");
+            String cvvCartao = request.getParameter("cvvCartao");
+            String cpfCnpjPortador = request.getParameter("cpfCnpjPortador");
+            String telefone = request.getParameter("telefone");
+
+            if (tipoPagamento <= 0 || tipoPagamento > 2) {
+                errorMessage = "Tipo de pagamento selecionado inválido!";
+            } else if (numeroCartao == null || numeroCartao.trim().isEmpty() || numeroCartao.length() != 16) {
+                errorMessage = "Número do cartão inserido incorretamente";
+            } else if (nomeCartao == null || nomeCartao.trim().isEmpty() || !nomeCartao.matches("[a-zA-Z\\s]+")) {
+                errorMessage = "Nome do cartão inserido incorretamente";
+            } else if (vencimentoCartao == null || vencimentoCartao.trim().isEmpty()) {
+                errorMessage = "Vencimento do cartão inserido incorretamente";
+            } else if (cvvCartao == null || cvvCartao.trim().isEmpty()) {
+                errorMessage = "CVV do cartão inserido incorretamente";
+            } else if (cpfCnpjPortador == null || cpfCnpjPortador.trim().isEmpty() || cpfCnpjPortador.length() != 11) {
+                errorMessage = "CPF / CNPJ inserido(s) incorretamente";
+            } else if (telefone == null || telefone.trim().isEmpty()) {
+                errorMessage = "Telefone inserido incorretamente";
+            } else {
+                PedidoDAO pDao = new PedidoDAO();
+
+                pDao.atualizarTipoPagamentoPedido(request, idPedido);
+            }
+        }
+
+        request.setAttribute("errorMessage", errorMessage);
+
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

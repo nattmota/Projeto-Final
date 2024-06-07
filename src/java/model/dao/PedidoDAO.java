@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.servlet.http.HttpServletRequest;
 import model.bean.Pedido;
 
 public class PedidoDAO {
@@ -35,5 +36,43 @@ public class PedidoDAO {
             e.printStackTrace();
         }
         return pedido.getIdPedido();        
+    }
+    
+    public boolean atualizarEnderecoPedido(Pedido pedido) {
+        try{
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = conexao.prepareStatement("UPDATE pedido SET endereco_entrega_id = ? WHERE idPedido = ?");
+            stmt.setInt(1, pedido.getIdEndereco());
+            stmt.setInt(2, pedido.getIdPedido());
+            
+            int linhasAfetadas = stmt.executeUpdate();
+            
+            return linhasAfetadas > 0;
+           
+        }catch(SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean atualizarTipoPagamentoPedido(HttpServletRequest request, int idPedido) {
+        try{
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = conexao.prepareStatement("UPDATE pedido SET tipo_pagamento_id = ? WHERE idPedido = ?");
+            
+            int idTipoPagamento = Integer.parseInt(request.getParameter("tipoPagamento"));
+            
+            stmt.setInt(1, idTipoPagamento);
+            
+            stmt.setInt(2, idPedido);
+            
+            int linhasAfetadas = stmt.executeUpdate();
+            
+            return linhasAfetadas > 0;
+           
+        }catch(SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

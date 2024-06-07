@@ -176,6 +176,10 @@
         <servlet-name>DadosPagamentoController</servlet-name>
         <url-pattern>/dados-pagamento</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DadosPagamentoController</servlet-name>
+        <url-pattern>/enviarDadosPagamento</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

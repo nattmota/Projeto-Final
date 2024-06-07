@@ -77,25 +77,33 @@
                         <hr>
                     </div>
                     <h2><b>Forma Pagamento</b></h2>
-                    <div class="container-pagamento">
-                        <div class="header-container">
-                            <i class="fa-solid fa-arrow-left"></i>
-                            <h4>Cartão de Crédito / Débito</h4>
-                        </div>
-                        <div class="body-container">
-                            <input type="text" placeholder="Número do cartão">
-                            <div class="input-separator">
-                                <input type="text" placeholder="Nome impresso no cartão" id="input-maior">
-                                <input type="text" placeholder="Vencimento(MM/AA)">
-                                <input type="text" placeholder="CVV">
+                    <form action="enviarDadosPagamento" method="post">
+                        <div class="container-pagamento">
+                            <div class="header-container">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            <select name="tipoPagamento" id="tipoPagamento">
+                                <c:forEach items="${tipoPagamento}" var="tipoPagamento">
+                                    <option value="${tipoPagamento.idPagamento}"> ${tipoPagamento.metodo}</option>
+                                </c:forEach>
+                            </select>
                             </div>
-                            <input type="text" placeholder="CPF ou CNPJ do portador do cartão">
-                            <input type="text" placeholder="Telefone">
+                            <div class="body-container">
+                                <input type="text" name="numeroCartao" id="numeroCartao" placeholder="Número do cartão">
+                                <div class="input-separator">
+                                    <input type="text" name="nomeCartao" placeholder="Nome impresso no cartão" id="input-maior">
+                                    <input type="text" name="vencimentoCartao" id="vencimentoCartao" placeholder="Vencimento(MM/AA)">
+                                    <input type="text" name="cvvCartao" id="cvvCartao" placeholder="CVV">
+                                </div>
+                                <input type="text" name="cpfCnpjPortador" id="cpfCnpjPortador" placeholder="CPF ou CNPJ do portador do cartão">
+                                <input type="text" name="telefone" id="telefone" placeholder="Telefone">
+                                <input type="hidden" name="idPedido" id="idPedido" value="${idPedido}">
+                                <p class="mensagem-erro">${errorMessage}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="btn-continuar">
-                        <button>FAZER PEDIDO</button>
-                    </div>
+                        <div class="btn-continuar">
+                            <button type="submit">FAZER PEDIDO</button>
+                        </div>
+                    </form>
                 </div>
                 <div class="container-carrinho">
                     <c:forEach items="${produtosPedido}" var="produtoPedido">
@@ -124,5 +132,6 @@
             </div>
         </main>
         <jsp:include page="footer.jsp"></jsp:include>
+        <script src="js/validacao-pagamento.js" type="text/javascript"></script>
     </body>
 </html>
