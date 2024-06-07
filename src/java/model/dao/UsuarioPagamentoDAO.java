@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import model.bean.Usuario;
-import model.bean.TipoPagamento;
 
 public class UsuarioPagamentoDAO {
     public boolean inserirMetodoPagamentoUsuario(HttpServletRequest request) {

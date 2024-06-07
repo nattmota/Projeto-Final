@@ -16,6 +16,7 @@ import model.dao.PedidoDAO;
 import model.dao.ProdutoPedidoDAO;
 import model.dao.TipoPagamentoDAO;
 import model.dao.UsuarioDAO;
+import model.dao.UsuarioPagamentoDAO;
 
 public class DadosPagamentoController extends HttpServlet {
 
@@ -71,9 +72,10 @@ public class DadosPagamentoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-
+        
         String errorMessage = "";
-
+        request.setAttribute("errorMessage", errorMessage);
+        
         if (url.equals("/enviarDadosPagamento")) {
 
             int idPedido = Integer.parseInt(request.getParameter("idPedido"));
@@ -90,7 +92,7 @@ public class DadosPagamentoController extends HttpServlet {
                 errorMessage = "Tipo de pagamento selecionado inválido!";
             } else if (numeroCartao == null || numeroCartao.trim().isEmpty() || numeroCartao.length() != 16) {
                 errorMessage = "Número do cartão inserido incorretamente";
-            } else if (nomeCartao == null || nomeCartao.trim().isEmpty() || !nomeCartao.matches("[a-zA-Z\\s]+")) {
+            } else if (nomeCartao == null || nomeCartao.trim().isEmpty()) {
                 errorMessage = "Nome do cartão inserido incorretamente";
             } else if (vencimentoCartao == null || vencimentoCartao.trim().isEmpty()) {
                 errorMessage = "Vencimento do cartão inserido incorretamente";
@@ -101,15 +103,14 @@ public class DadosPagamentoController extends HttpServlet {
             } else if (telefone == null || telefone.trim().isEmpty()) {
                 errorMessage = "Telefone inserido incorretamente";
             } else {
-                PedidoDAO pDao = new PedidoDAO();
-
-                pDao.atualizarTipoPagamentoPedido(request, idPedido);
+                PedidoDAO pedidoDao = new PedidoDAO();
+                pedidoDao.atualizarTipoPagamentoPedido(request, idPedido);
+                UsuarioPagamentoDAO usuarioPagamentoDao = new UsuarioPagamentoDAO();
+                usuarioPagamentoDao.inserirMetodoPagamentoUsuario(request);
+                response.sendRedirect("./index");
+                System.out.println("PEDIDO FEITO COM SUCESOO!");
             }
-        }
-
-        request.setAttribute("errorMessage", errorMessage);
-
-        processRequest(request, response);
+        }  
     }
 
     @Override

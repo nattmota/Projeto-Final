@@ -32,13 +32,6 @@ window.onload = function () {
     cpfInput.addEventListener('input', function () {
         var value = cpfInput.value;
         value = value.replace(/\D/g, ''); // Remove caracteres não numéricos
-
-        if (value.length <= 11) { // Verifica se é CPF
-            value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4'); // Aplica a máscara de CPF
-        } else { // Se for maior que 11 dígitos, considera CNPJ
-            value = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5'); // Aplica a máscara de CNPJ
-        }
-
         cpfInput.value = value;
     });
 
@@ -47,7 +40,6 @@ window.onload = function () {
         var value = nmrCartao.value;
         value = value.replace(/\D/g, ''); // Remove caracteres não numéricos
         value = value.slice(0, 16); // Limita a 16 dígitos
-        value = value.replace(/(\d{4})(?=\d)/g, '$1 '); // Adiciona espaço a cada 4 dígitos
         nmrCartao.value = value;
     });
 
