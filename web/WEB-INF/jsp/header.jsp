@@ -1,7 +1,6 @@
 <%-- Document : header Created on : 04/05/2024, 11:20:03 Author : natan --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -85,12 +84,11 @@
                     <li><a href="./papelaria">Papelaria <i class="fa-solid fa-chevron-down"></i></a></li>
                     <li><a href="./biblias">Bíblias <i class="fa-solid fa-chevron-down"></i></a></li>
                     <li><a href="./brinquedos">Brinquedos Educativos <i class="fa-solid fa-chevron-down"></i></a>
-                    </li>
-                    <li><a href="#">Quem somos</a></li>
+                    </li>                  
                     <li><a href="#footer">Contato</a></li>
                 </ul>
             </nav>
-            <br />
+            <br/>
             <div class="bar-mobile d-block d-md-none">
                 <div class="up-row">
                     <button class="btn btn-primary btn-icon" type="button" data-bs-toggle="offcanvas"
@@ -116,7 +114,6 @@
                                 <li><a href="./papelaria">Papelaria </a></li>
                                 <li><a href="./biblias">Bíblias </a></li>
                                 <li><a href="./brinquedos">Brinquedos Educativos</a></li>
-                                <li><a href="#">Quem somos</a></li>
                                 <li><a href="#footer">Contato</a></li>
                             </ul>
                             <div class="nav-conta">

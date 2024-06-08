@@ -416,7 +416,7 @@
 
     header {
         background-color: #00326D;
-        height: 22vh;
+        height: 26vh;
         width: auto;
     }
 
@@ -493,14 +493,14 @@
 
     .header-cima .input-box form button.search-button i {
         font-size: 22px;
-        color: #000; /* Cor do ícone */
+        color: #000; 
         padding-right: 10px;
     }
 
     .header-cima .input-box input {
         width: 750px;
         height: 55px;
-        font-size: 14px;
+        font-size: 16px;
         padding: 10px;
         border-radius: 10px;
         background-color: #ecf0f1;
@@ -540,8 +540,25 @@
     .header-baixo ul li a {
         color: #fff;
         font-family: "Rubik", sans-serif;
-        font-size: 20px;
+        font-size: 22px;
         text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 5px 10px;
+        position: relative;
+        opacity: 1;
+    }
+    
+    .header-baixo ul li a:hover {
+        font-size: 24px;
+        opacity: 0.7;        
+    }
+    
+    .header-baixo ul li a i {
+        transition: transform 0.3s ease;
+    }
+    
+    .header-baixo ul li a:hover i {
+        transform: translateX(5px); /* Move o ícone ligeiramente para a direita */
     }
 
     .header-baixo i {

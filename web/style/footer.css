@@ -150,6 +150,14 @@
         font-family: "Rubik", sans-serif;
         text-decoration: none;
         color: #00326D;
+        transition: all 0.3s ease;
+        font-size: 18px;
+    }
+
+    .upper-footer a:hover {
+        font-size: 20px;
+        opacity: 0.7; 
+        color: #0056b3; 
     }
     
     .upper-footer .column-dp h4 {
