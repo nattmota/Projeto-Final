@@ -342,19 +342,14 @@
 
     header .bar-mobile .up-row .btn-icon {
         border: none;
-        /* Remove a borda */
         background-color: transparent;
-        /* Define o fundo como transparente */
         padding: 0;
-        /* Remove o preenchimento */
         box-shadow: none !important;
-        /* Remove a sombra */
     }
 
 
     header .bar-mobile .up-row .offcanvas {
         background-color: #00326D;
-        /* Define a cor de fundo da barra lateral */
     }
 
     header .bar-mobile .up-row .offcanvas-header {
@@ -431,19 +426,202 @@
     }
 
     .offcanvas-body ul li a {
-        position: relative; /* Define a posição como relativa para os elementos a */
-        text-decoration: none; /* Remove o sublinhado padrão dos links */
-        color: inherit; /* Herda a cor do texto do elemento pai */
+        position: relative; 
+        text-decoration: none; 
+        color: inherit; 
     }
 
     .offcanvas-body ul li a:hover {
-        border-bottom: 2px solid #00326D; /* Adiciona uma borda inferior de 2px com a cor #00326D quando o link estiver em estado de hover */
+        border-bottom: 2px solid #00326D; 
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1499px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
+    header {
+        background-color: #00326D;
+        height: 26vh;
+        width: auto;
+    }
+
+    .bar-mobile {
+        display: none;
+    }
+
+    .upper-header {
+        height: 30px;
+        background-color: #4D71B4;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .icons-upper-header {
+        display: grid;
+        grid-template-columns: 16px 16px;
+        column-gap: 10px;
+        left: 0;
+        position: absolute;
+    }
+
+    .icons-upper-header i {
+        width: 16px;
+        margin-left: 10px;
+        color: whitesmoke;
+        font-size: 17px;
+    }
+
+    .upper-header-text p {
+        margin: 20px;
+        text-align: center;
+        color: whitesmoke;
+        font-family: "Rubik", sans-serif;
+        font-size: 17px;
+    }
+
+    .header-cima a {
+        font-family: "Rubik", sans-serif;
+        text-decoration: none;
+        color: white;
+    }
+
+    .header-cima i {
+        color: #fff;
+    }
+
+    .header-cima {
+        display: flex;
+        align-items: baseline;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .header-cima .logo {
+        width: 20%;
+    }
+
+    .header-cima .logo img {
+        width: 85%;
+    }
+
+    .header-cima .input-box form .search-container {
+        position: relative;
+    }
+
+    .header-cima .input-box form button.search-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        border: none;
+        background-color: #ecf0f1;
+        padding-left: 10px;
+        border-radius: 10px;
+    }
+
+    .header-cima .input-box form button.search-button i {
+        font-size: 22px;
+        color: #000; 
+        padding-right: 10px;
+    }
+
+    .header-cima .input-box input {
+        width: 45vw;
+        height: 55px;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #ecf0f1;
+        border: none;
+        font-family: "Rubik", sans-serif;
+        outline: none;
+    }
+
+    .header-cima .nav-1  {
+        width: 10vw;
+    }
+
+    .header-cima .nav-1 ul {
+        width: 300px;
+        display: flex;
+        gap: 50px;
+    }
+
+    .header-cima .nav-1 ul .element-nav-1 {
+        width: 100px;
+        display: flex;
+        position: static;
+    }
+
+    .header-cima ul {
+        list-style: none;
+    }
+
+    .header-baixo {
+        flex-direction: column;
+    }
+
+    .header-baixo ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        margin-top: 35px;
+    }
+
+    .header-baixo ul li a {
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: 22px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 5px 10px;
+        position: relative;
+        opacity: 1;
+    }
+    
+    .header-baixo ul li a:hover {
+        font-size: 24px;
+        opacity: 0.7;        
+    }
+    
+    .header-baixo ul li a i {
+        transition: transform 0.3s ease;
+    }
+    
+    .header-baixo ul li a:hover i {
+        transform: translateX(5px); /* Move o ícone ligeiramente para a direita */
+    }
+
+    .header-baixo i {
+        color: #fff;
+        padding: 0 5px;
+    }
+
+    header .header-cima .nav-1 ul .dropdown button  {
+        background-color: #fff;
+        font-family: "Rubik", sans-serif;
+        color: #00326D;
+    }
+
+    header .header-cima .nav-1 ul .dropdown button i {
+        color: #00326D;
+   
+    }
+
+    header .header-cima .nav-1 ul .dropdown .dropdown-menu a {
+        color: black;
+    }
 }
 
 /* desktops, telas grandes */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1500px) {
 
     * {
         margin: 0;
