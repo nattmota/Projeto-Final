@@ -8,9 +8,901 @@
     box-sizing: border-box;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {}
-@media screen and (min-width: 768px) and (max-width: 1024px) {}
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    main {
+        background-color: #ECF0F1;
+        padding: 20px;
+    }
+
+    main .text {
+        text-align: center;
+    }
+
+    main .text h1 {
+        font-family: "Rubik", sans-serif;
+        color: #00326D;
+        font-weight: bolder;
+        font-size: 24px;
+    }
+
+    main .line  {
+        color: #A7A7A7;
+    }
+
+    main .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    main .cart-table tr {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    main .cart-table th, main .cart-table td {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    main .cart-table th::before, main .cart-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    main .cart-table th:last-child, main .cart-table td:last-child {
+        border-bottom: none;
+    }
+
+    main .cart-table .th-produtos,
+    main .cart-table .td-produtos {
+        padding-right: 0;
+    }
+
+    main .cart-table tr .td-produtos {
+        display: block;
+        text-align: left;
+    }
+
+    main .cart-table tr .td-produtos span {
+        font-family: "Work Sans", sans-serif;
+        font-size: 22px;
+    }
+
+    main .cart-table tr .td-produtos .container-img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    main .cart-table tr .td-produtos .container-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    main .cart-table tr td .box-price {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    main .cart-table tr td .box-price button {
+        border: none;
+        font-size: 18px;
+        background-color: #00326D;
+        width: 8vw;
+        height: 8vw;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s;
+        cursor: pointer;
+    }
+
+    main .cart-table tr td .box-price #qtd-produto {
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+    main .cart-table tr td .box-price button p {
+        color: #fff;
+        font-size: 30px;
+        margin: 0;
+    }
+    
+    main .cart-table tr td .box-price button:hover {
+        background-color: #00509E;
+        transform: scale(1.1);
+    }
+    
+    main .cart-table tr td .box-price button:active {
+        background-color: #002F6C;
+        transform: scale(0.9);
+    }
+
+    main .cart-table tr td button {
+        border: none;
+    }
+
+    main .cart-table tr td button i {
+        font-size: 18px;
+    }
+
+    main .down-cart {
+        display: block;
+    }
+
+    main .down-cart .calculo-cep, 
+    main .down-cart .container-compra {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main .down-cart .calculo-cep .text-cep {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main .down-cart .calculo-cep .text-cep i{
+        font-size: 24px;
+    }
+
+    main .down-cart .calculo-cep .text-cep h3{
+        font-family: "Rubik", sans-serif;
+        font-size: 18px;
+    }
+
+    main .down-cart .calculo-cep .container-cep {
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main .down-cart .calculo-cep .container-cep .cep-btn {
+        border-top: 1px solid #BCBCBC;
+    }
+
+    main .down-cart .calculo-cep .container-cep input{
+        background-color: #ECF0F1;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: "Rubik", sans-serif;
+        outline: none;
+        width: 100%;
+    }
+
+    main .down-cart .calculo-cep .container-cep button{
+        background-color: #ECF0F1;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        color: #00326D;
+        font-weight: bold;
+        font-family: "Rubik", sans-serif;
+        width: 100%;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    main .down-cart .calculo-cep .container-cep button:hover {
+        background-color: #00326D;
+        color: #fff;
+    }
+
+    main .down-cart .container-compra {
+        width: 100%;
+        height: auto;
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    main .down-cart .container-compra .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    main .down-cart .container-compra .flex p {
+        font-size: 22px;
+        font-family: "Work Sans", sans-serif;
+    }
+
+    main .down-cart .container-compra .flex .p-cep {
+        font-size: 16px;
+        font-family: "Work Sans", sans-serif;
+        color: #868686;
+    }
+
+    main .down-cart .container-compra .flex h3 {
+        font-family: "Work Sans", sans-serif;
+        color: #00326D;
+        padding: 10px;
+    }
+
+    main .down-cart .container-compra .btn-compra {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main .down-cart .container-compra .btn-compra button {
+        width: 70vw;
+        height: 5vh;
+        background-color: #00326D;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-weight: bold;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    main .down-cart .container-compra .btn-compra button:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    main .down-cart .container-compra .btn-compra #btn-esvaizar-carrinho {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .carrinho-vazio-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carrinho-vazio {
+        border: 2px solid #00326D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        border-radius: 15px;
+        gap: 15px;
+        font-size: 18px;
+        margin: 25px 0;
+    }
+
+    .carrinho-vazio span {
+        font-family: "Rubik", sans-serif;
+    }
+
+    #lixo {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #lixo:hover {
+        transform: scale(1.2);
+    }
+
+    #lixo i {
+        font-size: 24px;
+        color: #ff0000; 
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main {
+        background-color: #ECF0F1;
+        padding: 20px;
+    }
+
+    main .text {
+        text-align: center;
+    }
+
+    main .text h1 {
+        font-family: "Rubik", sans-serif;
+        color: #00326D;
+        font-weight: bolder;
+        font-size: 24px;
+    }
+
+    main .line  {
+        color: #A7A7A7;
+    }
+
+    main .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    main .cart-table tr {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    main .cart-table th, main .cart-table td {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    main .cart-table th::before, main .cart-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    main .cart-table th:last-child, main .cart-table td:last-child {
+        border-bottom: none;
+    }
+
+    main .cart-table .th-produtos,
+    main .cart-table .td-produtos {
+        padding-right: 0;
+    }
+
+    main .cart-table tr .td-produtos {
+        display: block;
+        text-align: left;
+    }
+
+    main .cart-table tr .td-produtos span {
+        font-family: "Work Sans", sans-serif;
+        font-size: 22px;
+    }
+
+    main .cart-table tr .td-produtos .container-img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    main .cart-table tr .td-produtos .container-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    main .cart-table tr td .box-price {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    main .cart-table tr td .box-price button {
+        border: none;
+        font-size: 18px;
+        background-color: #00326D;
+        width: 5vw;
+        height: 5vw;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s;
+        cursor: pointer;
+    }
+
+    main .cart-table tr td .box-price #qtd-produto {
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+    main .cart-table tr td .box-price button p {
+        color: #fff;
+        font-size: 30px;
+        margin: 0;
+    }
+    
+    main .cart-table tr td .box-price button:hover {
+        background-color: #00509E;
+        transform: scale(1.1);
+    }
+    
+    main .cart-table tr td .box-price button:active {
+        background-color: #002F6C;
+        transform: scale(0.9);
+    }
+
+    main .cart-table tr td button {
+        border: none;
+    }
+
+    main .cart-table tr td button i {
+        font-size: 18px;
+    }
+
+    main .down-cart {
+        display: block;
+    }
+
+    main .down-cart .calculo-cep, 
+    main .down-cart .container-compra {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main .down-cart .calculo-cep .text-cep {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main .down-cart .calculo-cep .text-cep i{
+        font-size: 24px;
+    }
+
+    main .down-cart .calculo-cep .text-cep h3{
+        font-family: "Rubik", sans-serif;
+        font-size: 18px;
+    }
+
+    main .down-cart .calculo-cep .container-cep {
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main .down-cart .calculo-cep .container-cep .cep-btn {
+        border-top: 1px solid #BCBCBC;
+    }
+
+    main .down-cart .calculo-cep .container-cep input{
+        background-color: #ECF0F1;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: "Rubik", sans-serif;
+        outline: none;
+        width: 100%;
+    }
+
+    main .down-cart .calculo-cep .container-cep button{
+        background-color: #ECF0F1;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        color: #00326D;
+        font-weight: bold;
+        font-family: "Rubik", sans-serif;
+        width: 100%;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    main .down-cart .calculo-cep .container-cep button:hover {
+        background-color: #00326D;
+        color: #fff;
+    }
+
+    main .down-cart .container-compra {
+        width: 100%;
+        height: auto;
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    main .down-cart .container-compra .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    main .down-cart .container-compra .flex p {
+        font-size: 22px;
+        font-family: "Work Sans", sans-serif;
+    }
+
+    main .down-cart .container-compra .flex .p-cep {
+        font-size: 16px;
+        font-family: "Work Sans", sans-serif;
+        color: #868686;
+    }
+
+    main .down-cart .container-compra .flex h3 {
+        font-family: "Work Sans", sans-serif;
+        color: #00326D;
+        padding: 10px;
+    }
+
+    main .down-cart .container-compra .btn-compra {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main .down-cart .container-compra .btn-compra button {
+        width: 70vw;
+        height: 5vh;
+        background-color: #00326D;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-weight: bold;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    main .down-cart .container-compra .btn-compra button:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    main .down-cart .container-compra .btn-compra #btn-esvaizar-carrinho {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .carrinho-vazio-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carrinho-vazio {
+        border: 2px solid #00326D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        border-radius: 15px;
+        gap: 15px;
+        font-size: 18px;
+        margin: 25px 0;
+    }
+
+    .carrinho-vazio span {
+        font-family: "Rubik", sans-serif;
+    }
+
+    #lixo {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #lixo:hover {
+        transform: scale(1.2);
+    }
+
+    #lixo i {
+        font-size: 24px;
+        color: #ff0000; 
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1589px) {
+    main {
+        background-color: #ECF0F1;
+        padding: 20px;
+    }
+
+    main .text {
+        text-align: center;
+    }
+
+    main .text h1 {
+        font-family: "Rubik", sans-serif;
+        color: #00326D;
+        font-weight: bolder;
+        font-size: 24px;
+    }
+
+    main .line  {
+        color: #A7A7A7;
+    }
+
+    main .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    main .cart-table tr {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    main .cart-table th, main .cart-table td {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    main .cart-table th::before, main .cart-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    main .cart-table th:last-child, main .cart-table td:last-child {
+        border-bottom: none;
+    }
+
+    main .cart-table .th-produtos,
+    main .cart-table .td-produtos {
+        padding-right: 0;
+    }
+
+    main .cart-table tr .td-produtos {
+        display: block;
+        text-align: left;
+    }
+
+    main .cart-table tr .td-produtos span {
+        font-family: "Work Sans", sans-serif;
+        font-size: 22px;
+    }
+
+    main .cart-table tr .td-produtos .container-img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    main .cart-table tr .td-produtos .container-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    main .cart-table tr td .box-price {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    main .cart-table tr td .box-price button {
+        border: none;
+        font-size: 18px;
+        background-color: #00326D;
+        width: 5vw;
+        height: 5vw;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s;
+        cursor: pointer;
+    }
+
+    main .cart-table tr td .box-price #qtd-produto {
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+    main .cart-table tr td .box-price button p {
+        color: #fff;
+        font-size: 30px;
+        margin: 0;
+    }
+    
+    main .cart-table tr td .box-price button:hover {
+        background-color: #00509E;
+        transform: scale(1.1);
+    }
+    
+    main .cart-table tr td .box-price button:active {
+        background-color: #002F6C;
+        transform: scale(0.9);
+    }
+
+    main .cart-table tr td button {
+        border: none;
+    }
+
+    main .cart-table tr td button i {
+        font-size: 18px;
+    }
+
+    main .down-cart {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main .down-cart .calculo-cep, 
+    main .down-cart .container-compra {
+        margin-bottom: 20px;
+    }
+
+    main .down-cart .calculo-cep .text-cep {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main .down-cart .calculo-cep .text-cep i{
+        font-size: 24px;
+    }
+
+    main .down-cart .calculo-cep .text-cep h3{
+        font-family: "Rubik", sans-serif;
+        font-size: 18px;
+    }
+
+    main .down-cart .calculo-cep .container-cep {
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+    }
+
+    main .down-cart .calculo-cep .container-cep .cep-btn {
+        border-top: 1px solid #BCBCBC;
+    }
+
+    main .down-cart .calculo-cep .container-cep input{
+        background-color: #ECF0F1;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: "Rubik", sans-serif;
+        outline: none;
+        width: 100%;
+    }
+
+    main .down-cart .calculo-cep .container-cep button{
+        background-color: #ECF0F1;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        color: #00326D;
+        font-weight: bold;
+        font-family: "Rubik", sans-serif;
+        width: 100%;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    main .down-cart .calculo-cep .container-cep button:hover {
+        background-color: #00326D;
+        color: #fff;
+    }
+
+    main .down-cart .container-compra {
+        height: auto;
+        background-color: #ECF0F1;
+        border: 1px solid #BCBCBC;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    main .down-cart .container-compra .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    main .down-cart .container-compra .flex p {
+        font-size: 22px;
+        font-family: "Work Sans", sans-serif;
+    }
+
+    main .down-cart .container-compra .flex .p-cep {
+        font-size: 16px;
+        font-family: "Work Sans", sans-serif;
+        color: #868686;
+    }
+
+    main .down-cart .container-compra .flex h3 {
+        font-family: "Work Sans", sans-serif;
+        color: #00326D;
+        padding: 10px;
+    }
+
+    main .down-cart .container-compra .btn-compra {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main .down-cart .container-compra .btn-compra button {
+        width: 30vw;
+        height: 5vh;
+        background-color: #00326D;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-weight: bold;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    main .down-cart .container-compra .btn-compra button:hover {
+        transform: scale(1.08);
+        opacity: 0.8;
+    }
+
+    main .down-cart .container-compra .btn-compra #btn-esvaizar-carrinho {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .carrinho-vazio-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carrinho-vazio {
+        border: 2px solid #00326D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        border-radius: 15px;
+        gap: 15px;
+        font-size: 18px;
+        margin: 25px 0;
+    }
+
+    .carrinho-vazio span {
+        font-family: "Rubik", sans-serif;
+    }
+
+    #lixo {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #lixo:hover {
+        transform: scale(1.2);
+    }
+
+    #lixo i {
+        font-size: 24px;
+        color: #ff0000; 
+    }
+}
+
+@media screen and (min-width: 1590px) {
     main {
         background-color: #ECF0F1;
         padding: 40px;
@@ -63,10 +955,8 @@
     }
 
     main .cart-table tr .td-produtos .container-img {
-        width: 138px;
-        height: 96px;
-        border: 1px solid #B6B6B6;
-        border-radius: 15px;
+        width: 10vw;
+        height: 14vh;
     }
 
     main .cart-table tr .td-produtos .container-img img {
@@ -75,17 +965,47 @@
     }
 
     main .cart-table tr td .box-price {
-        width: 129px;
-        height: 42px;
-        border: 1px solid #B6B6B6;
-        border-radius: 20px;     
+        width: 9vw;
+        height: 6vh;   
         display: flex;
         justify-content: space-around;
-        padding-top: 8px;
+        align-items: center;
+    }
+
+    main .cart-table tr td .box-price #qtd-produto {
+        font-size: 22px;
+        margin: 0;
     }
 
     main .cart-table tr td .box-price button {
         border: none;
+        font-size: 18px;
+        background-color: #00326D;
+        width: 1.5vw;
+        height: 1.5vw;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s;
+        cursor: pointer;
+    }
+
+    main .cart-table tr td .box-price button:hover {
+        background-color: #00509E;
+        transform: scale(1.1);
+    }
+    
+    main .cart-table tr td .box-price button:active {
+        background-color: #002F6C;
+        transform: scale(0.9);
+    }
+
+    main .cart-table tr td .box-price button p {
+        font-size: 30px;
+        color: #fff;
+        margin: 0;
     }
 
     main .cart-table tr td button {
@@ -122,10 +1042,6 @@
         border-radius: 15px;
         display: flex;
     }
-
-    /* main .down-cart .calculo-cep .container-cep .cep-input {
-
-    } */
 
     main .down-cart .calculo-cep .container-cep .cep-btn {
         display: flex;
@@ -207,11 +1123,10 @@
         padding: 10px;
     }
 
-    main .down-cart .container-compra .btn-compra {       
-        display: flex;      
-        justify-content: center;
-        align-items: center;
+    main .down-cart .container-compra .btn-compra {
+        display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     main .down-cart .container-compra .btn-compra button {       
@@ -223,17 +1138,18 @@
         color: #fff;
         font-family: "Rubik", sans-serif;
         font-weight: bold;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    main .down-cart .container-compra .btn-compra button:hover {
+        transform: scale(1.08);
+        opacity: 0.8;
     }
 
     main .down-cart .container-compra .btn-compra #btn-esvaizar-carrinho {       
-        width: 351px;
-        height: 44px;
-        background-color: #ECF0F1;
-        border-radius: 10px;
-        border: none;
-        color: #000;
-        font-family: "Rubik", sans-serif;
-        font-weight: bold;
+        background-color: #dc3545;
+        color: #fff;
     }
 
     .carrinho-vazio-1 {
@@ -258,6 +1174,22 @@
 
     .carrinho-vazio span {
         font-family: "Rubik", sans-serif;
+    }
+
+    #lixo {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #lixo:hover {
+        transform: scale(1.2);
+    }
+
+    #lixo i {
+        font-size: 24px;
+        color: #ff0000; 
     }
 
 }

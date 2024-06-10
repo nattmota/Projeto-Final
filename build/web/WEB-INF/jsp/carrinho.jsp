@@ -34,7 +34,8 @@
                                             <div class="container-img">
                                                 <img src="data:image/jpeg;base64,${carrinho.imagemBase64}"
                                                     alt="${carrinho.nome}">
-                                            </div>${carrinho.nome}
+                                            </div>
+                                            <span>${carrinho.nome}</span>
                                         </td>
                                         <td>
                                             <div class="box-price">
@@ -48,7 +49,7 @@
                                                         <p style="margin: 0">+</p>
                                                     </button>
                                                 </form>
-                                                <p>${carrinho.quantidade}</p>
+                                                <p id="qtd-produto">${carrinho.quantidade}</p>
                                                 <form action="atualizarQuantidadeMenos" method="post"
                                                     style="display:inline;">
                                                     <input type="hidden" name="idCarrinho"
@@ -66,7 +67,7 @@
                                         <td>
                                             <form action="deletarItemCarrinho" method="post">
                                                 <input type="hidden" name="idCarrinho" value="${carrinho.idCarrinho}">
-                                                <button type="submit"><i class="bi bi-trash"></i></button>
+                                                <button id="lixo" type="submit"><i class="bi bi-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>
