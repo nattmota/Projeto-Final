@@ -6,11 +6,11 @@ USE bd_komunhao;
 CREATE TABLE usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(100) NOT NULL,
-    cpf CHAR(11) NOT NULL,
-    telefone VARCHAR(13),
-    status int default '1'
+    cpf CHAR(11) NOT NULL UNIQUE,
+    telefone VARCHAR(13) UNIQUE,
+    status INT DEFAULT 1
 );
 
 CREATE TABLE endereco (
