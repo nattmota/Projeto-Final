@@ -48,7 +48,7 @@ public class DadosPagamentoController extends HttpServlet {
 
         //LISTAR INFORMAÇÕES DO ENDEREÇO DO USUARIO DO PEDIDO
         EnderecoDAO enderecoDao = new EnderecoDAO();
-        List<Endereco> infoEndereco = enderecoDao.ListarInfoEnderecoUsuario();
+        List<Endereco> infoEndereco = enderecoDao.listarInfoEnderecoUsuario();
         request.setAttribute("endereco", infoEndereco);
 
         request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());

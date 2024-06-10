@@ -1,7 +1,5 @@
 package model.bean;
 
-import java.sql.Blob;
-
 public class Produto {
     private int idProduto;
     private String nome;

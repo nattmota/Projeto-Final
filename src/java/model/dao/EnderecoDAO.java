@@ -48,7 +48,7 @@ public class EnderecoDAO {
         }
     }
     
-    public List<Endereco> ListarInfoEnderecoUsuario() {
+    public List<Endereco> listarInfoEnderecoUsuario() {
         List<Endereco> enderecoUsuario = new ArrayList();
         try {
             Connection conexao = Conexao.conectar();
