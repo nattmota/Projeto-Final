@@ -13,6 +13,9 @@ CREATE TABLE usuario (
     status INT DEFAULT 1
 );
 
+INSERT INTO usuario (nome, email, senha, cpf, telefone, status)
+VALUES ('Admin', 'admin@admEmail.com', 'adminKomunhao890', '12345678901', '1234567890', 2);
+
 CREATE TABLE endereco (
     idEndereco INT PRIMARY KEY AUTO_INCREMENT,
     estado VARCHAR(50) NOT NULL,
