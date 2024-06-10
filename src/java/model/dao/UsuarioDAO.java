@@ -10,6 +10,7 @@ import java.util.List;
 import model.bean.Usuario;
 
 public class UsuarioDAO {
+
     public Usuario login(Usuario u) {
         Usuario usuarioValido = new Usuario();
         try {
@@ -91,7 +92,7 @@ public class UsuarioDAO {
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro: " + ex);
-            return false;   
+            return false;
         }
     }
 
@@ -137,22 +138,75 @@ public class UsuarioDAO {
             return false;
         }
     }
-    
+
     public List<Usuario> listarInformacoesUsuario() {
         List<Usuario> infoUsuario = new ArrayList();
-        try{
+        try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = conexao.prepareStatement("SELECT nome,email,telefone FROM usuario WHERE idUsuario = ?");
             stmt.setInt(1, Usuario.getIdUsuarioStatic());
-            
+
             ResultSet rs = stmt.executeQuery();
-            
-            while(rs.next()) {
+
+            while (rs.next()) {
                 Usuario usuario = new Usuario();
                 usuario.setNome(rs.getString("nome"));
                 usuario.setEmail(rs.getString("email"));
                 usuario.setTelefone(rs.getString("telefone"));
                 infoUsuario.add(usuario);
+            }
+
+            rs.close();
+            stmt.close();
+            conexao.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return infoUsuario;
+    }
+
+    public int verificarUnicidade(Usuario usuario) {
+        int retorno = 0;
+
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = conexao.prepareStatement("SELECT email, cpf, telefone FROM usuario");
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                if (rs.getString("email").equals(usuario.getEmail())) {
+                    retorno = 1;
+                }
+                if (rs.getString("cpf").equals(usuario.getCpf())) {
+                    retorno = 2;
+                }
+                if (rs.getString("telefone").equals(usuario.getTelefone())) {
+                    retorno = 3;
+                }
+            }
+
+            rs.close();
+            stmt.close();
+            conexao.close();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return retorno;
+    }
+    
+    public int listarStatusUsuario() {
+        int status = 0;
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = conexao.prepareStatement("SELECT status FROM usuario WHERE idUsuario = ?");
+            
+            stmt.setInt(1, Usuario.getIdUsuarioStatic());
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()) {
+                status = rs.getInt("status");               
             }
             
             rs.close();
@@ -162,6 +216,6 @@ public class UsuarioDAO {
         }catch(SQLException e) {
             e.printStackTrace();
         }
-        return infoUsuario;
+        return status;
     }
 }

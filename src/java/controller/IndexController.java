@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.bean.Produto;
 import model.bean.Usuario;
 import model.dao.ProdutoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
@@ -43,6 +44,14 @@ public class IndexController extends HttpServlet {
         }
         
         request.setAttribute("produtos", produto);
+        
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        
+        int status = usuarioDAO.listarStatusUsuario();
+        
+        System.out.println("STATUS" + status);
+        
+        request.setAttribute("status", status);
         
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

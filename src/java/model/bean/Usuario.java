@@ -8,19 +8,19 @@ public class Usuario {
     private String senha;
     private String cpf;
     private String telefone;
-    private int acesso;
+    private int status;
 
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nome, String email, String senha, String cpf, String telefone, int acesso) {
+    public Usuario(int idUsuario, String nome, String email, String senha, String cpf, String telefone, int status) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.cpf = cpf;
         this.telefone = telefone;
-        this.acesso = acesso;
+        this.status = status;
     }
 
     public int getIdUsuario() {
@@ -79,14 +79,13 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public int getAcesso() {
-        return acesso;
+    public int getStatus() {
+        return status;
     }
 
-    public void setAcesso(int acesso) {
-        this.acesso = acesso;
+    public void setStatus(int status) {
+        this.status = status;
     }
 
-    
     
 }
