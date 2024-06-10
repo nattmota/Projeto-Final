@@ -45,51 +45,43 @@
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">Minha Conta <i
-                                            class="fa-regular fa-user"></i></button>
+                                            aria-expanded="false">
+                                        <c:if test="${status == 2}">
+                                            Administrador <i class="fa-regular fa-user"></i>
+                                        </c:if>
+                                        <c:if test="${status != 2}">
+                                            Minha Conta <i class="fa-regular fa-user"></i>
+                                        </c:if>
+                                    </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <form action="deslogar" method="post">
                                             <button class="dropdown-item" type="submit">Logout</button>
                                         </form>
                                         <c:if test="${status == 2}">
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="./cadastro-produto">Cadastrar produto</a>
-                                                <a class="dropdown-item" href="./listar-produtos">Listar produtos</a>
-                                            </div>
+                                            <a class="dropdown-item" href="./cadastro-produto">Cadastrar Produto</a>
+                                            <a class="dropdown-item" href="./lista-produtos">Visualizar produtos</a>
                                         </c:if>
                                     </div>
                                 </div>
                                 <div class="element-nav-1">
-                                    <li><i class="fa-solid fa-cart-shopping"></i><a href="./carrinho">Meu
-                                            carrinho</a></li>
+                                    <li><i class="fa-solid fa-cart-shopping"></i><a href="./carrinho">Meu carrinho</a></li>
                                 </div>
-                                <!-- <div class="element-nav-1">
-                            <li><i class="fa-solid fa-right-from-bracket"></i><a href="./login">Logout</a></li>
-                        </div> -->
                             </ul>
-
-                        </c:when>                     
+                        </c:when>
                         <c:otherwise>
                             <ul>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">Minha Conta <i
-                                            class="fa-regular fa-user"></i></button>
+                                            aria-expanded="false">Minha Conta <i class="fa-regular fa-user"></i></button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="./login">Iniciar Sessão</a>
                                         <a class="dropdown-item" href="./cadastro-usuario">Criar uma conta</a>
-
                                     </div>
                                 </div>
-                                <!-- <div class="element-nav-1">
-                            <li><i class="fa-solid fa-right-from-bracket"></i><a href="./login">Logout</a></li>
-                        </div> -->
                             </ul>
                         </c:otherwise>
                     </c:choose>
-
-
                 </nav>
             </div>
             <hr />

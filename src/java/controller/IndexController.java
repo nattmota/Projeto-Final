@@ -49,7 +49,7 @@ public class IndexController extends HttpServlet {
         
         int status = usuarioDAO.listarStatusUsuario();
         
-        System.out.println("STATUS" + status);
+        System.out.println("STATUS: " + status);
         
         request.setAttribute("status", status);
         

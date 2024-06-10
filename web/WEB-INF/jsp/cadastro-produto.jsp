@@ -17,7 +17,7 @@
                         crossorigin="anonymous">
                     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                     <script type="text/javascript" src="./js/display-img.js"></script>
-                    <title>JSP Page</title>
+                    <title>Cadastro de Produto</title>
                 </head>
 
                 <body>
