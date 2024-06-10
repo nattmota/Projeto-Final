@@ -6,41 +6,67 @@
 
 
 
-@media screen and (min-width: 320px) and (max-width: 767px) {}
-@media screen and (min-width: 768px) and (max-width: 1024px) {}
-
-* {
+body {
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     width: 100%;
 }
 
 main {
     background-color: #ECF0F1;
+    padding: 20px;
 }
 
 .form-cadastro {
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
     padding: 35px 0;
     display: flex;
-    justify-content: center;
-    gap: 350px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
+.form-cadastro form {
+    width: 100%;
+    max-width: 600px;
+}
 
 .form-cadastro .container-img {
-    border: 1px solid black;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 500px;
+    border: 1px solid black;
     border-radius: 5px;
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-.form-cadastro .select-div {
-    display: flex;
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .form-cadastro {
+        gap: 15px;
+    }
+
+    .form-cadastro .container-img {
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .form-cadastro {
+        gap: 25px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .form-cadastro {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .form-cadastro .container-img {
+        height: 500px;
+    }
 }

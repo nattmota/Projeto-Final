@@ -1,9 +1,100 @@
-@media screen and (min-width: 320px) and (max-width: 767px) {}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* font-family: "Rubik", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+/* font-family: "Roboto Slab", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* font-family: "Work Sans", sans-serif */
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    main {
+        background-color: #ecf0f1;
+    }
+
+    .container-produto {
+        flex-direction: column;
+    }
+
+    .image-box {
+        width: 100%;
+        max-width: none;
+    }
+
+    .detalhes-box {
+        width: 100%;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .detalhes-box form table tr {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .detalhes-box form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .detalhes-box input {
+        padding: 5px;
+        outline: none;
+        border-color: #C9C9C9;
+        border-radius: 5px;   
+        width: 30%;
+    }
+
+    .detalhes-box button {
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        background-color: #286d34;
+        color: white;
+        cursor: pointer;
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+
+    .detalhes-box button:hover {
+        opacity: 0.8;
+    }
+
+    main .detalhes-box h1 {
+        color: #00326D;
+    }
+
+    main .detalhes-box h2 {
+        color: #286d34;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main {
+        background-color: #ecf0f1;
+    }
+
+    .container-produto {
+        flex-direction: column;
+    }
+
+    .image-box {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .detalhes-box {
+        width: 100%;
+        max-width: none;
+        padding-left: 0;
+    }
+}
 
 @media screen and (min-width: 1025px) {
-
     * {
         margin: 0;
         padding: 0;

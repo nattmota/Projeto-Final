@@ -48,7 +48,7 @@
                 <div class="h1-text">
                     <h1>DESTAQUES</h1>
                 </div>
-            <jsp:include page="produto.jsp" ></jsp:include>
+            <jsp:include page="produto.jsp"></jsp:include>
             </section>
             <section class="email-section">
                 <div class="newsletter">

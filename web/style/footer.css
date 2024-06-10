@@ -35,7 +35,16 @@
         font-family: "Rubik", sans-serif;
         text-decoration: none;
         color: #00326D;
+        transition: all 0.3 ease;
+        font-size: 18px;
+        opacity: 1;
     }
+
+    .upper-footer a:hover {
+        font-size: 20px;
+        opacity: 0.7; 
+        color: #0056b3; 
+    }	
 
     .upper-footer .column-dp h4,
     .upper-footer .column-empresa h4,
@@ -78,7 +87,7 @@
         border-radius: 50%;
         border: none;
         width: 10%;
-        height: 10%;
+        height: 60%;
         margin-right: 0 2.5%;
         margin-bottom: 2.5%;
         transition: opacity 0.3s;
@@ -107,21 +116,124 @@
 
     footer .text-footer span {  
         color: #fff;
-        font-size: 3.5vw;
+        font-size: 2.5vw;
         font-family: "Rubik", sans-serif;
     }
 
 } 
 
 
-/* iPads, tablets 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-
-} 
-
 /* telas pequenas, laptops */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
+    .upper-footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 5%;
+        width: 100%;
+        height: auto;
+        background-color: #D4D8D9;
+    }
+
+    .upper-footer h4 {
+        font-family: "Work Sans", sans-serif;
+        color: #00326D;
+        margin-bottom: 5%;
+    }
+
+    .upper-footer a {
+        font-family: "Rubik", sans-serif;
+        text-decoration: none;
+        color: #00326D;
+        transition: all 0.3 ease;
+        font-size: 18px;
+        opacity: 1;
+    }
+
+    .upper-footer a:hover {
+        font-size: 20px;
+        opacity: 0.7; 
+        color: #0056b3; 
+    }	
+
+    .upper-footer .column-dp h4,
+    .upper-footer .column-empresa h4,
+    .upper-footer .sociais h4 {
+        margin-bottom: 5%;
+    }
+
+    .upper-footer .contato h4 {
+        margin-bottom: 7.5%;
+    }
+
+    .upper-footer .contato .div-contato a {
+        color: #00326D;
+        font-size: 3.5vw;
+    }
+
+    .upper-footer .contato .div-contato a i {
+        margin-right: 1vw;
+        font-size: 3.5vw;
+    }
+
+    .upper-footer .contato .div-contato span {
+        color: #00326D;
+        font-family: "Roboto Slab";
+        font-size: 3.5vw;
+    }
+
+    .upper-footer .contato .div-contato i {
+        color: #00326D;
+        font-size: 3.5vw;
+    }
+
+    .upper-footer .sociais a i {
+        color: #fff;
+        font-size: 3.5vw;
+    }
+
+    .upper-footer .sociais button {
+        background-color: #00326D;
+        border-radius: 50%;
+        border: none;
+        width: 10%;
+        height: 60%;
+        margin-right: 0 2.5%;
+        margin-bottom: 2.5%;
+        transition: opacity 0.3s;
+    }
+
+    .upper-footer .sociais button:hover {
+        opacity: 0.8; 
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10vh;
+        background-color: #00326D;
+    } 
+
+    footer .text-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+      padding: 0 5%;
+    }
+
+
+    footer .text-footer span {  
+        color: #fff;
+        font-size: 1.8vw;
+        font-family: "Rubik", sans-serif;
+    }
 } 
 
 /* desktops, telas grandes */

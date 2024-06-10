@@ -14,21 +14,33 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    header {
+    header { 
         background-color: #00326D;
         height: auto;
         width: auto;
     }
 
-    .upper-header {
-        height: 6vh;
-        /* Reduzindo a altura */
-        background-color: #4D71B4;
-        /* Alterando a cor de fundo */
+    .header-baixo, .header-cima {
+        display: none;
     }
 
-    .icons-upper-header i {
-        display: none;
+    .upper-header {
+        height: 6vh;
+        background-color: #4D71B4;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .upper-header .icons-upper-header {
+        display: flex;
+        gap: 10px;
+    }
+
+    .upper-header .icons-upper-header i {
+        color: #fff;
     }
 
     .upper-header-text {
@@ -46,8 +58,8 @@
     .upper-header-text p {
         color: whitesmoke;
         font-family: "Rubik", sans-serif;
-        font-size: 14px;
-        /* Reduzindo o tamanho da fonte */
+        font-size: 15px;
+        margin: 10px 0;
     }
 
     header .bar-mobile .up-row {
@@ -70,6 +82,8 @@
 
     header .bar-mobile .down-row {
         padding: 0 10px 10px 10px;
+        display: flex;
+        justify-content: center;
     }
 
     header .bar-mobile .input-box {
@@ -79,18 +93,26 @@
         font-size: 14px;
     }
 
-    header .bar-mobile .input-box i {
-        font-size: 22px;
+    header .bar-mobile .input-box button {
         position: absolute;
         right: 10px;
+        background: none;
+        border: none;
+        color: #00326D;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    header .bar-mobile .down-row .input-box i {   
+        font-size: 22px;
         color: #00326D;
     }
 
-    header .bar-mobile .input-box input {
-        width: 750px;
-        height: 55px;
-        font-size: 20px;
-        padding: 10px;
+    header .bar-mobile .down-row .input-box input {
+        width: 80vw;
+        height: 40px;
+        font-size: 16px;
+        padding: 10px 40px 10px 10px;
         border-radius: 10px;
         background-color: #ecf0f1;
         border: none;
@@ -139,6 +161,7 @@
 
     header .bar-mobile .up-row .offcanvas-header .medias-mobile li a i {
         font-size: 25px;     
+
     }
 
     header .bar-mobile .up-row .offcanvas-body {
@@ -160,7 +183,15 @@
         text-decoration: none;
         color: #fff;
         font-size: 25px;
-        font-family: "Roboto Slab", sans-serif
+        font-family: "Roboto Slab", sans-serif;
+        opacity: 1;
+        position: relative;
+        transition: all 0.3 ease;
+    }
+
+    header .bar-mobile .up-row .offcanvas-body ul li a:hover {
+        font-size: 27px;
+        opacity: 0.7;
     }
 
     header .bar-mobile .up-row .offcanvas-body .nav-conta {
@@ -198,11 +229,6 @@
 
 }
 
-/* iPads, tablets 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-
-} */
-
 /* telas pequenas, laptops */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     * {
@@ -212,56 +238,49 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    .header-baixo {
-        display: none;
+    body .upper-header {
+        background-color: #4D71B4;
+        height: 6vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
-    .header-cima {
-        display: none;
+    body .upper-header .icons-upper-header {
+        display: flex;
+        gap: 15px;
+    }
+
+    body .upper-header .icons-upper-header i {
+        color: #fff;
+    }
+
+    body .upper-header .upper-header-text p {
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        margin: 20px;
     }
 
     header {
         background-color: #00326D;
-        height: auto;
-        width: auto;
+        height: 25vh;
     }
 
-    .upper-header {
-        height: 6vh;
-        /* Reduzindo a altura */
-        background-color: #4D71B4;
-        /* Alterando a cor de fundo */
-    }
-
-    .icons-upper-header i {
+    header .header-cima, .header-baixo {
         display: none;
     }
 
-    .upper-header-text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        /* Definindo a altura para ocupar todo o espaço vertical */
-    }
-
-    header hr {
+    hr {
         display: none;
-    }
-
-    .upper-header-text p {
-        color: whitesmoke;
-        font-family: "Rubik", sans-serif;
-        font-size: 14px;
-        /* Reduzindo o tamanho da fonte */
     }
 
     header .bar-mobile .up-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 35px;
-        padding-bottom: 15px;
+        padding: 0 35px 15px 35px;
+        
     }
 
     header .bar-mobile .up-row img {
@@ -276,6 +295,8 @@
 
     header .bar-mobile .down-row {
         padding: 0 10px 10px 10px;
+        display: flex;
+        justify-content: center;
     }
 
     header .bar-mobile .input-box {
@@ -285,18 +306,26 @@
         font-size: 14px;
     }
 
-    header .bar-mobile .input-box i {
-        font-size: 22px;
+    header .bar-mobile .input-box button {
         position: absolute;
         right: 10px;
+        background: none;
+        border: none;
+        color: #00326D;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    header .bar-mobile .down-row .input-box i {   
+        font-size: 22px;
         color: #00326D;
     }
 
-    header .bar-mobile .input-box input {
-        width: 750px;
-        height: 55px;
-        font-size: 20px;
-        padding: 10px;
+    header .bar-mobile .down-row .input-box input {
+        width: 80vw;
+        height: 40px;
+        font-size: 16px;
+        padding: 10px 40px 10px 10px;
         border-radius: 10px;
         background-color: #ecf0f1;
         border: none;
@@ -345,6 +374,7 @@
 
     header .bar-mobile .up-row .offcanvas-header .medias-mobile li a i {
         font-size: 25px;     
+
     }
 
     header .bar-mobile .up-row .offcanvas-body {
@@ -366,7 +396,15 @@
         text-decoration: none;
         color: #fff;
         font-size: 25px;
-        font-family: "Roboto Slab", sans-serif
+        font-family: "Roboto Slab", sans-serif;
+        opacity: 1;
+        position: relative;
+        transition: all 0.3 ease;
+    }
+
+    header .bar-mobile .up-row .offcanvas-body ul li a:hover {
+        font-size: 27px;
+        opacity: 0.7;
     }
 
     header .bar-mobile .up-row .offcanvas-body .nav-conta {
@@ -420,6 +458,10 @@
         width: auto;
     }
 
+    .bar-mobile {
+        display: none;
+    }
+
     .upper-header {
         height: 30px;
         background-color: #4D71B4;
@@ -466,6 +508,7 @@
         display: flex;
         justify-content: center;
         align-items: baseline;
+        padding: 20px;
     }
 
     .header-cima .logo {
@@ -498,7 +541,7 @@
     }
 
     .header-cima .input-box input {
-        width: 750px;
+        width: 45vw;
         height: 55px;
         font-size: 16px;
         padding: 10px;
@@ -509,6 +552,9 @@
         outline: none;
     }
 
+    .header-cima .nav-1  {
+        width: 10vw;
+    }
 
     .header-cima .nav-1 ul {
         width: 300px;
@@ -580,4 +626,5 @@
     header .header-cima .nav-1 ul .dropdown .dropdown-menu a {
         color: black;
     }
+
 }

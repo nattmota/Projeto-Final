@@ -1,24 +1,231 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); /* font-family: "Rubik", sans-serif */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap'); /* font-family: "Roboto Slab", sans-serif */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* font-family: "Work Sans", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* font-family: "Rubik", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+/* font-family: "Roboto Slab", sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* font-family: "Work Sans", sans-serif */
 
-@media screen and (min-width: 320px) and (max-width: 767px) {}
-@media screen and (min-width: 768px) and (max-width: 1024px) {}
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
     main {
         background-color: #ecf0f1;
     }
-    .show-products {
-        width: 100%;    
-        background-color: #ecf0f1;
-    }
-    
+
     .show-products h1 {
         color: #00326D;
         font-size: 40px;
         font-family: "Rubik", sans-serif;
     }
-    
+
+    .show-products .h1-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+    }
+
+    .card-products {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 25px;
+    }
+
+    .card-body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-body .card-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-body h5 {
+        font-family: "Rubik", sans-serif;
+    }
+
+    .card-body .card-price {
+        color: green;
+        font-size: 30px;
+        margin: 30px 0;
+    }
+
+    .card-body .center-element {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .card {
+        margin: 30px 50px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s;
+    }
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main {
+        background-color: #ecf0f1;
+    }
+
+    .show-products h1 {
+        color: #00326D;
+        font-size: 40px;
+        font-family: "Rubik", sans-serif;
+    }
+
+    .show-products .h1-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+    }
+
+    .card-products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        margin: 60px 25px;
+    }
+
+    .card-body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-body .card-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-body h5 {
+        font-family: "Rubik", sans-serif;
+    }
+
+    .card-body .card-price {
+        color: green;
+        font-size: 30px;
+        margin: 30px 0;
+    }
+
+    .card-body .center-element {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .card {
+        margin: 30px 50px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s;
+    }
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1520px) {
+    main {
+        background-color: #ecf0f1;
+    }
+
+    .show-products {
+        width: 100%;
+        background-color: #ecf0f1;
+    }
+
+    .show-products h1 {
+        color: #00326D;
+        font-size: 40px;
+        font-family: "Rubik", sans-serif;
+    }
+
+    .show-products .h1-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+    }
+
+    .card-products {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        padding: 60px 25px;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .card {
+        margin: 30px 50px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s;
+    }
+
+    .card-body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-body .card-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-body h5 {
+        font-family: "Rubik", sans-serif;
+    }
+
+    .card-body .card-price {
+        color: green;
+        font-size: 30px;
+        margin: 30px 0;
+    }
+
+    .card-body .center-element {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 1521px) {
+    main {
+        background-color: #ecf0f1;
+    }
+
+    .show-products {
+        width: 100%;
+        background-color: #ecf0f1;
+    }
+
+    .show-products h1 {
+        color: #00326D;
+        font-size: 40px;
+        font-family: "Rubik", sans-serif;
+    }
+
     .show-products .h1-text {
         display: flex;
         justify-content: center;
@@ -37,39 +244,38 @@
         box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
         transition: transform 0.3s;
     }
-    
+
     .card-products {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-content: center;
         padding: 60px 25px;
     }
-    
+
     .card-body {
         display: grid;
         justify-content: center;
         align-items: center;
     }
-    
+
     .card-body .card-title {
         display: flex;
         justify-content: center;
     }
-    
+
     .card-body h5 {
         font-family: "Rubik", sans-serif;
     }
-    
+
     .card-body .card-price {
         color: green;
         font-size: 30px;
         margin: 30px 0;
     }
-    
+
     .card-body .center-element {
         display: flex;
         justify-content: center;
         gap: 20px;
     }
-
 }

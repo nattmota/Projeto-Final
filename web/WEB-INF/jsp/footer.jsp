@@ -18,13 +18,11 @@
         <section class="upper-footer" id="footer">
             <div class="column-dp">
                 <h4>Departamentos</h4>
-                <p><a href="#">Início</a></p>
-                <p><a href="#">Livros</a></p>
-                <p><a href="#">Presentes</a></p>
-                <p><a href="#">Bíblias</a></p>
-                <p><a href="#">Brinquedos educativos</a></p>
-                <p><a href="#">Quem somos</a></p>
-                <p><a href="#">Contato</a></p>
+                <p><a href="./index">Início</a></p>
+                <p><a href="./livros">Livros</a></p>
+                <p><a href="./bilias">Bíblias</a></p>
+                <p><a href="./brinquedos">Brinquedos educativos</a></p>
+                <p><a href="#footer">Contato</a></p>
             </div>
             <div class="column-empresa">
                 <h4>Diretrizes da empresa</h4>

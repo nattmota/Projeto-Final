@@ -13,7 +13,7 @@
     </head>
     <body>
         <jsp:include page="header.jsp" ></jsp:include>
-        <section class="show-products">
+        <section class="show-products" style="background-color: #ecf0f1;">
             <div class="h1-text">
                 <h1>PAPELARIA</h1>
             </div>

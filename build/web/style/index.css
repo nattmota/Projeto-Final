@@ -2,9 +2,573 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap'); /* font-family: "Roboto Slab", sans-serif */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); /* font-family: "Work Sans", sans-serif */
 
-@media screen and (min-width: 320px) and (max-width: 767px) {}
-@media screen and (min-width: 768px) and (max-width: 1024px) {}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    main {
+        background-color: #ecf0f1;
+    }
+
+    .show-products h1 {
+        color: #00326D;
+        font-size: 40px;
+        font-family: "Rubik", sans-serif;
+    }
+
+    .show-products .h1-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+    }
+
+    .card {
+        margin: 30px 50px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-products {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 25px;
+    }
+
+    .card-body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .card-body .card-title {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .card-body h5 {
+        font-family: "Rubik", sans-serif;
+    }
+    
+    .card-body .card-price {
+        color: green;
+        font-size: 30px;
+        margin: 30px 0;
+    }
+    
+    .card-body .center-element {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    main .email-section {
+        width: 100%;
+        height: 30vh;
+        background-color: #00326D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 15px;
+    }
+    
+    main .email-section .newsletter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .email-section h3 {
+        color: #fff;
+        font-family: "Roboto Slab", serif;
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+    
+    main .email-section h2 {
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        margin-bottom: 20px;
+    }
+    
+    main .email-section p {
+        color: #fff;
+        font-family: "Work Sans", sans-serif;
+        margin-bottom: 50px;
+    }
+    
+    main .email-section .newsletter .input-box i {
+        color: #00326D;
+        font-size: 25px;
+        position: absolute;
+        right: 10px;
+    }
+    
+    main .email-section .newsletter .input-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    main .email-section input {
+        width: 60vw;
+        height: 4vh;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #ecf0f1;
+        border: none;
+        font-family: "Rubik", sans-serif;
+    }
+
+    main .instagram-section {
+        width: 100%;
+        height: 25vh;
+        background-color: #ecf0f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main .instagram-section .to-instagram {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main .instagram-section .to-instagram .tag-insta h2 {
+        color: #00326D;
+        font-size: 35px;
+        font-family: "Work Sans", sans-serif;
+        /* font-family: "Rubik", sans-serif / font-family: "Roboto Slab", sans-serif / font-family: "Work Sans", sans-serif*/
+    }
+    
+    main .instagram-section .to-instagram .tag-insta i {
+        color: #00326D;
+        font-size: 35px;
+        margin-right: 10px;
+    }
+    
+    main .instagram-section .to-instagram h3 {
+        font-family: "Rubik", sans-serif;
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+    
+    main .instagram-section .to-instagram button a {
+        text-decoration: none;
+        color: #00326D;
+        font-size: 13px;
+        font-family: "Roboto Slab", sans-serif;
+    }
+    
+    main .instagram-section .to-instagram button {
+        border: 1px solid #00326D;
+        border-radius: 30px;
+        padding: 5px 30px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    main .instagram-section .to-instagram button a:hover {
+        text-decoration: none;
+        color: #fff;
+        font-size: 13px;
+        font-family: "Roboto Slab", sans-serif;
+    }
+    
+    main .instagram-section .to-instagram button:hover {
+        background-color: #00326D;
+        border: 1px solid #00326D;
+        border-radius: 30px;
+        padding: 5px 30px;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main {
+        background-color: #ecf0f1;
+    }
+
+    .show-products h1 {
+        color: #00326D;
+        font-size: 40px;
+        font-family: "Rubik", sans-serif;
+    }
+
+    .show-products .h1-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+    }
+
+    .card {
+        margin: 30px 50px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-products {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        align-items: center;
+        margin: 60px 25px;
+    }
+
+    .card-body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .card-body .card-title {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .card-body h5 {
+        font-family: "Rubik", sans-serif;
+    }
+    
+    .card-body .card-price {
+        color: green;
+        font-size: 30px;
+        margin: 30px 0;
+    }
+    
+    .card-body .center-element {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    main .email-section {
+        width: 100%;
+        height: 30vh;
+        background-color: #00326D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 15px;
+    }
+    
+    main .email-section .newsletter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .email-section h3 {
+        color: #fff;
+        font-family: "Roboto Slab", serif;
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+    
+    main .email-section h2 {
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        margin-bottom: 20px;
+    }
+    
+    main .email-section p {
+        color: #fff;
+        font-family: "Work Sans", sans-serif;
+        margin-bottom: 50px;
+    }
+    
+    main .email-section .newsletter .input-box i {
+        color: #00326D;
+        font-size: 25px;
+        position: absolute;
+        right: 10px;
+    }
+    
+    main .email-section .newsletter .input-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    main .email-section input {
+        width: 60vw;
+        height: 4vh;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #ecf0f1;
+        border: none;
+        font-family: "Rubik", sans-serif;
+    }
+
+    main .instagram-section {
+        width: 100%;
+        height: 25vh;
+        background-color: #ecf0f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main .instagram-section .to-instagram {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main .instagram-section .to-instagram .tag-insta h2 {
+        color: #00326D;
+        font-size: 35px;
+        font-family: "Work Sans", sans-serif;
+    }
+    
+    main .instagram-section .to-instagram .tag-insta i {
+        color: #00326D;
+        font-size: 35px;
+        margin-right: 10px;
+    }
+    
+    main .instagram-section .to-instagram h3 {
+        font-family: "Rubik", sans-serif;
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+    
+    main .instagram-section .to-instagram button a {
+        text-decoration: none;
+        color: #00326D;
+        font-size: 13px;
+        font-family: "Roboto Slab", sans-serif;
+    }
+    
+    main .instagram-section .to-instagram button {
+        border: 1px solid #00326D;
+        border-radius: 30px;
+        padding: 5px 30px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    main .instagram-section .to-instagram button a:hover {
+        text-decoration: none;
+        color: #fff;
+        font-size: 13px;
+        font-family: "Roboto Slab", sans-serif;
+    }
+    
+    main .instagram-section .to-instagram button:hover {
+        background-color: #00326D;
+        border: 1px solid #00326D;
+        border-radius: 30px;
+        padding: 5px 30px;
+    }
+
+}
+
 @media screen and (min-width: 1025px) {
+    main {
+        background-color: #ecf0f1;
+    }
+    .show-products {
+        width: 100%;    
+        background-color: #ecf0f1;
+    }
+    
+    .show-products h1 {
+        color: #00326D;
+        font-size: 40px;
+        font-family: "Rubik", sans-serif;
+    }
+    
+    .show-products .h1-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+    }
+    
+    .card-products {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        padding: 60px 25px;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .card {
+        margin: 30px 50px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s;
+    }
+    
+    .card-body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .card-body .card-title {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .card-body h5 {
+        font-family: "Rubik", sans-serif;
+    }
+    
+    .card-body .card-price {
+        color: green;
+        font-size: 30px;
+        margin: 30px 0;
+    }
+    
+    .card-body .center-element {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    main .email-section {
+        width: 100%;
+        height: 43vh;
+        background-color: #00326D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main .email-section .newsletter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main .email-section h3 {
+        color: #fff;
+        font-family: "Roboto Slab", serif;
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+    
+    main .email-section h2 {
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        margin-bottom: 20px;
+    }
+    
+    main .email-section p {
+        color: #fff;
+        font-family: "Work Sans", sans-serif;
+        margin-bottom: 50px;
+    }
+    
+    main .email-section .newsletter .input-box i {
+        color: #00326D;
+        font-size: 25px;
+        position: absolute;
+        right: 10px;
+    }
+    
+    main .email-section .newsletter .input-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+    
+    main .email-section input {
+        width: 600px;
+        height: 50px;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #ecf0f1;
+        border: none;
+        font-family: "Rubik", sans-serif;
+    }
+    
+    
+    main .instagram-section {
+        width: 100%;
+        height: 30vh;
+        background-color: #ecf0f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main .instagram-section .to-instagram {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main .instagram-section .to-instagram .tag-insta h2 {
+        color: #00326D;
+        font-size: 35px;
+        font-family: "Work Sans", sans-serif;
+    }
+    
+    main .instagram-section .to-instagram .tag-insta i {
+        color: #00326D;
+        font-size: 35px;
+        margin-right: 10px;
+    }
+    
+    main .instagram-section .to-instagram h3 {
+        font-family: "Rubik", sans-serif;
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+    
+    main .instagram-section .to-instagram button a {
+        text-decoration: none;
+        color: #00326D;
+        font-size: 13px;
+        font-family: "Roboto Slab", sans-serif;
+    }
+    
+    main .instagram-section .to-instagram button {
+        border: 1px solid #00326D;
+        border-radius: 30px;
+        padding: 5px 30px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    main .instagram-section .to-instagram button a:hover {
+        text-decoration: none;
+        color: #fff;
+        font-size: 13px;
+        font-family: "Roboto Slab", sans-serif;
+    }
+    
+    main .instagram-section .to-instagram button:hover {
+        background-color: #00326D;
+        border: 1px solid #00326D;
+        border-radius: 30px;
+        padding: 5px 30px;
+    }
+}
+
+@media screen and (min-width: 1521px) {
     main {
         background-color: #ecf0f1;
     }
@@ -30,13 +594,6 @@
         margin: 30px 50px;
         border-radius: 5px;
         box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
-    }
-    
-    .card-products {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-content: center;
-        margin: 60px 25px;
     }
     
     .card-products {
@@ -154,7 +711,6 @@
         color: #00326D;
         font-size: 35px;
         font-family: "Work Sans", sans-serif;
-        /* font-family: "Rubik", sans-serif / font-family: "Roboto Slab", sans-serif / font-family: "Work Sans", sans-serif*/
     }
     
     main .instagram-section .to-instagram .tag-insta i {

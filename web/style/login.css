@@ -6,7 +6,22 @@
 
 
 /* Dispositivos móveis */
-@media screen and (min-width: 320px) and (max-width: 480px) { 
+@media screen and (min-width: 320px) and (max-width: 580px) { 
+    main {
+        background-color: #ECF0F1;
+        padding: 5% 0;
+    }
+
+    main .left-img {
+        display: none;
+    }
+
+    #card-cadastro {
+        width: 90vw;
+    }
+}
+
+@media screen and (min-width: 581px) and (max-width: 768px) { 
     main {
         background-color: #ECF0F1;
         padding: 5% 0;
@@ -17,8 +32,8 @@
     }
 }
 
-/* iPads, tablets */
-@media screen and (min-width: 481px) and (max-width: 768px) {
+/* telas pequenas, laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     main {
         background-color: #ECF0F1;
         padding: 5% 0;
@@ -27,10 +42,6 @@
     main .left-img {
         display: none;
     }
-} 
-
-/* telas pequenas, laptops */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
 }
 
 /* desktops, telas grandes */
@@ -38,7 +49,7 @@
     main {
         display: grid !important;
         grid-template-columns: 50% 50%;
-        background: linear-gradient(to right, rgba(0, 0, 255, 0.7), #00B2FF);
+        background-color: #ECF0F1;
     }    
     
     main .left-img {
@@ -47,8 +58,17 @@
         align-items: center;
     }
 
+    #card-login {
+        width: 35vw;
+    }
+
+    #card-cadastro {
+        width: 35vw;
+    }
+
     main .left-img img {
         border-radius: 10px;
+        width: 90%;
     }
     
     .btn btn-success btn-block btn-lg gradient-custom-4 text-body {

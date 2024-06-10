@@ -29,11 +29,10 @@
                         <table cellspacing="0" class="inputs">
                             <tr>
                                 <td><b>Quantidade</b></td>
-                                <td align="right"><input type="number" name="quantidade" id="quantidade"></td>
+                                <td align="left"><input type="number" name="quantidade" id="quantidade"></td>
                             </tr>                         
                         </table>
                         <input type="hidden" name="id-produto" id="id-produto" value="${produto.idProduto}">
-                        
                         <h4>Especificações</h4>
                         <!-- <p>Para mais informações do produto, entre em contato com a loja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus repellat ipsum aperiam minima
                             facere provident saepe quidem, officia quae iste ad totam autem doloremque perferendis nihil harum dolorem soluta eaque.</p> -->
