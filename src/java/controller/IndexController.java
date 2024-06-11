@@ -47,9 +47,7 @@ public class IndexController extends HttpServlet {
         
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         
-        int status = usuarioDAO.listarStatusUsuario();
-        
-        System.out.println("STATUS: " + status);
+        int status = usuarioDAO.listarStatusUsuario();             
         
         request.setAttribute("status", status);
         

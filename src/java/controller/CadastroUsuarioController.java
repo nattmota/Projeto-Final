@@ -17,6 +17,12 @@ public class CadastroUsuarioController extends HttpServlet {
         String url = "/WEB-INF/jsp/cadastro-usuario.jsp";
 
         request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
+        
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        
+        int status = usuarioDAO.listarStatusUsuario();             
+        
+        request.setAttribute("status", status);
 
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

@@ -21,6 +21,7 @@ import model.bean.Usuario;
 import model.dao.CarrinhoDAO;
 import model.dao.PedidoDAO;
 import model.dao.ProdutoPedidoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
@@ -47,6 +48,10 @@ public class CarrinhoController extends HttpServlet {
         System.out.println("Total: " + total);
         
         request.setAttribute("idUsuario", Usuario.getIdUsuarioStatic());
+        
+        UsuarioDAO usuarioDAO = new UsuarioDAO();     
+        int status = usuarioDAO.listarStatusUsuario();                   
+        request.setAttribute("status", status);
 
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

@@ -14,6 +14,7 @@ import model.bean.Produto;
 import model.bean.Usuario;
 import model.dao.CategoriaDAO;
 import model.dao.ProdutoDAO;
+import model.dao.UsuarioDAO;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -43,6 +44,12 @@ public class CadastroProdutoController extends HttpServlet {
         }
         
         request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
+        
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        
+        int status = usuarioDAO.listarStatusUsuario();             
+        
+        request.setAttribute("status", status);
         
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);

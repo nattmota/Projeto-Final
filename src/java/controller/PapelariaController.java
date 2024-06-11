@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.bean.Produto;
 import model.bean.Usuario;
 import model.dao.ProdutoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
@@ -51,6 +52,10 @@ public class PapelariaController extends HttpServlet {
         request.setAttribute("produtos", produto);
         
         request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
+        
+        UsuarioDAO usuarioDAO = new UsuarioDAO();     
+        int status = usuarioDAO.listarStatusUsuario();                   
+        request.setAttribute("status", status);
 
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
         d.forward(request, response);response.setContentType("text/html;charset=UTF-8");

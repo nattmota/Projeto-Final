@@ -127,10 +127,29 @@
                             </ul>
                             <div class="nav-conta">
                                 <i class="fa-solid fa-user"></i>
-                                <ul>
-                                    <li><a href="./cadastro-usuario">Criar uma conta</a></li>
-                                    <li><a href="./login">Iniciar Sessão</a></li>
-                                </ul>
+                                <c:choose>
+                                    <c:when test="${idusuario != 0}">
+                                        <ul>
+                                            <c:if test="${status == 2}">
+                                                <li class="nome">Administrador</li>
+                                                <li><a href="./cadastro-produto">Cadastrar Produto</a></li>
+                                                <li><a href="./lista-produtos">Visualizar produtos</a></li>
+                                                </c:if>
+                                                <c:if test="${status != 2}">
+                                                <li class="nome">Minha Conta</li>
+                                                </c:if>
+                                            <form action="deslogar" method="post">
+                                                <button id="btn-logout" type="submit">Logout</button>
+                                            </form>
+                                        </ul>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <ul>
+                                            <li><a href="./cadastro-usuario">Criar uma conta</a></li>
+                                            <li><a href="./login">Iniciar Sessão</a></li>
+                                        </ul>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                         </div>
                     </div>
