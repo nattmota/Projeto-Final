@@ -107,7 +107,7 @@ public class DadosPagamentoController extends HttpServlet {
                 pedidoDao.atualizarTipoPagamentoPedido(request, idPedido);
                 UsuarioPagamentoDAO usuarioPagamentoDao = new UsuarioPagamentoDAO();
                 usuarioPagamentoDao.inserirMetodoPagamentoUsuario(request);
-                response.sendRedirect("./index");
+                response.sendRedirect("./pedido-sucesso");
                 System.out.println("PEDIDO FEITO COM SUCESOO!");
             }
         }  

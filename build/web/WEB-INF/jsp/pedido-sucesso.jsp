@@ -9,11 +9,28 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link href="./style/pedido-sucesso.css" rel="stylesheet" type="text/css" />
+        <script src="https://kit.fontawesome.com/6f0f753ce6.js" crossorigin="anonymous"></script>
+        <title>Pedido Confirmado</title>
     </head>
     <body>
         <jsp:include page="header.jsp" ></jsp:include>
-        <h1>Pedido feito com sucess</h1>
+        <main class="main">
+            <div class="container-sucesso">
+                <div class="text-sucesso">
+                    <h1>PEDIDO FEITO COM SUCESSO</h1>
+                    <div class="circle">  
+                        <i class="fa-solid fa-check"></i> 
+                    </div>
+                </div>
+                <hr>
+                <div class="btn-link">
+                    <button>
+                        <a href="./index">VER MAIS PRODUTOS</a>
+                    </button>
+                </div>
+            </div>      
+        </main>
         <jsp:include page="footer.jsp" ></jsp:include>
     </body>
 </html>
