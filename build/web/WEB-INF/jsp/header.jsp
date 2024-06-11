@@ -139,7 +139,7 @@
                                                 <li class="nome">Minha Conta</li>
                                                 </c:if>
                                             <form action="deslogar" method="post">
-                                                <button id="btn-logout" type="submit">Logout</button>
+                                                <button id="btn-logout" type="submit">LOGOUT</button>
                                             </form>
                                         </ul>
                                     </c:when>

@@ -191,7 +191,7 @@
 
     header .bar-mobile .up-row .offcanvas-body ul li a:hover {
         font-size: 27px;
-        opacity: 0.7;
+        opacity: 0.7;        
     }
 
     header .bar-mobile .up-row .offcanvas-body .nav-conta {
@@ -207,11 +207,13 @@
     header .bar-mobile .up-row .offcanvas-body .nav-conta ul {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 15px;
     }
 
     header .bar-mobile .up-row .offcanvas-body .nav-conta ul .nome {
         font-size: 27px;
+        color: #0dcaf0;
+        text-decoration: underline;
     }
 
     #btn-logout {
@@ -220,6 +222,12 @@
         background: transparent;
         font-size: 27px;
         color: #ff4f4f;
+        cursor: pointer; 
+    }
+    
+    #btn-logout:hover {
+        color: #ff1a1a; 
+        text-decoration: underline; 
     }
 
     header .bar-mobile .up-row .offcanvas-body .nav-conta ul li  {
@@ -230,10 +238,14 @@
         font-size: 21px;
     }
 
+    header .bar-mobile .up-row .offcanvas-body .nav-conta ul li a:hover {
+        text-decoration: underline;
+    }
+    
     .offcanvas-body ul li a {
-        position: relative; /* Define a posição como relativa para os elementos a */
-        text-decoration: none; /* Remove o sublinhado padrão dos links */
-        color: inherit; /* Herda a cor do texto do elemento pai */
+        position: relative; 
+        text-decoration: none; 
+        color: inherit; 
     }
 
     .offcanvas-body ul li a:hover {
@@ -433,6 +445,8 @@
 
     header .bar-mobile .up-row .offcanvas-body .nav-conta ul .nome {
         font-size: 27px;
+        color: #0dcaf0;
+        text-decoration: underline;
     }
 
     #btn-logout {
@@ -441,6 +455,12 @@
         background: transparent;
         font-size: 27px;
         color: #ff4f4f;
+        cursor: pointer; 
+    }
+    
+    #btn-logout:hover {
+        color: #ff1a1a; 
+        text-decoration: underline; 
     }
 
     header .bar-mobile .up-row .offcanvas-body .nav-conta ul li  {
