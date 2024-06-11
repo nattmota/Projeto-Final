@@ -17,11 +17,11 @@ public class CadastroUsuarioController extends HttpServlet {
         String url = "/WEB-INF/jsp/cadastro-usuario.jsp";
 
         request.setAttribute("idusuario", Usuario.getIdUsuarioStatic());
-        
+
         UsuarioDAO usuarioDAO = new UsuarioDAO();
-        
-        int status = usuarioDAO.listarStatusUsuario();             
-        
+
+        int status = usuarioDAO.listarStatusUsuario();
+
         request.setAttribute("status", status);
 
         RequestDispatcher d = getServletContext().getRequestDispatcher(url);
@@ -71,6 +71,8 @@ public class CadastroUsuarioController extends HttpServlet {
                     || telefone == null || telefone.trim().isEmpty()
                     || cpf == null || cpf.trim().isEmpty()) {
                 errorMessage = "Todos os campos são obrigatórios.";
+            } else if (cpf.length() != 11) {
+                errorMessage = "Cpf inválido";
             } else {
                 if (senha.equals(confirmarSenha)) {
                     Usuario usuario = new Usuario();
@@ -87,15 +89,15 @@ public class CadastroUsuarioController extends HttpServlet {
                             nextPage = "./login";
                         }
                     } else {
-                        switch(validacao) {
-                            case 1: 
+                        switch (validacao) {
+                            case 1:
                                 errorMessage = "Email já cadastrado";
                                 break;
-                                
+
                             case 2:
                                 errorMessage = "CPF já cadastrado";
                                 break;
-                                
+
                             case 3:
                                 errorMessage = "Telefone ja cadastrado";
                                 break;
