@@ -55,8 +55,37 @@
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </section>                         
                             <div class="main-separator">
+                                <div class="container-carrinho-mobile">
+                                    <div class="text-resumo-pedido">
+                                        <h1>Produtos do Pedido</h1>                                      
+                                    </div>
+                                    <c:forEach items="${produtosPedido}" var="produtoPedido">
+                                        <div class="info-produto">
+                                            <div class="image-box">
+                                                <img src="data:image/jpeg;base64,${produtoPedido.imagemBase64}"
+                                                    alt="ImagemProduto">
+                                            </div>
+                                            <div class="info-produto-2">
+                                                <h5>${produtoPedido.nome}</h5>
+                                                <span id="qtd">x ${produtoPedido.quantidade}</span>
+                                                <span id="preco">R$ ${produtoPedido.subtotal}</span>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </c:forEach>
+                                    <div class="info-preco">
+                                        <div class="price-separator">
+                                            <span>Custo de frete:</span>
+                                            <span>R$ xx,xx</span>
+                                        </div>
+                                        <div class="price-separator">
+                                            <span id="preco-total">Total:</span>
+                                            <span>R$ ${total}</span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="inputs-container">
                                     <div class="dados">
                                         <h2>Dados de Contato</h2>

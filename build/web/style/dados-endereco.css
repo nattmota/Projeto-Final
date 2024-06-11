@@ -9,9 +9,383 @@
     box-sizing: border-box;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {}
-@media screen and (min-width: 768px) and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    .vh-10 {
+        display: none;
+    }
+}   
 
+@media screen and (max-width: 767px) {
+    main {
+        background-color: #ECF0F1;
+        padding: 20px 20px 100px 20px;
+    }
+
+    .main-separator {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    main .main-separator .container-carrinho {
+        display: none;
+    }
+
+    main .main-separator .container-carrinho-mobile {
+        border: 1px solid #AFAFAF;
+        padding: 20px;
+        border-radius: 20px;
+    }   
+
+    main .main-separator .container-carrinho-mobile .text-resumo-pedido {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-produto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-produto .info-produto-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+        gap: 20px
+    }
+
+    main .main-separator .container-carrinho-mobile .info-produto .info-produto-2 #qtd {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-produto .info-produto-2 #preco {
+        font-size: 25px;
+        color: green;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-preco .price-separator {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-preco .price-separator #preco-total {
+        font-size: 22px;
+        font-weight: bold;
+        color: #00326D;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-preco .price-separator span {
+        font-size: 22px;
+    }
+
+    main .main-separator .inputs-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main .main-separator .inputs-container .dados input {
+        background-color: #ECF0F1;
+        border: 1px solid #AFAFAF;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        outline: none;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega {
+        border: 3px solid #00326D;
+        border-radius: 10px;
+        display: flex;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .circulo-icon {
+        background-color: #00326D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10vw;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .circulo-icon .circulo {
+        background-color: #fff;
+        border-radius: 50%;
+        width: 7vw;
+        height: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .circulo-icon .circulo i {
+        font-size: 25px;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .texto-metodo-entrega {
+        display: flex;
+        padding: 5px 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .texto-metodo-entrega .preco-frete {
+        display: flex;
+        align-items: center;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .texto-metodo-entrega .preco-frete span {
+        color:#00326D;
+        font-weight: bold;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    main .main-separator .inputs-container form .dados-entrega .dados-endereco input {
+        background-color: #ECF0F1;
+        border: 1px solid #AFAFAF;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        outline: none;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .inputs-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .dados, .entrega, .dados-endereco, .btn-continuar {
+        padding: 10px;
+    }
+
+    .container-carrinho, .dados, .entrega {
+        margin: 30px 0;
+    }
+
+    .dados input, .dados-endereco input, .entrega input {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .dados-separator {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .dados-separator input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn-continuar button {
+        width: 100%;
+        background-color: #00326D;
+        border-radius: 45px;
+        border: none;
+        color: #fff;
+        padding: 15px 5px;
+        font-weight: bold;
+        font-family: "Rubik", sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-continuar button:hover {
+        background-color: #005bb5;
+        color: #e0e0e0;
+    }
+
+    .info-produto span,
+    .info-produto h5 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main {
+        background-color: #ECF0F1;
+        padding: 20px 20px 100px 20px;
+    }
+
+    .main-separator {
+        flex-direction: column;
+    }
+
+    main .main-separator .container-carrinho {
+        display: none;
+    }
+
+    main .main-separator .container-carrinho-mobile {
+        border: 1px solid #AFAFAF;
+        padding: 20px;
+        border-radius: 20px;
+    }   
+
+    main .main-separator .container-carrinho-mobile .text-resumo-pedido {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-produto {
+        display: flex;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-produto .info-produto-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px;
+        gap: 20px
+    }
+
+    main .main-separator .container-carrinho-mobile .info-produto .info-produto-2 #qtd {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-produto .info-produto-2 #preco {
+        font-size: 25px;
+        color: green;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-preco .price-separator {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-preco .price-separator #preco-total {
+        font-size: 22px;
+        font-weight: bold;
+        color: #00326D;
+    }
+
+    main .main-separator .container-carrinho-mobile .info-preco .price-separator span {
+        font-size: 22px;
+    }
+
+    main .main-separator .inputs-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main .main-separator .inputs-container .dados input {
+        background-color: #ECF0F1;
+        border: 1px solid #AFAFAF;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        outline: none;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega {
+        border: 3px solid #00326D;
+        border-radius: 10px;
+        display: flex;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .circulo-icon {
+        background-color: #00326D;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10vw;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .circulo-icon .circulo {
+        background-color: #fff;
+        border-radius: 50%;
+        width: 7vw;
+        height: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .circulo-icon .circulo i {
+        font-size: 25px;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .texto-metodo-entrega {
+        display: flex;
+        padding: 5px 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .texto-metodo-entrega .preco-frete {
+        display: flex;
+        align-items: center;
+    }
+
+    main .main-separator .inputs-container .entrega .container-metodo-entrega .texto-metodo-entrega .preco-frete span {
+        color:#00326D;
+        font-weight: bold;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    main .main-separator .inputs-container form .dados-entrega .dados-endereco input {
+        background-color: #ECF0F1;
+        border: 1px solid #AFAFAF;
+        border-radius: 5px;
+        padding: 5px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        outline: none;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .dados, .entrega, .dados-endereco, .btn-continuar {
+        padding: 20px;
+    }
+
+    .dados input, .dados-endereco input, .entrega input {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .dados-separator {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .dados-separator input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn-continuar button {
+        width: 100%;
+        background-color: #00326D;
+        border-radius: 45px;
+        border: none;
+        color: #fff;
+        padding: 15px 5px;
+        font-weight: bold;
+        font-family: "Rubik", sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-continuar button:hover {
+        background-color: #005bb5;
+        color: #e0e0e0;
+    }
+}
 
 @media screen and (min-width: 1025px) {
     main {
@@ -81,8 +455,13 @@
         color: #fff;
     }
 
+    main .main-separator .container-carrinho-mobile {
+        display: none;
+    }
+
     main .main-separator .inputs-container .dados {
         padding: 30px 0 30px 30px;
+        width: 55vw;
     }
 
     main .main-separator .inputs-container .dados input {
@@ -90,7 +469,7 @@
         border: 1px solid #AFAFAF;
         border-radius: 5px;
         padding: 5px;
-        width: 100%;
+        width: 52vw;
         font-family: "Open Sans", sans-serif;
         font-size: 20px;
         outline: none;
@@ -107,7 +486,7 @@
         border: 1px solid #AFAFAF;
         border-radius: 5px;
         padding: 5px;
-        width: 100%;
+        width: 52vw;
         font-family: "Open Sans", sans-serif;
         font-size: 20px;
         outline: none;
@@ -118,6 +497,7 @@
     main .main-separator .inputs-container .dados-endereco .dados-separator {
         display: flex;
         justify-content: space-between;
+        width: 52vw;
     }
 
     main .main-separator .inputs-container .dados-endereco .dados-separator input {
@@ -125,7 +505,7 @@
         border: 1px solid #AFAFAF;
         border-radius: 5px;
         padding: 5px;
-        width: 45%;
+        width: 25vw;
         font-family: "Open Sans", sans-serif;
         font-size: 20px;
         outline: none;
@@ -138,7 +518,7 @@
     }
 
     main .main-separator .inputs-container .entrega .container-metodo-entrega {
-        width: 100%;
+        width: 52vw;
         height: 80px;
         border: 3px solid #00326D;
         border-radius: 10px;
@@ -200,8 +580,13 @@
         padding: 15px 5px;
         width: 35%;
         font-weight: bold;
-        font-family: "Rubik", sans-serif
+        font-family: "Rubik", sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
+    main .main-separator .inputs-container .btn-continuar button:hover {
+        background-color: #005bb5;
+        color: #e0e0e0;
     }
 
     main .main-separator {
@@ -213,7 +598,7 @@
         display: flex;
         flex-direction: column;
         flex: 1; 
-        max-width: calc(100% - 1030px);
+        max-width: calc(100% - 41vw);
     }
 
     main .main-separator .container-carrinho {
