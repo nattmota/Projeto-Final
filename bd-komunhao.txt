@@ -59,6 +59,8 @@ CREATE TABLE tipo_pagamento (
     metodo VARCHAR(100) NOT NULL
 );
 
+INSERT INTO tipo_pagamento (metodo) VALUES ('Cartão Crédito'),('Cartão Débito');
+
 CREATE TABLE pedido (
     idPedido INT PRIMARY KEY AUTO_INCREMENT,
     usuario_id INT NOT NULL,
