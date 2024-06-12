@@ -46,14 +46,6 @@ CREATE TABLE produto (
     FOREIGN KEY (categoria) REFERENCES categoria(idCategoria)
 );
 
-CREATE TABLE estoque (
-    idEstoque INT PRIMARY KEY AUTO_INCREMENT,
-    produto INT NOT NULL,
-    quantidade INT NOT NULL,
-    custo FLOAT(10,2) NOT NULL,
-    FOREIGN KEY (produto) REFERENCES produto(idProduto)
-);
-
 CREATE TABLE tipo_pagamento (
     idPagamento INT PRIMARY KEY AUTO_INCREMENT,
     metodo VARCHAR(100) NOT NULL
