@@ -29,7 +29,7 @@
                         <jsp:include page="header-checkout.jsp"></jsp:include>
                         <main>
                             <section class="vh-10">
-                                <div class="container py-5 h-100">
+                                <div class="container h-100">
                                     <div class="row d-flex justify-content-center align-items-center h-100">
                                         <div class="col-12">
                                             <div class="card card-stepper"
@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="container-carrinho">
                                     <c:forEach items="${produtosPedido}" var="produtoPedido">
-                                        <div class="info-produto">
+                                        <div class="info-produto">  
                                             <div class="image-box">
                                                 <img src="data:image/jpeg;base64,${produtoPedido.imagemBase64}"
                                                     alt="ImagemProduto">

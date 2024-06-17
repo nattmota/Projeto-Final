@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="element-nav-1">
-                                    <li><i class="fa-solid fa-cart-shopping"></i><a href="./carrinho">Meu carrinho</a></li>
+                                    <li><i class="fa-solid fa-cart-shopping"></i><a href="./carrinho">Carrinho</a></li>
                                 </div>
                             </ul>
                         </c:when>

@@ -17,7 +17,7 @@
         <jsp:include page="header-checkout.jsp"></jsp:include>
         <main>
             <section class="vh-10">
-                <div class="container py-5 h-100">
+                <div class="container h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col-12">
                             <div class="card card-stepper" style="background-color: #ECF0F1; border: none; box-shadow: none">
