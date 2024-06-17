@@ -75,4 +75,26 @@ public class PedidoDAO {
             return false;
         }
     }
+    
+    public void atualizarStatusPedido(int idPedido) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = conexao.prepareStatement("UPDATE pedido SET status_pedido = ? WHERE idPedido = ?");
+            
+            String status = "processando";
+            
+            stmt.setString(1, status);
+            stmt.setInt(2, idPedido);
+            
+            int linhasAfetadas = stmt.executeUpdate();
+            
+            if(linhasAfetadas > 0) {
+                System.out.println("Status atualizado com sucesso!");              
+            } else {
+                System.out.println("Nenhum pedido selecionado para atualizacao!");
+            }            
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
