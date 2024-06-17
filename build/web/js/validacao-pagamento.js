@@ -1,5 +1,5 @@
 window.onload = function () {
-    // Máscara para o campo de vencimento (MM/AA)
+    // mascara para vencimento
     var vencimentoInput = document.getElementById('vencimentoCartao');
     vencimentoInput.addEventListener('input', function () {
         var value = vencimentoInput.value;
@@ -9,7 +9,7 @@ window.onload = function () {
         vencimentoInput.value = value;
     });
 
-    // Máscara para o campo de CVV
+    // mascara para cvv
     var cvvInput = document.getElementById('cvvCartao');
     cvvInput.addEventListener('input', function () {
         var value = cvvInput.value;
@@ -18,7 +18,7 @@ window.onload = function () {
         cvvInput.value = value;
     });
 
-    // Máscara para o campo de telefone
+    // mascara para telefone
     var telefoneInput = document.getElementById('telefone');
     telefoneInput.addEventListener('input', function () {
         var value = telefoneInput.value;
@@ -26,8 +26,8 @@ window.onload = function () {
         value = value.replace(/^(\d{2})(\d{4,5})(\d{4})$/, '($1) $2-$3'); // Aplica a máscara
         telefoneInput.value = value;
     });
-
-    // Máscara para o campo de CPF/CNPJ
+    
+    // mascara para cpf/cnpj
     var cpfInput = document.getElementById('cpfCnpjPortador');
     cpfInput.addEventListener('input', function () {
         var value = cpfInput.value;
@@ -35,6 +35,7 @@ window.onload = function () {
         cpfInput.value = value;
     });
 
+    // mascara para numero do cartao
     var nmrCartao = document.getElementById('numeroCartao');
     nmrCartao.addEventListener('input', function () {
         var value = nmrCartao.value;
@@ -43,6 +44,7 @@ window.onload = function () {
         nmrCartao.value = value;
     });
 
+    // mascara nome
     var nomeCartao = document.getElementById('input-maior');
     nomeCartao.addEventListener('input', function () {
         var value = nomeCartao.value;
